@@ -1,0 +1,46 @@
+<div id="msg-add-to-cart">
+    <!-- modal add to cart -->
+    <div id="modal-add-to-cart" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridModalLabel">购物车</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div>
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>商品</th>
+                                        <th>名称</th>
+                                        <th>数量</th>
+                                        <th>总额</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td><img src="{{ prod.img_t }}"></td>
+                                        <td>{{ prod.title }}</td>
+                                        <td>{{ qty }}</td>
+                                        <td>{{ amount }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

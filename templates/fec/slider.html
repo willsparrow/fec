@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>无标题文档</title>
+    <script type="text/javascript" src="http://www.w3school.com.cn/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".imgtext").hide();
+            $(".chaonanwo").hover(function () {
+                //$(".imgtext").slideToggle(1000);
+            });
+        });
+    </script>
+    <style type="text/css">
+        .chaonanwo {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            position: relative;
+        }
+
+        .chaonanwo:hover {
+            text-decoration: none;
+            cursor: pointer;
+            color: #666;
+            box-shadow: 0 1px 1px rgba(0, 1, 1, .08);
+        }
+
+        .chaonanwo img {
+            width: 281px;
+            height: 276px;
+            border: 0px;
+            padding: 12px 9px;
+            display: block;
+        }
+
+        .text {
+            width: 300px;
+            height: auto;
+            background-color: #FFFFFF;
+            FILTER: alpha(opacity=70);
+            opacity: 0.7;
+            -moz-opacity: 0.7;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        .imgbt {
+            width: 280px;
+            height: 30px;
+            padding: 0px 10px;
+        }
+
+        .imgbt span {
+            display: block;
+        }
+
+        .span_a {
+            width: 210px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+            color: #FF3366;
+            padding-right: 10px;
+        }
+
+        .span_b {
+            width: 60px;
+            line-height: 30px;
+            float: left;
+            font-size: 16px;
+            color: #FF3366;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            text-align: right;
+        }
+
+        .clear {
+            display: block;
+            font-size: 0px;
+            height: 0px;
+            line-height: 0px;
+            clear: both;
+        }
+
+        .imgtext {
+            width: 280px;
+            height: 80px;
+            padding: 20px 10px;
+            color: #333333;
+            font-size: 12px;
+        }
+
+        /* Common style */
+        .grid div {
+            position: relative;
+            float: left;
+            overflow: hidden;
+            margin: 10px 1%;
+            min-width: 320px;
+            max-width: 480px;
+            max-height: 360px;
+            width: 48%;
+            background: #3085a3;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .grid div img {
+            position: relative;
+            display: block;
+            min-height: 100%;
+            max-width: 100%;
+            opacity: 0.8;
+        }
+
+        .grid div div {
+            padding: 2em;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .grid div div::before,
+        .grid div div::after {
+            pointer-events: none;
+        }
+
+        .grid div div,
+        .grid div div > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Anchor will cover the whole item by default */
+        /* For some effects it will show as a button */
+        .grid div div > a {
+            z-index: 1000;
+            text-indent: 200%;
+            white-space: nowrap;
+            font-size: 0;
+            opacity: 0;
+        }
+
+        .grid div h2 {
+            word-spacing: -0.15em;
+            font-weight: 300;
+        }
+
+        .grid div h2 span {
+            font-weight: 800;
+        }
+
+        .grid div h2,
+        .grid div p {
+            margin: 0;
+        }
+
+        .grid div p {
+            letter-spacing: 1px;
+            font-size: 68.5%;
+        }
+
+        /*---------------*/
+        /***** Zoe *****/
+        /*---------------*/
+
+        div.effect-zoe div {
+            top: auto;
+            bottom: 0;
+            padding: 1em;
+            height: 3.75em;
+            background: #fff;
+            color: #3c4a50;
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+        }
+
+        div.effect-zoe h2 {
+            float: left;
+        }
+
+        div.effect-zoe p.icon-links a {
+            float: right;
+            color: #3c4a50;
+            font-size: 1.4em;
+        }
+
+        div.effect-zoe:hover p.icon-links a:hover,
+        div.effect-zoe:hover p.icon-links a:focus {
+            color: #252d31;
+        }
+
+        div.effect-zoe p.description {
+            position: absolute;
+            bottom: 8em;
+            padding: 2em;
+            color: #fff;
+            text-transform: none;
+            font-size: 90%;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
+            -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+        }
+
+        div.effect-zoe h2,
+        div.effect-zoe p.icon-links a {
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            -webkit-transform: translate3d(0, 200%, 0);
+            transform: translate3d(0, 200%, 0);
+        }
+
+        div.effect-zoe p.icon-links a span::before {
+            display: inline-block;
+            padding: 8px 10px;
+            font-family: 'feathericons';
+            speak: none;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-eye::before {
+            content: '\e000';
+        }
+
+        .icon-paper-clip::before {
+            content: '\e001';
+        }
+
+        .icon-heart::before {
+            content: '\e024';
+        }
+
+        div.effect-zoe h2 {
+            display: inline-block;
+        }
+
+        div.effect-zoe:hover p.description {
+            opacity: 1;
+        }
+
+        div.effect-zoe:hover div,
+        div.effect-zoe:hover h2,
+        div.effect-zoe:hover p.icon-links a {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        div.effect-zoe:hover h2 {
+            -webkit-transition-delay: 0.05s;
+            transition-delay: 0.05s;
+        }
+
+        div.effect-zoe:hover p.icon-links a:nth-child(3) {
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
+
+        div.effect-zoe:hover p.icon-links a:nth-child(2) {
+            -webkit-transition-delay: 0.15s;
+            transition-delay: 0.15s;
+        }
+
+        div.effect-zoe:hover p.icon-links a:first-child {
+            -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="chaonanwo">
+    <a href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1458640904116-093b74971de9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0c236f26de72aaa9e9ca10b4f0ea0cf6"/>
+    </a>
+
+    <div class="text">
+        <div class="imgbt">
+            <span class="span_a">韩版短翻领POLO衫</span>
+            <span class="span_b">￥59.00</span>
+            <span class="clear"></span>
+        </div>
+        <div class="imgtext">
+            2012新品男T恤韩版短袖男士夏装男装翻领t恤POLO衫 货到付款 T93
+        </div>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="effect-zoe">
+        <img src="https://images.unsplash.com/photo-1458640904116-093b74971de9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0c236f26de72aaa9e9ca10b4f0ea0cf6"
+             alt="img26">
+
+        <div class="hovershow">
+            <h2>Creative <span>Zoe</span></h2>
+
+            <p class="icon-links">
+                <a href="#"><span class="icon-heart"></span></a>
+                <a href="#"><span class="icon-eye"></span></a>
+                <a href="#"><span class="icon-paper-clip"></span></a>
+            </p>
+
+            <p class="description">Zoe never had the patience of her sisters. She deliberately punched the bear in his
+                face.</p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

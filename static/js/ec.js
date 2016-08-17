@@ -1,0 +1,43 @@
+/**
+ * Created by wangpenglong801 on 2016-04-05.
+ */
+$(document).ready(function(){
+    $(".btn-add-to-cart").click(function(){
+        prod_id = ($(this).parent().parent().children("div.prod-qty").children("input#id_prod_id").val());
+        qty = ($(this).parent().parent().children("div.prod-qty").children("input#id_qty").val());
+        console.log(qty)
+        $.post("/ec/add_to_cart/", {'prod_id':prod_id, 'qty':qty}, function(ret){
+            //console.log(ret)
+            $("#msg-add-to-cart").html(ret);
+            $("#modal-add-to-cart").modal('show');
+       });
+    });
+
+    $(".icon-add").click(function () {
+        prod_id = $(this).parent().children("input#id_prod_id").val();
+        // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
+        console.log($(this).parent().children("input#id_prod_qty").val());
+        console.log(prod_id);
+        qty = 1;
+        $.post("/ec/add_prod/", {'prod_id':prod_id, 'qty':qty}, function(ret){
+            // console.log(ret)
+            // $("#block_cart").html(ret);
+            location.reload();
+       });
+
+    })
+
+    $(".icon-del").click(function () {
+        prod_id = $(this).parent().children("input#id_prod_id").val();
+        // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
+        console.log($(this).parent().children("input#id_prod_qty").val());
+        console.log(prod_id);
+        qty = 1;
+        $.post("/ec/del_prod/", {'prod_id':prod_id, 'qty':qty}, function(ret){
+            // console.log(ret)
+            // $("#block_cart").html(ret);
+            location.reload();
+       });
+
+    })
+});

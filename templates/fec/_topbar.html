@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default hidden-print" id="header" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <span class="navbar-brand-logo"></span>
+                EC
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#">
+                        毛巾
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i>百花</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i>紫日</i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">
+                        袜子
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">
+                                <i>千恒</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i>外贸</i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="#">欢迎,{{ user.username }}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'get_cart_info' %}">购物车</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">退出</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">登陆</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'register' %}">注册</a>
+                    </li>
+                {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

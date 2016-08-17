@@ -1,0 +1,36 @@
+{% extends 'fec/index.html' %}
+
+{% block login %}
+    <div class="container login">
+        <div class="row">
+            <div class="col-md-4"><h2>登陆</h2></div>
+            <div class="col-md-8">
+                {% if form.errors %}
+                <p class="alert alert-info">密码或用户名错误！</p>
+                {% endif %}
+                <div id="login">
+                    <form class="form-horizontal" method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label">用户名：</label>
+                            <div class="col-sm-10">{{ form.username }}</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passowrd" class="col-sm-2 control-label">密码：</label>
+                            <div class="col-sm-10">{{ form.password }}</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" value="login" class="btn btn-default">登陆</button>
+                                <input type="hidden" name="next" value="/">
+                                <!--
+                                    <input type="hidden" name="next" value="/prod_list">
+                                -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
