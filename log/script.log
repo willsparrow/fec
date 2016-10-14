@@ -1,0 +1,340 @@
+[2016-08-17 15:54:59,450] [Thread-8:1056] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2016-09-22 19:00:48,176] [Thread-7:4732] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2016-10-12 16:04:46,082] [Thread-6:3896] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2016-10-12 18:58:37,898] [Thread-180:1744] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 32, in prod_list
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 162, in render
+    len_values = len(values)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 144, in __len__
+    self._fetch_all()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 238, in iterator
+    results = compiler.execute_sql()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (2006, 'MySQL server has gone away')
+[2016-10-12 19:58:28,844] [Thread-25:76] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 130, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 19:58:36,048] [Thread-26:3348] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 130, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 19:58:58,838] [Thread-27:1816] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 130, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 19:59:41,144] [Thread-2:4584] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 129, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 19:59:56,815] [Thread-4:684] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 129, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 20:09:56,920] [Thread-2:4720] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 129, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 20:11:59,743] [Thread-3:4540] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 129, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 20:12:33,691] [Thread-4:4584] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 129, in get_cart_info
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2016-10-12 20:44:27,515] [Thread-11:2052] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 133, in get_cart_info
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 98, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 35, in get_template
+    return engine.get_template(template_name, dirs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 30, in get_template
+    return Template(self.engine.get_template(template_name, dirs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\engine.py", line 167, in get_template
+    template, origin = self.find_template(template_name, dirs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\engine.py", line 141, in find_template
+    source, display_name = loader(name, dirs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loaders\base.py", line 13, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loaders\base.py", line 23, in load_template
+    template = Template(source, origin, template_name, self.engine)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 191, in __init__
+    self.nodelist = engine.compile_string(template_string, origin)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\engine.py", line 261, in compile_string
+    return parser.parse()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 210, in do_extends
+    nodelist = parser.parse()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 184, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 342, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 1440, in url
+    viewname = parser.compile_filter(bits[1])
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 424, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 640, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: ':checkout' from 'ec:checkout'
+[2016-10-12 20:46:46,040] [Thread-17:4256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 133, in get_cart_info
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'checkout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2016-10-12 20:49:25,977] [Thread-2:3636] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 133, in get_cart_info
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'checkout' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+[2016-10-12 20:52:13,805] [Thread-11:180] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /checkout/
+[2016-10-12 20:53:25,526] [Thread-24:4640] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 195, in checkout
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2016-10-13 16:23:18,321] [Thread-9:2672] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

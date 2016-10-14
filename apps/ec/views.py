@@ -20,6 +20,7 @@ def index(request):
     return render(request, 'ec/index.html')
 
 
+# 查询所有商品信息
 def prod_list(request):
     prods = Prod.objects.all()
     logger.debug('查询所有商品信息')
@@ -32,6 +33,7 @@ def prod_list(request):
                   context_dict)
 
 
+# 查询某个商品的详情信息
 def prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})
@@ -42,6 +44,7 @@ def prod_detail(request, prod_id):
                   context_dict)
 
 
+# 创建订单
 def create_order(cust_id):
     logger.debug('查询该客户是否有未处理的订单')
     cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
@@ -74,8 +77,10 @@ def create_order(cust_id):
 @login_required
 def add_to_cart(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    # 创建订单
     so_id = create_order(cust_id)
     prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    # 创建订单行
     sol = Sol()
     sol.so_id = so_id
     sol.cust_id = cust_id
@@ -133,6 +138,7 @@ def add_prod(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
     so_id = create_order(cust_id)
     prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    # 创建订单行
     sol = Sol()
     sol.so_id = so_id
     sol.cust_id = cust_id
@@ -182,5 +188,10 @@ def del_prod(request):
 
 @login_required
 def checkout(request):
-    cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
-
+    cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
+    context_dict = {
+        'cust': cust
+    }
+    return render(request,
+                  'ec/checkout.html',
+                  context_dict)
