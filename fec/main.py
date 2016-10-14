@@ -29,6 +29,7 @@ def register(request):
         username = request.POST.get('username', '')
         password1 = request.POST.get('password1', '')
         password2 = request.POST.get('password2', '')
+        mobilephone = request.POST.get('mobilephone')
         form = UserCreationForm({'username': username,
                                  'password1': password1,
                                  'password2': password2})
@@ -38,6 +39,7 @@ def register(request):
             cust = Cust()
             cust.user_id = User.objects.get(username=username).id
             cust.name = username
+            cust.mobilephone = mobilephone
             cust.created_date = timezone.now()
             cust.updated_date = timezone.now()
             cust.status = 1

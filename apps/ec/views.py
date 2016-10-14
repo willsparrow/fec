@@ -233,3 +233,16 @@ def checkout_confirm(request):
     return render(request,
                   'ec/checkout_confirm.html',
                   context_dict)
+
+
+@login_required
+def get_order_info(request):
+    cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
+    # 查询客户订单信息并修改修改订单的状态
+    sos = So.objects.filter(cust_id=cust.id)
+    context_dict = {
+        'cust': cust
+    }
+    return render(request,
+                      'ec/checkout_confirm.html',
+                      context_dict)
