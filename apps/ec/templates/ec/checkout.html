@@ -5,7 +5,8 @@
         <div class="row">
             <div class="col-md-2"><h2>结算</h2></div>
             <div class="col-md-8">
-                <form class="form-horizontal">
+                <form class="form-horizontal"  action="{% url 'checkout' %}" method="post">
+                    {% csrf_token %}
                     <fieldset>
                         <div>收货人信息</div>
                         <div>姓名 {{ cust.name }}</div>
@@ -49,6 +50,9 @@
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="detailAddress" placeholder="详细地址">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-default btn-check-out" style="float: right">确定提交</button>
                             </div>
                         </div>
                     </fieldset>

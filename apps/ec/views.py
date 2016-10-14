@@ -105,21 +105,26 @@ def add_to_cart(request):
 
 
 def get_cart_detail(cust_id):
-    # 对明细进行购物车展示聚合
-    sols = Sol.objects.filter(cust_id=cust_id,
-                              status=1).values('so_id',
-                                               'prod_id',
-                                               'name',
-                                               'img_t',
-                                               'price').annotate(qty=Sum('qty'),
-                                                                 amt=Sum('qty') * F('price'))
-    # 聚合购物车商品总额
-    total = Sol.objects.filter(cust_id=cust_id,
-                               status=1).values('so_id').annotate(total=Sum(F('qty') * F('price')))[0]['total']
+    # 查询该用户是否有购物车信息
+    cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
+    if len(cnt) == 0:
+        context_dict = {'cnt': 0}
+    else:
+        # 对明细进行购物车展示聚合
+        sols = Sol.objects.filter(cust_id=cust_id,
+                                  status=1).values('so_id',
+                                                   'prod_id',
+                                                   'name',
+                                                   'img_t',
+                                                   'price').annotate(qty=Sum('qty'),
+                                                                     amt=Sum('qty') * F('price'))
+        # 聚合购物车商品总额
+        total = Sol.objects.filter(cust_id=cust_id,
+                                   status=1).values('so_id').annotate(total=Sum(F('qty') * F('price')))[0]['total']
 
-    logger.debug('查询用户购物车信息')
-    context_dict = {'sols': sols,
-                    'total': total}
+        logger.debug('查询用户购物车信息')
+        context_dict = {'sols': sols,
+                        'total': total}
 
     return context_dict
 
