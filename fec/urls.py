@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout_then_login
 from .main import *
-from apps.ec.views import prod_list, prod_detail, add_to_cart, get_cart_info, checkout
+from apps.ec.views import prod_list, prod_detail, add_to_cart, get_cart_info, checkout, checkout_confirm
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^add_to_cart/', add_to_cart, name='add_to_card'),
     url(r'^cart/', get_cart_info, name='get_cart_info'),
     url(r'^checkout/', checkout, name='checkout'),
+    url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
 ]
 
 urlpatterns += [

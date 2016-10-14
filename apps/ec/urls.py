@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^del_prod/', del_prod, name='del_prod'),
     url(r'^cart/', get_cart_info, name='get_cart_info'),
     url(r'^checkout/$', checkout, name='checkout'),
+    url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
 ]

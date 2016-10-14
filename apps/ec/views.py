@@ -200,3 +200,36 @@ def checkout(request):
     return render(request,
                   'ec/checkout.html',
                   context_dict)
+
+
+@login_required
+def checkout_confirm(request):
+    # 查询客户信息并修改客户的默认地址
+    cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
+    cust.province = request.POST.get('province')
+    cust.city = request.POST.get('city')
+    cust.country = request.POST.get('area')
+    cust.address = request.POST.get('detailAddress')
+    cust.save()
+    print request.POST.get('province')
+    print request.POST.get('city')
+    print request.POST.get('area')
+    print request.POST.get('detailAddress')
+    # 查询客户订单信息并修改修改订单的状态
+    so = So.objects.filter(cust_id=cust.id, status=1)[0]
+    so.status = 888
+    so.save()
+    # 查询客户订单对应的订单行信息并修改修改订单行的状态
+    sols = Sol.objects.filter(cust_id=cust.id,
+                              so_id=so.id,
+                              status=1)
+    for sol in sols:
+        sol.status = 888
+        sol.save()
+
+    context_dict = {
+        'cust': cust
+    }
+    return render(request,
+                  'ec/checkout_confirm.html',
+                  context_dict)
