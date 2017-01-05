@@ -1,0 +1,51 @@
+{% extends 'ec/index.html' %}
+
+{% block cart %}
+<div class="container cart">
+    <div class="row">
+        <div class="col-md-2"><h2>订单</h2></div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>商品</th>
+                    <th>名称</th>
+                    <th>数量</th>
+                    <th>价格</th>
+                    <th>总额</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for sol in sols %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>
+                            <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                <img src="{{ sol.img_t }}">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                {{ sol.name }}
+                            </a>
+                        </td>
+                        <td>{{ sol.qty }}</td>
+                        <td>{{ sol.price }}</td>
+                        <td>{{ sol.amt }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>共计:</td>
+                    <td>{{ total }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

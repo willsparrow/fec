@@ -17,23 +17,25 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout_then_login
 from .main import *
-from apps.ec.views import prod_list, prod_detail, add_to_cart, get_cart_info, checkout, checkout_confirm
+from apps.ec.views import get_prod_list, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^$', index, name='index'),
-    url(r'^$', prod_list, name='index'),
+    url(r'^$', get_prod_list, name='index'),
     url(r'^accounts/login/$', login, {'template_name': 'fec/login.html'}, name='login'),
     url(r'^logout/$', logout_then_login, name='logout'),
     url(r'^register/$', register, name='register'),
     url(r'^test/', test, name='test'),
     # ec urls
-    url(r'^prod_list/', prod_list, name='prod_list'),
-    url(r'^prod_detail/(?P<prod_id>\d+)/$', prod_detail, name='prod_detail'),
+    url(r'^prod_list/', get_prod_list, name='prod_list'),
+    url(r'^prod_detail/(?P<prod_id>\d+)/$', get_prod_detail, name='prod_detail'),
     url(r'^add_to_cart/', add_to_cart, name='add_to_card'),
-    url(r'^cart/', get_cart_info, name='get_cart_info'),
+    url(r'^cart/', get_cart_detail, name='get_cart_detail'),
     url(r'^checkout/', checkout, name='checkout'),
     url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
+    url(r'^order_list/$', get_order_list, name='order_list'),
+    url(r'^order_detail/(?P<so_id>\d+)/$', get_order_detail, name='order_detail'),
 ]
 
 urlpatterns += [

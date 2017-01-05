@@ -21,7 +21,7 @@ def index(request):
 
 
 # 查询所有商品信息
-def prod_list(request):
+def get_prod_list(request):
     prods = Prod.objects.all()
     logger.debug('查询所有商品信息')
     logger.debug(prods)
@@ -34,7 +34,7 @@ def prod_list(request):
 
 
 # 查询某个商品的详情信息
-def prod_detail(request, prod_id):
+def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})
     context_dict = {'prod': prod,
@@ -62,6 +62,7 @@ def create_order(cust_id):
         so.company = cust.company
         so.province = cust.province
         so.city = cust.city
+        so.country = cust.country
         so.address = cust.address
         so.created_date = timezone.now()
         so.updated_date = timezone.now()
@@ -104,7 +105,7 @@ def add_to_cart(request):
                   context_dict)
 
 
-def get_cart_detail(cust_id):
+def get_cart_info(cust_id):
     # 查询该用户是否有购物车信息
     cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
     if len(cnt) == 0:
@@ -130,9 +131,9 @@ def get_cart_detail(cust_id):
 
 
 @login_required
-def get_cart_info(request):
+def get_cart_detail(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
-    context_dict = get_cart_detail(cust_id)
+    context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/cart.html',
                   context_dict)
@@ -211,12 +212,14 @@ def checkout_confirm(request):
     cust.country = request.POST.get('area')
     cust.address = request.POST.get('detailAddress')
     cust.save()
-    print request.POST.get('province')
-    print request.POST.get('city')
-    print request.POST.get('area')
-    print request.POST.get('detailAddress')
-    # 查询客户订单信息并修改修改订单的状态
+    # 查询客户订单信息
     so = So.objects.filter(cust_id=cust.id, status=1)[0]
+    # 修改客户订单的地址信息
+    so.province = request.POST.get('province')
+    so.city = request.POST.get('city')
+    so.country = request.POST.get('area')
+    so.address = request.POST.get('detailAddress')
+    # 修改客户订单的状态
     so.status = 888
     so.save()
     # 查询客户订单对应的订单行信息并修改修改订单行的状态
@@ -226,9 +229,9 @@ def checkout_confirm(request):
     for sol in sols:
         sol.status = 888
         sol.save()
-
     context_dict = {
-        'cust': cust
+        'cust': cust,
+        'so_number': so.id
     }
     return render(request,
                   'ec/checkout_confirm.html',
@@ -236,13 +239,41 @@ def checkout_confirm(request):
 
 
 @login_required
-def get_order_info(request):
+def get_order_list(request):
     cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
     # 查询客户订单信息并修改修改订单的状态
     sos = So.objects.filter(cust_id=cust.id)
     context_dict = {
-        'cust': cust
-    }
+        'cust': cust,
+        'sos': sos}
     return render(request,
-                      'ec/checkout_confirm.html',
-                      context_dict)
+                  'ec/order_list.html',
+                  context_dict)
+
+
+def get_order_info(so_id):
+    # 对明细进行购物车展示聚合
+    sols = Sol.objects.filter(so_id=so_id,
+                              status=888).values('so_id',
+                                                 'prod_id',
+                                                 'name',
+                                                 'img_t',
+                                                 'price').annotate(qty=Sum('qty'),
+                                                                   amt=Sum('qty') * F('price'))
+
+    # 聚合购物车商品总额
+    total = Sol.objects.filter(so_id=so_id,
+                               status=888).values('so_id').annotate(total=Sum(F('qty') * F('price')))[0]['total']
+
+    logger.debug('查询用户购物车信息')
+    context_dict = {'sols': sols,
+                    'total': total}
+    return context_dict
+
+
+@login_required
+def get_order_detail(request, so_id):
+    context_dict = get_order_info(so_id)
+    return render(request,
+                  'ec/order_detail.html',
+                  context_dict)
