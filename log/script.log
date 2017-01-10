@@ -949,3 +949,6 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
     (lookup_view_s, args, kwargs, len(patterns), patterns))
 NoReverseMatch: Reverse for 'order_detail' with arguments '()' and keyword arguments '{u'so_id': 1L}' not found. 1 pattern(s) tried: ['order_detail/(?P<order_id>\\d+)/$']
+[2017-01-10 15:04:41,105] [Thread-9:1796] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-10 16:09:51,803] [Thread-2:2688] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /accounts/login/
+[2017-01-10 16:09:55,058] [Thread-3:1896] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /accounts/login/
