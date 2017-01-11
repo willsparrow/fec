@@ -64,6 +64,8 @@ def create_order(cust_id):
         so.city = cust.city
         so.country = cust.country
         so.address = cust.address
+        so.amount = 0
+        so.total = 0
         so.created_date = timezone.now()
         so.updated_date = timezone.now()
         so.status = 1
@@ -119,13 +121,17 @@ def get_cart_info(cust_id):
                                                    'img_t',
                                                    'price').annotate(qty=Sum('qty'),
                                                                      amt=Sum('qty') * F('price'))
-        # 聚合购物车商品总额
+        # 聚合购物车商品总数
         total = Sol.objects.filter(cust_id=cust_id,
-                                   status=1).values('so_id').annotate(total=Sum(F('qty') * F('price')))[0]['total']
+                                   status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
+        # 聚合购物车商品总额
+        amount = Sol.objects.filter(cust_id=cust_id,
+                                    status=1).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
 
         logger.debug('查询用户购物车信息')
         context_dict = {'sols': sols,
-                        'total': total}
+                        'total': total,
+                        'amount': amount}
 
     return context_dict
 
@@ -219,6 +225,14 @@ def checkout_confirm(request):
     so.city = request.POST.get('city')
     so.country = request.POST.get('area')
     so.address = request.POST.get('detailAddress')
+    # 聚合购物车商品总数
+    total = Sol.objects.filter(cust_id=cust.id,
+                               status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
+    # 聚合购物车商品总额
+    amount = Sol.objects.filter(cust_id=cust.id,
+                                status=1).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
+    so.total = total
+    so.amount = amount
     # 修改客户订单的状态
     so.status = 888
     so.save()
@@ -247,7 +261,7 @@ def get_order_list(request):
         context_dict = {'cnt': 0}
     else:
         # 查询客户订单信息
-        sos = So.objects.filter(cust_id=cust.id).order_by('-id')
+        sos = So.objects.filter(cust_id=cust.id, status=888).order_by('-id')
         context_dict = {'cust': cust,
                         'sos': sos}
     return render(request,
@@ -256,7 +270,8 @@ def get_order_list(request):
 
 
 def get_order_info(so_id):
-    # 对明细进行购物车展示聚合
+    # 对订单行信息进行展示聚合
+    so = So.objects.filter(id=so_id)[0]
     sols = Sol.objects.filter(so_id=so_id,
                               status=888).values('so_id',
                                                  'prod_id',
@@ -264,14 +279,22 @@ def get_order_info(so_id):
                                                  'img_t',
                                                  'price').annotate(qty=Sum('qty'),
                                                                    amt=Sum('qty') * F('price'))
+    # 聚合购物车商品总数
+    # total = Sol.objects.filter(so_id=so_id,
+    #                            status=888).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
+    # so.total = total
 
     # 聚合购物车商品总额
-    total = Sol.objects.filter(so_id=so_id,
-                               status=888).values('so_id').annotate(total=Sum(F('qty') * F('price')))[0]['total']
-
-    logger.debug('查询用户购物车信息')
+    # amount = Sol.objects.filter(so_id=so_id,
+    #                             status=888).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
+    # so.amount = amount
+    # so.save()
+    total = so.total
+    amount = so.amount
+    logger.debug('查询用户订单行信息')
     context_dict = {'sols': sols,
-                    'total': total}
+                    'total': total,
+                    'amount': amount}
     return context_dict
 
 

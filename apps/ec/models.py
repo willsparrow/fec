@@ -72,6 +72,8 @@ class So(models.Model):
     city = models.CharField(max_length=100, null=True)
     country = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=100, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    total = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
