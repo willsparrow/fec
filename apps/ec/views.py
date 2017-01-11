@@ -109,9 +109,11 @@ def add_to_cart(request):
 
 def get_cart_info(cust_id):
     # 查询该用户是否有购物车信息
+    cust = Cust.objects.get(id=cust_id)
     cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
     if len(cnt) == 0:
-        context_dict = {'cnt': 0}
+        context_dict = {'cnt': 0,
+                        'cust': cust}
     else:
         # 对明细进行购物车展示聚合
         sols = Sol.objects.filter(cust_id=cust_id,
@@ -258,7 +260,8 @@ def get_order_list(request):
     # 查询该用户是否有订单信息
     cnt = So.objects.filter(cust_id=cust.id, status=888).annotate(cnt=Count('id'))
     if len(cnt) == 0:
-        context_dict = {'cnt': 0}
+        context_dict = {'cnt': 0,
+                        'cust': cust}
     else:
         # 查询客户订单信息
         sos = So.objects.filter(cust_id=cust.id, status=888).order_by('-id')
@@ -271,7 +274,7 @@ def get_order_list(request):
 
 def get_order_info(so_id):
     # 对订单行信息进行展示聚合
-    so = So.objects.filter(id=so_id)[0]
+    so = So.objects.get(id=so_id)
     sols = Sol.objects.filter(so_id=so_id,
                               status=888).values('so_id',
                                                  'prod_id',

@@ -9,7 +9,13 @@
                 </div>
                 <div class="col-md-8">
                     {% if cnt == 0 %}
-                        <div><h4>您的购物车空空如也，去购物吧~~</h4></div>
+                        <h5>{{ cust.name }}您好:</h5>
+                        <div class="bs-component">
+                            <blockquote>
+                                <p>您的购物车空空如也，去购物吧~~</p>
+                                <small>竭诚为您服务</small>
+                            </blockquote>
+                        </div>
                     {% else %}
                         <table class="table">
                             <thead>
