@@ -1,33 +1,77 @@
 {% extends 'ec/index.html' %}
 
 {% block cart %}
-    <div id="block_cart">
-        {% if cnt == 0 %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div><h4>您的购物车空空如也，去购物吧~~</h4></div>
-                    </div>
-                    <div class="col-md-2"></div>
+    <div id="block_cart" class="cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h2>购物车</h2>
                 </div>
-            </div>
-
-        {% else %}
-            {% include 'ec/_cart_detail.html' %}
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                <div class="col-md-8">
+                    {% if cnt == 0 %}
+                        <div><h4>您的购物车空空如也，去购物吧~~</h4></div>
+                    {% else %}
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>商品</th>
+                                <th>名称</th>
+                                <th>数量</th>
+                                <th>价格</th>
+                                <th>总额</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for sol in sols %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>
+                                        <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                            <img src="{{ sol.img_t }}">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                            {{ sol.name }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
+                                               style="display:none;">
+                                        <div class="icon-add btn btn-default" style="display:inline;">
+                                            <span class="glyphicon glyphicon-plus"/>
+                                        </div>
+                                        <input id="id_prod_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
+                                        <div class="icon-del btn btn-default" style="display:inline;">
+                                            <span class="glyphicon glyphicon-minus"/>
+                                        </div>
+                                    </td>
+                                    <td>{{ sol.price }}</td>
+                                    <td>{{ sol.amt }}</td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>共计:</td>
+                                <td>{{ total }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                         <form action="{% url 'checkout' %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-default btn-check-out" style="float: right">去结算
                             </button>
                         </form>
-                    </div>
+                    {% endif %}
+
                 </div>
+                <div class="col-md-2"></div>
             </div>
-        {% endif %}
+        </div>
     </div>
 {% endblock %}
 

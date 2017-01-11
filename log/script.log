@@ -952,3 +952,71 @@ NoReverseMatch: Reverse for 'order_detail' with arguments '()' and keyword argum
 [2017-01-10 15:04:41,105] [Thread-9:1796] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-01-10 16:09:51,803] [Thread-2:2688] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /accounts/login/
 [2017-01-10 16:09:55,058] [Thread-3:1896] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF token missing or incorrect.): /accounts/login/
+[2017-01-11 09:22:47,499] [Thread-7:2848] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-11 09:29:52,243] [Thread-22:900] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in add_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 09:40:05,391] [Thread-75:1332] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-11 09:40:07,778] [Thread-76:2636] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in add_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 09:43:56,855] [Thread-78:2152] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in add_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 09:49:06,776] [Thread-80:76] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/del_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 189, in del_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 09:50:52,167] [Thread-81:2060] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in add_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 10:12:04,009] [Thread-9:3268] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 164, in add_prod
+    context_dict = get_cart_detail(cust_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
+    if test_func(request.user):
+AttributeError: 'long' object has no attribute 'user'

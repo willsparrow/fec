@@ -160,7 +160,7 @@ def add_prod(request):
     logger.debug('创建订单行:#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
-    context_dict = get_cart_detail(cust_id)
+    context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/_cart_detail.html',
                   context_dict)
@@ -186,7 +186,7 @@ def del_prod(request):
     logger.debug('创建订单行:#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
-    context_dict = get_cart_detail(cust_id)
+    context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/_cart_detail.html',
                   context_dict)
@@ -241,11 +241,15 @@ def checkout_confirm(request):
 @login_required
 def get_order_list(request):
     cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
-    # 查询客户订单信息并修改修改订单的状态
-    sos = So.objects.filter(cust_id=cust.id)
-    context_dict = {
-        'cust': cust,
-        'sos': sos}
+    # 查询该用户是否有订单信息
+    cnt = So.objects.filter(cust_id=cust.id, status=888).annotate(cnt=Count('id'))
+    if len(cnt) == 0:
+        context_dict = {'cnt': 0}
+    else:
+        # 查询客户订单信息
+        sos = So.objects.filter(cust_id=cust.id)
+        context_dict = {'cust': cust,
+                        'sos': sos}
     return render(request,
                   'ec/order_list.html',
                   context_dict)
