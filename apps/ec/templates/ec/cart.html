@@ -43,7 +43,7 @@
                                             <span class="glyphicon glyphicon-plus"/>
                                         </div>
                                         <input id="id_prod_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
-                                        <div class="icon-del btn btn-default" style="display:inline;">
+                                        <div {% if sol.qty <= 1  %}class="icon-del btn btn-default disabled"{% else %}class="icon-del btn btn-default"{% endif %} style="display:inline;">
                                             <span class="glyphicon glyphicon-minus"/>
                                         </div>
                                     </td>

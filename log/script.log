@@ -1020,3 +1020,4 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 21, in _wrapped_view
     if test_func(request.user):
 AttributeError: 'long' object has no attribute 'user'
+[2017-01-11 13:55:59,957] [Thread-3:3652] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

@@ -32,12 +32,21 @@ $(document).ready(function(){
         // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
         console.log($(this).parent().children("input#id_prod_qty").val());
         console.log(prod_id);
-        qty = 1;
-        $.post("/ec/del_prod/", {'prod_id':prod_id, 'qty':qty}, function(ret){
-            // console.log(ret)
-            // $("#block_cart").html(ret);
-            location.reload();
-       });
+        qty = parseInt($(this).parent().children("input#id_prod_qty").val());
+        if (qty == 1){
+            console.log($(this).attr("class"));
+            //$(this).attr("class", "disabled");
+            $(this).attr("disabled",true);
+            console.log($(this).attr("class"));
+        }
+        else{
+            qty = 1;
+            $.post("/ec/del_prod/", {'prod_id':prod_id, 'qty':qty}, function(ret){
+                // console.log(ret)
+                // $("#block_cart").html(ret);
+                location.reload();
+           });
+        }
 
     })
 });
