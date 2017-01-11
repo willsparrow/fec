@@ -247,7 +247,7 @@ def get_order_list(request):
         context_dict = {'cnt': 0}
     else:
         # 查询客户订单信息
-        sos = So.objects.filter(cust_id=cust.id)
+        sos = So.objects.filter(cust_id=cust.id).order_by('-id')
         context_dict = {'cust': cust,
                         'sos': sos}
     return render(request,
