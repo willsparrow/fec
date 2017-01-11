@@ -5,7 +5,13 @@
         <div class="row">
             <div class="col-md-2"><h2>结算</h2></div>
             <div class="col-md-8">
-                <h4>{{ cust.name }}您好，您的订单:{{ so_number }}已受理成功，预计今明两天送达，欢迎再次购物，谢谢！</h4>
+                <h5>{{ cust.name }}您好:</h5>
+                <div class="bs-component">
+                    <blockquote>
+                        <p>您的订单:<a href="{% url 'order_detail' so_number %}"><h2>{{ so_number }}</h2></a>已受理成功，预计今明两天送达，欢迎再次购物，谢谢!</p>
+                        <small>竭诚为您服务</small>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </div>
