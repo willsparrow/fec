@@ -210,21 +210,29 @@ def rmv_prod(request):
     cnt_prod = Sol.objects.filter(cust_id=cust_id,
                                   so_id=so_id,
                                   prod_id=prod.id).count()
-    logger.debug('订单#' + str(so_id) + '商品distinct数:' + str(cnt_prod))
-    if cnt_prod == cnt_so_prod:
-        cnt_sols = Sol.objects.filter(cust_id=cust_id,
-                                      so_id=so_id,
-                                      prod_id=prod.id,
-                                      status=1).delete()
-        logger.debug('删除商品#' + str(prod.id) + '订单行' + str(cnt_sols) + '行')
+    # No select distinct prod_id
+    # cnt_so_prod = Sol.objects.filter(cust_id=cust_id,
+    #                                  so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
+    print cnt_so_prod
+    logger.debug('订单#' + str(so_id) + '商品distinct数:' + str(cnt_so_prod))
+    if cnt_so_prod == cnt_prod:
+        # 购物车只有一种商品时，在移除该商品的同时需要删除订单信息
+        # Sol.objects.filter(cust_id=cust_id,
+        #                    so_id=so_id,
+        #                    prod_id=prod.id,
+        #                    status=1).delete()
+        Sol.objects.filter(cust_id=cust_id,
+                           so_id=so_id,
+                           status=1).delete()
+        logger.debug('删除商品#' + str(prod.id) + '订单行')
         So.objects.get(id=so_id).delete()
-        logger.debug('删除商品#' + str(prod.id) + 'on订单#' + str(so_id))
+        logger.debug('删除商品#' + str(prod.id) + '所在订单#' + str(so_id))
     else:
-        cnt_sols = Sol.objects.filter(cust_id=cust_id,
-                                      so_id=so_id,
-                                      prod_id=prod.id,
-                                      status=1).delete()
-        logger.debug('删除商品#' + str(prod.id) + '订单行' + str(cnt_sols) + '行')
+        Sol.objects.filter(cust_id=cust_id,
+                           so_id=so_id,
+                           prod_id=prod.id,
+                           status=1).delete()
+        logger.debug('删除商品#' + str(prod.id) + '订单行')
     context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/_cart_detail.html',

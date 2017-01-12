@@ -1279,3 +1279,57 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\base\operations.py", line 132, in distinct_sql
     raise NotImplementedError('DISTINCT ON fields is not supported by this database backend')
 NotImplementedError: DISTINCT ON fields is not supported by this database backend
+[2017-01-12 14:38:42,844] [Thread-6:1852] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).count('prod_id', distinct=True)
+TypeError: count() takes exactly 1 argument (3 given)
+[2017-01-12 14:44:50,940] [Thread-6:4308] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).annotate(count=Count('prod_id', distinct=True))[0]['count']
+TypeError: 'Sol' object has no attribute '__getitem__'
+[2017-01-12 14:44:58,505] [Thread-10:2248] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).annotate(count=Count('prod_id', distinct=True))[0]['count']
+TypeError: 'Sol' object has no attribute '__getitem__'
+[2017-01-12 15:07:41,288] [Thread-10:4164] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).annotate(count=Count('prod_id', distinct=True))[0]['count']
+TypeError: 'Sol' object has no attribute '__getitem__'
+[2017-01-12 15:24:37,298] [Thread-4:4352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
+TypeError: __init__() takes at least 2 arguments (1 given)
+[2017-01-12 15:25:09,453] [Thread-9:5028] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
+    so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
+TypeError: __init__() takes at least 2 arguments (1 given)
