@@ -70,7 +70,7 @@ def create_order(cust_id):
         so.updated_date = timezone.now()
         so.status = 1
         so.save()
-        logger.debug('订单:' + str(so.id) + '已创建')
+        logger.debug('订单:#' + str(so.id) + '已创建')
     else:
         so = So.objects.filter(cust_id=cust_id, status=1)[0]
         logger.debug('该客户有还未处理的订单:#' + str(so.id))
@@ -194,6 +194,37 @@ def del_prod(request):
     logger.debug('创建订单行:#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
+    context_dict = get_cart_info(cust_id)
+    return render(request,
+                  'ec/_cart_detail.html',
+                  context_dict)
+
+
+@login_required
+def rmv_prod(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    so_id = create_order(cust_id)
+    prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    cnt_so_prod = Sol.objects.filter(cust_id=cust_id,
+                                     so_id=so_id).count()
+    cnt_prod = Sol.objects.filter(cust_id=cust_id,
+                                  so_id=so_id,
+                                  prod_id=prod.id).count()
+    logger.debug('订单#' + str(so_id) + '商品distinct数:' + str(cnt_prod))
+    if cnt_prod == cnt_so_prod:
+        cnt_sols = Sol.objects.filter(cust_id=cust_id,
+                                      so_id=so_id,
+                                      prod_id=prod.id,
+                                      status=1).delete()
+        logger.debug('删除商品#' + str(prod.id) + '订单行' + str(cnt_sols) + '行')
+        So.objects.get(id=so_id).delete()
+        logger.debug('删除商品#' + str(prod.id) + 'on订单#' + str(so_id))
+    else:
+        cnt_sols = Sol.objects.filter(cust_id=cust_id,
+                                      so_id=so_id,
+                                      prod_id=prod.id,
+                                      status=1).delete()
+        logger.debug('删除商品#' + str(prod.id) + '订单行' + str(cnt_sols) + '行')
     context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/_cart_detail.html',

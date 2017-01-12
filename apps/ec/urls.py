@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^add_to_cart/', add_to_cart, name='add_to_card'),
     url(r'^add_prod/', add_prod, name='add_prod'),
     url(r'^del_prod/', del_prod, name='del_prod'),
+    url(r'^rmv_prod/', rmv_prod, name='rmv_prod'),
     url(r'^cart/', get_cart_detail, name='get_cart_detail'),
     url(r'^checkout/$', checkout, name='checkout'),
     url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),

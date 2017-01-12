@@ -49,4 +49,16 @@ $(document).ready(function(){
         }
 
     })
+
+    $(".icon-rmv").click(function () {
+        prod_id = $(this).parent().children("input#id_prod_id").val();
+        // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
+        console.log(prod_id);
+        $.post("/ec/rmv_prod/", {'prod_id':prod_id}, function(ret){
+                // console.log(ret)
+                // $("#block_cart").html(ret);
+                location.reload();
+           });
+    })
+
 });

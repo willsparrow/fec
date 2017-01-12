@@ -26,6 +26,7 @@
                                 <th>数量</th>
                                 <th>价格</th>
                                 <th>总额</th>
+                                <th>删除</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -55,10 +56,18 @@
                                     </td>
                                     <td>{{ sol.price }}</td>
                                     <td>{{ sol.amt }}</td>
+                                    <td>
+                                        <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
+                                               style="display:none;">
+                                        <div class="icon-rmv btn btn-default" style="display:inline;">
+                                            <span class="glyphicon glyphicon-remove"/>
+                                        </div>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <th scope="row"></th>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -67,6 +76,7 @@
                             </tr>
                             <tr>
                                 <th scope="row"></th>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
