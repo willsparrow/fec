@@ -1333,3 +1333,254 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\views.py", line 209, in rmv_prod
     so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
 TypeError: __init__() takes at least 2 arguments (1 given)
+[2017-01-13 15:50:05,321] [Thread-2:4528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 33, in get_prod_list
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 159, in render
+    return template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 212, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_list_by_category' with arguments '()' and keyword arguments '{u'category': u'\u7259\u818f'}' not found. 1 pattern(s) tried: ['prod_list/(?P<category>\\s+)']
+[2017-01-13 15:51:48,937] [Thread-4:2092] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 33, in get_prod_list
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 159, in render
+    return template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 212, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_list_by_category' with arguments '()' and keyword arguments '{u'category': u'yagao'}' not found. 1 pattern(s) tried: ['prod_list/(?P<category>\\s+)']
+[2017-01-13 15:51:54,839] [Thread-5:4836] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 33, in get_prod_list
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 159, in render
+    return template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 212, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_list_by_category' with arguments '()' and keyword arguments '{u'category': u'yagao'}' not found. 1 pattern(s) tried: ['prod_list/(?P<category>\\s+)']
+[2017-01-13 15:52:23,687] [Thread-7:5048] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 33, in get_prod_list
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 159, in render
+    return template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 212, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_list_by_category' with arguments '()' and keyword arguments '{u'category': u'yagao'}' not found. 1 pattern(s) tried: ['prod_list/(?P<category>\\s+)']
+[2017-01-13 16:05:31,423] [Thread-3:1456] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_list/yagao/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 39, in get_prod_list_by_category
+    logger.debug('鏍规嵁鍟嗗搧绫诲瀷' + category + '鏌ヨ璇ョ被鍨嬫墍鏈夊晢鍝佷俊鎭?)
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)

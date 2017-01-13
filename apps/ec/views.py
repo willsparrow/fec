@@ -33,6 +33,23 @@ def get_prod_list(request):
                   context_dict)
 
 
+# 根据商品类型查询该类型所有商品信息
+def get_prod_list_by_category(request, category):
+    cnt = Prod.objects.filter(category=category).count()
+    if cnt == 0:
+        context_dict = {'cnt': 0}
+    else:
+        prods = Prod.objects.filter(category=category)
+        logger.debug('根据商品类型' + str(category) + '查询该类型所有商品信息')
+        logger.debug(prods)
+        add_to_cart_form = AddToCartForm(initial={'qty': 1})
+        context_dict = {'prods': prods,
+                        'add_to_cart_form': add_to_cart_form}
+    return render(request,
+                  'ec/prod_list.html',
+                  context_dict)
+
+
 # 查询某个商品的详情信息
 def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
@@ -70,10 +87,10 @@ def create_order(cust_id):
         so.updated_date = timezone.now()
         so.status = 1
         so.save()
-        logger.debug('订单:#' + str(so.id) + '已创建')
+        logger.debug('订单#' + str(so.id) + '已创建')
     else:
         so = So.objects.filter(cust_id=cust_id, status=1)[0]
-        logger.debug('该客户有还未处理的订单:#' + str(so.id))
+        logger.debug('该客户有还未处理的订单#' + str(so.id))
     return so.id
 
 
@@ -96,7 +113,7 @@ def add_to_cart(request):
     sol.updated_date = timezone.now()
     sol.status = 1
     sol.save()
-    logger.debug('创建订单行:#' + str(sol.id))
+    logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
     context_dict = {'prod': prod,
@@ -165,7 +182,7 @@ def add_prod(request):
     sol.updated_date = timezone.now()
     sol.status = 1
     sol.save()
-    logger.debug('创建订单行:#' + str(sol.id))
+    logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
     context_dict = get_cart_info(cust_id)
@@ -191,7 +208,7 @@ def del_prod(request):
     sol.updated_date = timezone.now()
     sol.status = 1
     sol.save()
-    logger.debug('创建订单行:#' + str(sol.id))
+    logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
     context_dict = get_cart_info(cust_id)

@@ -6,9 +6,19 @@
 
 {% block prods %}
     <div class="container">
-        <div class="row">
+        {% if cnt == 0 %}
+            <div class="row">
+                <h5>您好:</h5>
+                <div class="bs-component">
+                    <blockquote>
+                        <p>伽马备货中...先去看看别的商品吧~~</p>
+                        <small>竭诚为您服务</small>
+                    </blockquote>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
             {% for prod in prods %}
-
                 <div class="col-sm-6 col-md-4 text-center prod">
                     <div>
                         <a href="{% url 'prod_detail' prod_id=prod.id %}">
@@ -43,8 +53,8 @@
 
                     </div>
                 </div>
-
             {% endfor %}
-        </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
