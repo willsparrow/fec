@@ -5,6 +5,9 @@
     <div class="row">
         <div class="col-md-2"><h2>订单</h2></div>
         <div class="col-md-8">
+            <div><h6>订单号:{{ so.id }}</h6></div>
+            <div><h6>收件人:{{ so.cust_name }}</h6></div>
+            <div><h6>收件人电话:{{ so.cust_mobilephone }}</h6></div>
             <table class="table">
                 <thead>
                 <tr>
@@ -41,7 +44,7 @@
                     <td></td>
                     <td></td>
                     <td>件数:</td>
-                    <td>{{ total }}</td>
+                    <td>{{ so.total }}</td>
                 </tr>
                 <tr>
                     <th scope="row"></th>
@@ -49,10 +52,11 @@
                     <td></td>
                     <td></td>
                     <td>共计:</td>
-                    <td>{{ amount }}</td>
+                    <td>{{ so.amount }}</td>
                 </tr>
                 </tbody>
             </table>
+            <div><h6>收货地址:{{ so.province }}省-{{ so.city }}市-{{ so.country }}-{{ so.address }}</h6></div>
         </div>
     </div>
 </div>

@@ -321,6 +321,7 @@ def get_order_info(so_id):
                                                  'img_t',
                                                  'price').annotate(qty=Sum('qty'),
                                                                    amt=Sum('qty') * F('price'))
+    # 20170112之前因为在checkout confirm时没有更新订单商品总数、总金额，在查看时用如下代码做订单信息更新
     # 聚合购物车商品总数
     # total = Sol.objects.filter(so_id=so_id,
     #                            status=888).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
@@ -331,12 +332,12 @@ def get_order_info(so_id):
     #                             status=888).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
     # so.amount = amount
     # so.save()
-    total = so.total
-    amount = so.amount
+    # 20170112之前仅仅是返回商品总数和总金额，20170112之后返回全部订单信息包括订单商品总数、总金额以及收件人、收货地址信息
+    # total = so.total
+    # amount = so.amount
     logger.debug('查询用户订单行信息')
-    context_dict = {'sols': sols,
-                    'total': total,
-                    'amount': amount}
+    context_dict = {'so': so,
+                    'sols': sols}
     return context_dict
 
 
