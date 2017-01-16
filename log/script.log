@@ -1584,3 +1584,4 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\views.py", line 39, in get_prod_list_by_category
     logger.debug('鏍规嵁鍟嗗搧绫诲瀷' + category + '鏌ヨ璇ョ被鍨嬫墍鏈夊晢鍝佷俊鎭?)
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+[2017-01-16 09:47:09,265] [Thread-10:624] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
