@@ -6,21 +6,33 @@
 
 {% block prods %}
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 text-center">
+    <div class="row prod">
+        <div class="col-xs-12 col-sm-6 col-md-2"></div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="prod-title">
+                {{ prod.title }}
+            </div>
             <div class="prod-img-m">
                 <img src="{{ prod.img_m }}">
             </div>
-            <div class="prod-price">
-                {{ prod.price }}
-            </div>
-             <div class="prod-title">
-                {{ prod.title }}
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="prod-title">
+                <h4>{{ prod.title }}</h4>
             </div>
             <div class="prod-description">
-                {{ prod.description }}
+                <h5>{{ prod.description }}</h5>
             </div>
-            <div class="text-center">{% include "ec/_add_to_cart_form.html" %}</div>
+            <div class="prod-color">
+                <h5>颜色:{{ prod.color }}</h5>
+            </div>
+            <div class="prod-size">
+                <h5>型号:{{ prod.size }}</h5>
+            </div>
+            <div class="prod-price">
+                <h2>￥:{{ prod.price }}</h2>
+            </div>
+            <div>{% include "ec/_add_to_cart_form.html" %}</div>
         </div>
     </div>
 </div>

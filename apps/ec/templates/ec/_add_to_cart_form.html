@@ -1,12 +1,12 @@
 <form action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
     {% csrf_token %}
     <div class="prod-qty" style="display:inline;">
-        <div class="icon-add" style="display:none;">
+        <div class="icon-add" style="display:inline;">
             <span class="glyphicon glyphicon-plus"/>
         </div>
         {{ add_to_cart_form.qty }}
         <input id="id_prod_id" name="prod_id" type="number" value="{{ prod.id }}" style="display:none;">
-        <div class="icon-del" style="display:none;">
+        <div class="icon-del" style="display:inline;">
             <span class="glyphicon glyphicon-minus"/>
         </div>
     </div>
