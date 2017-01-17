@@ -11,7 +11,7 @@ from .forms import *
 from django.db.models import Sum
 from django.db.models import Count
 from django.db.models import F
-from django.db.models import Q
+from django.db import transaction
 
 # Create your views here.
 
@@ -59,7 +59,7 @@ def get_prod_list_by_keywords(request):
     if cnt == 0:
         context_dict = {'cnt': 0}
     else:
-        prods =Prod.objects.filter(keywords__contains=keywords)
+        prods = Prod.objects.filter(keywords__contains=keywords)
         logger.debug('根据商品关键字' + keywords.encode('utf-8') + '查询该类型所有商品信息')
         logger.debug(prods)
         add_to_cart_form = AddToCartForm(initial={'qty': 1})
@@ -117,9 +117,11 @@ def create_order(cust_id):
 @login_required
 def add_to_cart(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    prod_id = request.POST.get('prod_id')
+    qty = request.POST.get('qty')
     # 创建订单
     so_id = create_order(cust_id)
-    prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    prod = Prod.objects.get(id=prod_id)
     # 创建订单行
     sol = Sol()
     sol.so_id = so_id
@@ -128,7 +130,7 @@ def add_to_cart(request):
     sol.name = prod.name
     sol.img_t = prod.img_t
     sol.price = prod.price
-    sol.qty = request.POST.get('qty')
+    sol.qty = qty
     sol.created_date = timezone.now()
     sol.updated_date = timezone.now()
     sol.status = 1
@@ -287,10 +289,49 @@ def checkout(request):
                   context_dict)
 
 
+@transaction.atomic
+def deduct_stock(so_id):
+    # 根据订单id对订单行在产品维度进行聚合
+    sols = Sol.objects.filter(so_id=so_id,
+                              status=1).values('so_id',
+                                               'prod_id',
+                                               'name',
+                                               'img_t',
+                                               'price').annotate(qty=Sum('qty'),
+                                                                 amt=Sum('qty') * F('price'))
+    # 根据订单上经过聚合的商品进行扣库存操作
+    # 锁库存
+    for sol in sols:
+        Prod.objects.select_for_update().get(id=sol['prod_id'])
+    # check库存
+    # 缺货商品列表
+    prods = []
+    for sol in sols:
+        prod = Prod.objects.select_for_update().get(id=sol['prod_id'])
+        if prod.qty < sol['qty']:
+            prods.append(prod)
+    # 扣库存
+    if len(prods) > 0:
+        context_dict = {
+            'success': 0,
+            'prods': prods
+        }
+    else:
+        for sol in sols:
+            prod = Prod.objects.select_for_update().get(id=sol['prod_id'])
+            prod.qty = prod.qty - sol['qty']
+            prod.save()
+        context_dict = {
+            'success': 1
+        }
+    return context_dict
+
+
 @login_required
 def checkout_confirm(request):
-    # 查询客户信息并修改客户的默认地址
+    # 查询客户信息
     cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
+    # 修改客户的默认地址
     cust.province = request.POST.get('province')
     cust.city = request.POST.get('city')
     cust.country = request.POST.get('area')
@@ -298,36 +339,47 @@ def checkout_confirm(request):
     cust.save()
     # 查询客户订单信息
     so = So.objects.filter(cust_id=cust.id, status=1)[0]
-    # 修改客户订单的地址信息
-    so.province = request.POST.get('province')
-    so.city = request.POST.get('city')
-    so.country = request.POST.get('area')
-    so.address = request.POST.get('detailAddress')
-    # 聚合购物车商品总数
-    total = Sol.objects.filter(cust_id=cust.id,
-                               status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
-    # 聚合购物车商品总额
-    amount = Sol.objects.filter(cust_id=cust.id,
-                                status=1).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
-    so.total = total
-    so.amount = amount
-    # 修改客户订单的状态
-    so.status = 888
-    so.save()
-    # 查询客户订单对应的订单行信息并修改修改订单行的状态
-    sols = Sol.objects.filter(cust_id=cust.id,
-                              so_id=so.id,
-                              status=1)
-    for sol in sols:
-        sol.status = 888
-        sol.save()
-    context_dict = {
-        'cust': cust,
-        'so_number': so.id
-    }
-    return render(request,
-                  'ec/checkout_confirm.html',
-                  context_dict)
+    context_dict = deduct_stock(so.id)
+    # 扣库存成功
+    if context_dict['success'] == 1:
+        # 修改客户订单的地址信息
+        so.province = request.POST.get('province')
+        so.city = request.POST.get('city')
+        so.country = request.POST.get('area')
+        so.address = request.POST.get('detailAddress')
+        # 聚合购物车商品总数
+        total = Sol.objects.filter(cust_id=cust.id,
+                                   status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
+        # 聚合购物车商品总额
+        amount = Sol.objects.filter(cust_id=cust.id,
+                                    status=1).values('so_id').annotate(amount=Sum(F('qty') * F('price')))[0]['amount']
+        # 修改客户订单的商品总数和商品总额
+        so.total = total
+        so.amount = amount
+        # 修改客户订单的状态
+        so.status = 888
+        so.save()
+        # 查询客户订单对应的订单行信息
+        sols = Sol.objects.filter(cust_id=cust.id,
+                                  so_id=so.id,
+                                  status=1)
+        # 修改客户订单对应的订单行的状态
+        for sol in sols:
+            sol.status = 888
+            sol.save()
+        context_dict = {
+            'cust': cust,
+            'so_number': so.id
+        }
+        return render(request,
+                      'ec/checkout_confirm.html',
+                      context_dict)
+    else:
+        # 扣库存失败
+        return render(request,
+                      'ec/checkout_lack.html',
+                      context_dict)
+
 
 
 @login_required

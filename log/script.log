@@ -1770,3 +1770,43 @@ Traceback (most recent call last):
     logger.debug('鏍规嵁鍟嗗搧鍏抽敭瀛? + keywords + '鏌ヨ璇ョ被鍨嬫墍鏈夊晢鍝佷俊鎭?)
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordinal not in range(128)
 [2017-01-17 15:10:44,888] [Thread-10:3184] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-17 16:49:26,444] [Thread-6:1540] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-17 16:52:34,329] [Thread-67:2784] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 343, in checkout_confirm
+    context_dict = deduct_stock(so.id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 305, in deduct_stock
+    Prod.objects.select_for_update().get(id=sol.prod_id)
+AttributeError: 'dict' object has no attribute 'prod_id'
+[2017-01-17 16:58:47,456] [Thread-5:3908] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 342, in checkout_confirm
+    context_dict = deduct_stock(so.id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 305, in deduct_stock
+    Prod.objects.select_for_update().get(id=sol.prod_id)
+AttributeError: 'dict' object has no attribute 'prod_id'
+[2017-01-17 17:01:03,163] [Thread-5:1652] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 342, in checkout_confirm
+    context_dict = deduct_stock(so.id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 311, in deduct_stock
+    if prod.qty < sol.qty:
+AttributeError: 'dict' object has no attribute 'qty'

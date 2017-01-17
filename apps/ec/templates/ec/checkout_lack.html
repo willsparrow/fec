@@ -1,0 +1,55 @@
+{% extends 'ec/index.html' %}
+
+{% block cart %}
+<div class="container cart">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h5>{{ cust.name }}您好:</h5>
+            <div class="bs-component">
+                <blockquote>
+                    <p>如下商品缺货还请相应调整购物车商品数量。</p>
+                    <small>给您带来的不变敬请谅解，竭诚为您服务！</small>
+                    <h6><a href="{% url 'get_cart_detail' %}">去购物车>></a></h6>
+                </blockquote>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>商品</th>
+                        <th>商品编号</th>
+                        <th>名称</th>
+                        <th>库存</th>
+                        <th>价格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for prod in prods %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>
+                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
+                                <img src="{{ prod.img_t }}">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
+                                {{ prod.id }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
+                                {{ prod.name }}
+                            </a>
+                        </td>
+                        <td>{{ prod.qty }}</td>
+                        <td>{{ prod.price }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
