@@ -119,27 +119,34 @@ def add_to_cart(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
     prod_id = request.POST.get('prod_id')
     qty = request.POST.get('qty')
-    # 创建订单
-    so_id = create_order(cust_id)
     prod = Prod.objects.get(id=prod_id)
-    # 创建订单行
-    sol = Sol()
-    sol.so_id = so_id
-    sol.cust_id = cust_id
-    sol.prod_id = prod.id
-    sol.name = prod.name
-    sol.img_t = prod.img_t
-    sol.price = prod.price
-    sol.qty = qty
-    sol.created_date = timezone.now()
-    sol.updated_date = timezone.now()
-    sol.status = 1
-    sol.save()
-    logger.debug('创建订单行#' + str(sol.id))
-    qty = sol.qty
-    amount = int(sol.qty) * prod.price
+    amount = int(qty) * prod.price
+    # check库存
+    if prod.qty < int(qty):
+        enough = 0
+    else:
+        enough = 1
+        # 创建订单
+        so_id = create_order(cust_id)
+        # 创建订单行
+        sol = Sol()
+        sol.so_id = so_id
+        sol.cust_id = cust_id
+        sol.prod_id = prod.id
+        sol.name = prod.name
+        sol.img_t = prod.img_t
+        sol.price = prod.price
+        sol.qty = qty
+        sol.created_date = timezone.now()
+        sol.updated_date = timezone.now()
+        sol.status = 1
+        sol.save()
+        logger.debug('创建订单行#' + str(sol.id))
+        qty = sol.qty
+        amount = int(sol.qty) * prod.price
     context_dict = {'prod': prod,
                     'qty': qty,
+                    'enough': enough,
                     'amount': amount}
     return render(request,
                   'ec/_add_to_cart_message.html',
