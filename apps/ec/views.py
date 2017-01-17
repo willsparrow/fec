@@ -16,6 +16,7 @@ from django.db.models import F
 
 logger = logging.getLogger('django')
 
+
 def index(request):
     return render(request, 'ec/index.html')
 

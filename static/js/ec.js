@@ -5,6 +5,8 @@ $(document).ready(function(){
     $(".btn-add-to-cart").click(function(){
         prod_id = ($(this).parent().parent().children("div.prod-qty").children("input#id_prod_id").val());
         qty = ($(this).parent().parent().children("div.prod-qty").children("input#id_qty").val());
+        // 重置商品数量为1
+        $(this).parent().parent().children("div.prod-qty").children("input#id_qty").val(1);
         console.log(qty)
         $.post("/ec/add_to_cart/", {'prod_id':prod_id, 'qty':qty}, function(ret){
             //console.log(ret)
@@ -52,13 +54,26 @@ $(document).ready(function(){
 
     $(".icon-rmv").click(function () {
         prod_id = $(this).parent().children("input#id_prod_id").val();
-        // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
-        console.log(prod_id);
         $.post("/ec/rmv_prod/", {'prod_id':prod_id}, function(ret){
-                // console.log(ret)
-                // $("#block_cart").html(ret);
-                location.reload();
-           });
+            location.reload();
+        });
+    })
+
+    // 商品详情页增加商品数量
+     $(".prod-qty-add").click(function () {
+         qty = parseInt($(this).parent().children("input#id_qty").val());
+         $(this).parent().children("input#id_qty").val( qty + 1);
+    })
+
+    // 商品详情页减少商品数量
+    $(".prod-qty-del").click(function () {
+        qty = parseInt($(this).parent().children("input#id_qty").val());
+        if (qty == 1){
+            $(this).attr("disabled",true);
+        }
+        else{
+            $(this).parent().children("input#id_qty").val( qty - 1);
+        }
     })
 
 });

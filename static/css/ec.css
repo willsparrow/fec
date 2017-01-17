@@ -132,6 +132,9 @@ body {
     text-align: center;
 }
 
+.prod .prod-price h2{
+    color: #e4393c;
+}
 /*
  *设置加入购物车按钮效果
  */
