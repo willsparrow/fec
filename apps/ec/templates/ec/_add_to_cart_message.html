@@ -8,9 +8,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     {% if enough == 1 %}
-                        <h4 class="modal-title" id="gridModalLabel">商品添加成功</h4>
+                        <h4 class="modal-title text-info" id="gridModalLabel"><strong><span class="glyphicon glyphicon-ok"></span>商品添加成功</strong></h4>
                     {% else %}
-                        <h4 class="modal-title" id="gridModalLabel">商品库存不足,欢迎下次提前购物~</h4>
+                        <h4 class="modal-title text-info" id="gridModalLabel"><strong><span class="glyphicon glyphicon-remove"></span>商品库存不足,欢迎下次提前购物~</strong></h4>
                     {% endif %}
                 </div>
                 <div class="modal-body">

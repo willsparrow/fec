@@ -1810,3 +1810,4 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\views.py", line 311, in deduct_stock
     if prod.qty < sol.qty:
 AttributeError: 'dict' object has no attribute 'qty'
+[2017-01-17 19:32:51,588] [Thread-3:1872] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
