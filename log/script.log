@@ -1769,3 +1769,4 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\views.py", line 64, in get_prod_list_by_keywords
     logger.debug('鏍规嵁鍟嗗搧鍏抽敭瀛? + keywords + '鏌ヨ璇ョ被鍨嬫墍鏈夊晢鍝佷俊鎭?)
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordinal not in range(128)
+[2017-01-17 15:10:44,888] [Thread-10:3184] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
