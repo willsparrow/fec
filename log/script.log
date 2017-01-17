@@ -1665,3 +1665,4 @@ Traceback (most recent call last):
     raise errorclass, errorvalue
 OperationalError: (2013, 'Lost connection to MySQL server during query')
 [2017-01-17 09:36:38,871] [Thread-2:4048] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-17 10:44:57,561] [Thread-6:376] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
