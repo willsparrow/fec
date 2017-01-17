@@ -29,6 +29,7 @@ class Prod(models.Model):
     color = models.CharField(max_length=100, null=True)
     weight = models.CharField(max_length=100, null=True)
     age = models.CharField(max_length=100, null=True)
+    keywords = models.CharField(max_length=1000, null=True)
     def __str__(self):
         return self.code
 

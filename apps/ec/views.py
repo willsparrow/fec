@@ -11,6 +11,7 @@ from .forms import *
 from django.db.models import Sum
 from django.db.models import Count
 from django.db.models import F
+from django.db.models import Q
 
 # Create your views here.
 
@@ -42,6 +43,24 @@ def get_prod_list_by_category(request, category):
     else:
         prods = Prod.objects.filter(category=category)
         logger.debug('根据商品类型' + str(category) + '查询该类型所有商品信息')
+        logger.debug(prods)
+        add_to_cart_form = AddToCartForm(initial={'qty': 1})
+        context_dict = {'prods': prods,
+                        'add_to_cart_form': add_to_cart_form}
+    return render(request,
+                  'ec/prod_list.html',
+                  context_dict)
+
+
+# 根据商品关键字查询该类型所有商品信息
+def get_prod_list_by_keywords(request):
+    keywords = request.GET.get('keywords')
+    cnt = Prod.objects.filter(keywords__contains=keywords).count()
+    if cnt == 0:
+        context_dict = {'cnt': 0}
+    else:
+        prods =Prod.objects.filter(keywords__contains=keywords)
+        logger.debug('根据商品关键字' + keywords.encode('utf-8') + '查询该类型所有商品信息')
         logger.debug(prods)
         add_to_cart_form = AddToCartForm(initial={'qty': 1})
         context_dict = {'prods': prods,

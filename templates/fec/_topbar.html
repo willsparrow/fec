@@ -50,6 +50,12 @@
                     </a>
                 </li>
             </ul>
+            <form class="navbar-form navbar-left" action="{% url 'prod_list_by_keywords'%}">
+                <div class="form-group">
+                    <input id="keywords" name="keywords" type="text" class="form-control" placeholder="搜索">
+                </div>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"/></button>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 {% if request.user.is_authenticated %}
                     <li>

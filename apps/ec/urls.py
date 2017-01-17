@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^prod_list/$', get_prod_list, name='prod_list'),
     url(r'^prod_list/(?P<category>\w+)/$', get_prod_list_by_category, name='prod_list_by_category'),
+    url(r'^search/', get_prod_list_by_keywords, name='prod_list_by_keywords'),
     url(r'^prod_detail/(?P<prod_id>\d+)/$', get_prod_detail, name='prod_detail'),
     url(r'^add_to_cart/$', add_to_cart, name='add_to_card'),
     url(r'^add_prod/$', add_prod, name='add_prod'),
