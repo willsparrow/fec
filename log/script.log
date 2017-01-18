@@ -1812,3 +1812,4 @@ Traceback (most recent call last):
 AttributeError: 'dict' object has no attribute 'qty'
 [2017-01-17 19:32:51,588] [Thread-3:1872] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-01-18 13:46:12,996] [Thread-11:1724] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-18 14:44:13,434] [Thread-2:1560] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
