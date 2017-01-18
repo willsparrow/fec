@@ -15,7 +15,7 @@
                     </blockquote>
                 </div>
             {% else %}
-                <table class="table">
+                <table class="table" id="orders">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -50,4 +50,9 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        $('#orders').DataTable();
+    });
+</script>
 {% endblock %}
