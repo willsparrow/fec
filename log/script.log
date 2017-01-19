@@ -1842,3 +1842,779 @@ AttributeError: 'dict' object has no attribute 'qty'
 [2017-01-19 15:40:02,992] [Thread-58:2768] [django.request:170] [base:get_response] [WARNING]- Not Found: /order_list/448c34a56d699c29117adc64c43affeb.woff2
 [2017-01-19 15:40:03,030] [Thread-59:3512] [django.request:170] [base:get_response] [WARNING]- Not Found: /order_list/fa2772327f55d8198301fdb8bcfc8158.woff
 [2017-01-19 15:40:03,078] [Thread-60:3436] [django.request:170] [base:get_response] [WARNING]- Not Found: /order_list/e18bbf611f2a2e43afc071aa2f4e1512.ttf
+[2017-01-19 16:00:25,957] [Thread-5:3932] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-01-19 16:21:47,115] [Thread-2:2396] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dump(so),
+TypeError: dump() takes at least 2 arguments (1 given)
+[2017-01-19 16:22:08,486] [Thread-2:3440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dumps(so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <So: 88> is not JSON serializable
+[2017-01-19 16:22:09,503] [Thread-3:3536] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dumps(so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <So: 88> is not JSON serializable
+[2017-01-19 16:22:14,815] [Thread-4:3524] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dumps(so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <So: 88> is not JSON serializable
+[2017-01-19 16:22:25,671] [Thread-9:3776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dumps(so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <So: 88> is not JSON serializable
+[2017-01-19 16:22:41,365] [Thread-13:1168] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 445, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 438, in get_order_info
+    'js_so': json.dumps(so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: <So: 88> is not JSON serializable
+[2017-01-19 16:25:25,903] [Thread-2:1252] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:25:26,997] [Thread-3:1400] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:25:27,947] [Thread-4:668] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:25:29,323] [Thread-5:996] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:25:30,505] [Thread-6:1540] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:26:16,368] [Thread-7:2552] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 448, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 442, in get_order_info
+    'js_sols': json.dumps(sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: [{'img_t': u'http://115.29.239.5:8086/img/12484C414_1T_NEW.png', 'name': u'\u68d2\u7403\u6b3e\u5916\u5957', 'price': Decimal('268.00'), 'prod_id': Decimal('2'), 'qty': Decimal('2'), 'so_id': Decimal('88'), 'amt': Decimal('536.00')}] is not JSON serializable
+[2017-01-19 16:33:23,647] [Thread-2:1544] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 440, in get_order_info
+    dict_sol['so_id'] = sol.so_id
+AttributeError: 'dict' object has no attribute 'so_id'
+[2017-01-19 16:33:27,842] [Thread-3:1556] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 440, in get_order_info
+    dict_sol['so_id'] = sol.so_id
+AttributeError: 'dict' object has no attribute 'so_id'
+[2017-01-19 16:33:28,733] [Thread-4:3816] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 440, in get_order_info
+    dict_sol['so_id'] = sol.so_id
+AttributeError: 'dict' object has no attribute 'so_id'
+[2017-01-19 16:34:49,680] [Thread-2:2964] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('268.00') is not JSON serializable
+[2017-01-19 16:34:50,868] [Thread-3:4052] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('268.00') is not JSON serializable
+[2017-01-19 16:35:41,733] [Thread-2:2856] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('2') is not JSON serializable
+[2017-01-19 16:36:02,414] [Thread-4:3972] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('2') is not JSON serializable
+[2017-01-19 16:36:05,358] [Thread-5:120] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('2') is not JSON serializable
+[2017-01-19 16:36:06,242] [Thread-6:3604] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 459, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('2') is not JSON serializable
+[2017-01-19 16:45:19,948] [Thread-2:2776] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:45:26,683] [Thread-3:3312] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:45:45,821] [Thread-2:3296] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('536.00') is not JSON serializable
+[2017-01-19 16:45:46,601] [Thread-3:4040] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('536.00') is not JSON serializable
+[2017-01-19 16:45:50,030] [Thread-4:2620] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('536.00') is not JSON serializable
+[2017-01-19 16:46:06,229] [Thread-2:3168] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:46:08,084] [Thread-3:3520] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:46:08,563] [Thread-4:3564] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:47:20,145] [Thread-5:1748] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:47:21,137] [Thread-6:3188] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:47:21,882] [Thread-7:3096] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:47:23,101] [Thread-8:3748] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so, use_decimal=True),
+  File "C:\Python27\lib\json\__init__.py", line 251, in dumps
+    sort_keys=sort_keys, **kw).encode(obj)
+TypeError: __init__() got an unexpected keyword argument 'use_decimal'
+[2017-01-19 16:49:23,637] [Thread-5:2056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('536.00') is not JSON serializable
+[2017-01-19 16:52:22,154] [Thread-2:1804] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 451, in get_order_info
+    'json_so': json.dumps(dict_so),
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2017, 1, 18, 4, 26, 3, tzinfo=<UTC>) is not JSON serializable
+[2017-01-19 16:53:50,365] [Thread-2:2204] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 452, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('88') is not JSON serializable
+[2017-01-19 16:54:23,016] [Thread-7:3500] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 452, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('88') is not JSON serializable
+[2017-01-19 16:54:36,540] [Thread-11:3256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 452, in get_order_info
+    'json_sols': json.dumps(list_sols)}
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('88') is not JSON serializable
+[2017-01-19 16:56:22,473] [Thread-2:1880] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/88/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 458, in get_order_detail
+    context_dict = get_order_info(so_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 439, in get_order_info
+    for sol in sols:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 162, in __iter__
+    self._fetch_all()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 965, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 1085, in iterator
+    for row in self.query.get_compiler(self.db).results_iter():
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\compiler.py", line 794, in results_iter
+    results = self.execute_sql(MULTI)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (2013, 'Lost connection to MySQL server during query')
+[2017-01-19 17:17:48,023] [Thread-3:3132] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:17:53,924] [Thread-6:3472] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:17:58,878] [Thread-7:76] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:18:11,257] [Thread-9:1696] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:18:13,381] [Thread-10:3564] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:18:13,898] [Thread-11:1840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:18:19,089] [Thread-12:1388] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.localtime(timezone.now())
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime
+[2017-01-19 17:18:49,147] [Thread-18:872] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 131, in add_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 107, in create_order
+    so.created_date = timezone.now()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
+    value = value.astimezone(timezone)
+ValueError: astimezone() cannot be applied to a naive datetime

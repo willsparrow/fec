@@ -2,6 +2,7 @@
 
 
 import logging
+import json
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -429,11 +430,26 @@ def get_order_info(so_id):
     # so.amount = amount
     # so.save()
     # 20170112之前仅仅是返回商品总数和总金额，20170112之后返回全部订单信息包括订单商品总数、总金额以及收件人、收货地址信息
-    # total = so.total
-    # amount = so.amount
+    dict_so = {}
+    dict_so['id'] = so.id
+    dict_so['created_date'] = str(so.created_date)
+    dict_so['total'] = str(so.total)
+    dict_so['amount'] = str(so.amount)
+    list_sols = []
+    for sol in sols:
+        dict_sol = {}
+        dict_sol['so_id'] = str(sol['so_id'])
+        dict_sol['prod_id'] = str(sol['prod_id'])
+        dict_sol['name'] = sol['name']
+        dict_sol['qty'] = str(sol['qty'])
+        dict_sol['price'] = str(sol['price'])
+        dict_sol['amt'] = str(sol['amt'])
+        list_sols.append(dict_sol)
     logger.debug('查询用户订单行信息')
     context_dict = {'so': so,
-                    'sols': sols}
+                    'sols': sols,
+                    'json_so': json.dumps(dict_so),
+                    'json_sols': json.dumps(list_sols)}
     return context_dict
 
 
