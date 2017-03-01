@@ -1,4 +1,11 @@
 /*
+ *设置导航nav固定在顶部效果
+ */
+body {
+    padding-top: 70px;
+}
+
+/*
  *设置导航nav menu的hover的下拉效果
  */
 li.dropdown:hover > ul.dropdown-menu {

@@ -2618,3 +2618,4 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\utils\timezone.py", line 309, in localtime
     value = value.astimezone(timezone)
 ValueError: astimezone() cannot be applied to a naive datetime
+[2017-03-01 14:12:50,111] [Thread-13:4092] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
