@@ -96,3 +96,23 @@ class Sol(models.Model):
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     def __str__(self):
         return str(self.id)
+
+
+class ProdDetail(models.Model):
+    class Meta:
+        db_table = 't_prod_detail'
+    prod_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    img = models.CharField(max_length=200, null=True)
+    seq = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)
+
+
+class ProdThumb(models.Model):
+    class Meta:
+        db_table = 't_prod_thumb'
+    prod_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    img = models.CharField(max_length=200, null=True)
+    seq = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)

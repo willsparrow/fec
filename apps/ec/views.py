@@ -71,11 +71,22 @@ def get_prod_list_by_keywords(request):
                   context_dict)
 
 
+def get_prod_detail_imgs(prod_id):
+    cnt = ProdDetail.objects.filter(prod_id=prod_id).count()
+    if cnt == 0:
+        prod_details = 0
+    else:
+        prod_details = ProdDetail.objects.filter(prod_id=prod_id)
+    return prod_details
+
+
 # 查询某个商品的详情信息
 def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})
+    prod_details = get_prod_detail_imgs(prod_id)
     context_dict = {'prod': prod,
+                    'prod_details': prod_details,
                     'add_to_cart_form': add_to_cart_form}
     return render(request,
                   'ec/prod_detail.html',
