@@ -7,7 +7,7 @@
 {% block prods %}
     <div class="container">
         <div class="row prod">
-            <div class="col-xs-12 col-sm-6 col-md-2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-1"></div>
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="prod-title">
                     <a href="{% url 'prod_detail' prod_id=prod.id %}">{{ prod.title }}</a>
@@ -16,6 +16,17 @@
                     <img src="{{ prod.img_m }}">
                 </div>
             </div>
+
+            {% if prod_thumbs != 0 %}
+                <div class="col-xs-12 col-sm-6 col-md-1">
+                    <ul>
+                        {% for prod_thumb in prod_thumbs %}
+                            <li><img src="{{ prod_thumb.img}}"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
             <div class="col-xs-6 col-md-4">
                 <div class="prod-title">
                     <a href="{% url 'prod_detail' prod_id=prod.id %}"><h4><strong>{{ prod.title }}</strong></h4></a>

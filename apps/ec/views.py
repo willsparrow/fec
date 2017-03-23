@@ -80,13 +80,24 @@ def get_prod_detail_imgs(prod_id):
     return prod_details
 
 
+def get_prod_thumb_imgs(prod_id):
+    cnt = ProdThumb.objects.filter(prod_id=prod_id).count()
+    if cnt == 0:
+        prod_thumbs = 0
+    else:
+        prod_thumbs = ProdThumb.objects.filter(prod_id=prod_id)
+    return prod_thumbs
+
+
 # 查询某个商品的详情信息
 def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})
     prod_details = get_prod_detail_imgs(prod_id)
+    prod_thumbs = get_prod_thumb_imgs(prod_id)
     context_dict = {'prod': prod,
                     'prod_details': prod_details,
+                    'prod_thumbs': prod_thumbs,
                     'add_to_cart_form': add_to_cart_form}
     return render(request,
                   'ec/prod_detail.html',
