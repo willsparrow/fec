@@ -76,4 +76,12 @@ $(document).ready(function(){
         }
     })
 
+    // 商品详情页slide thumb hover效果
+    $(".prod-slide-thumb").hover(function() {
+            $(this).addClass("z-active");
+        },function () {
+            $(this).removeClass("z-active");
+        }
+    )
+
 });

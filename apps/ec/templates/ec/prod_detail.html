@@ -7,7 +7,7 @@
 {% block prods %}
     <div class="container">
         <div class="row prod">
-            <div class="col-xs-12 col-sm-6 col-md-1"></div>
+
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="prod-title">
                     <a href="{% url 'prod_detail' prod_id=prod.id %}">{{ prod.title }}</a>
@@ -18,10 +18,10 @@
             </div>
 
             {% if prod_thumbs != 0 %}
-                <div class="col-xs-12 col-sm-6 col-md-1">
+                <div class="col-xs-12 col-sm-6 col-md-2 slide">
                     <ul>
                         {% for prod_thumb in prod_thumbs %}
-                            <li><img src="{{ prod_thumb.img}}"></li>
+                            <li class="prod-slide-thumb"><a><img src="{{ prod_thumb.img}}"></a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -32,22 +32,22 @@
                     <a href="{% url 'prod_detail' prod_id=prod.id %}"><h4><strong>{{ prod.title }}</strong></h4></a>
                 </div>
                 <div class="prod-description">
-                    <h5>{{ prod.description }}</h5>
+                    {{ prod.description }}
                 </div>
                 <div class="prod-id">
-                    <h5>商品编号:<strong>{{ prod.id }}</strong></h5>
+                    商品编号:<strong>{{ prod.id }}</strong>
                 </div>
                 <div class="prod-color">
-                    <h5>颜色:<strong>{{ prod.color }}</strong></h5>
+                    颜色:<strong>{{ prod.color }}</strong>
                 </div>
                 <div class="prod-spec">
-                    <h5>规格:<strong>{{ prod.spec }}</strong></h5>
+                    规格:<strong>{{ prod.spec }}</strong>
                 </div>
                 <div class="prod-size">
-                    <h5>型号:<strong>{{ prod.size }}</strong></h5>
+                    型号:<strong>{{ prod.size }}</strong>
                 </div>
                 <div class="prod-ship">
-                    <h5>支付方式:<strong>货到付款</strong></h5>
+                    支付方式:<strong>货到付款</strong>
                 </div>
                 <div class="prod-qty">
                     <h5>库存:<strong>{{ prod.qty }}</strong></h5>

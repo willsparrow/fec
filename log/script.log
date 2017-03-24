@@ -2653,3 +2653,4 @@ Traceback (most recent call last):
     raise errorclass, errorvalue
 ProgrammingError: (1146, "Table 'fec.t_prod_detail' doesn't exist")
 [2017-03-23 17:05:47,894] [Thread-4:2352] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-03-24 14:09:26,954] [Thread-5:968] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
