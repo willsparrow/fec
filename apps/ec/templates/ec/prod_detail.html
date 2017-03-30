@@ -23,7 +23,7 @@
             </div>
 
             {% if prod_thumbs != 0 %}
-                <div class="col-xs-12 col-sm-12 col-md-2 visible-lg visible-md slide">
+                <div class="col-xs-12 col-sm-12 col-md-2 visible-lg visible-md slide" style="max-width: 78px; margin-right: 68px">
                     <ul>
                         {% for prod_thumb in prod_thumbs %}
                             <li class="prod-slide-thumb"><a><img src="{{ prod_thumb.img}}" width="78" height="78"></a></li>

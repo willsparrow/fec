@@ -26,6 +26,10 @@ img {
 /*
  *设置prod side thumbs
  */
+.slide ul{
+    padding: 0px;
+}
+
 .slide li {
     position: relative;
     zoom: 1;
@@ -46,6 +50,7 @@ img {
     margin:0;
     border:2px solid #b4a078
 }
+
 /*
  *设置导航nav menu的hover的下拉效果
  */
@@ -176,6 +181,12 @@ body {
 /*
  *设置商品展示
  */
+.prod{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .prod input {
     text-align: center;
 }
