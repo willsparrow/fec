@@ -18,7 +18,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-5">
                 <div class="prod-img-m">
-                    <img src="{{ prod.img_m }}">
+                    <img src="{{ prod.img_m }}" width="430" height="430">
                 </div>
             </div>
 
@@ -26,7 +26,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-2 visible-lg visible-md slide">
                     <ul>
                         {% for prod_thumb in prod_thumbs %}
-                            <li class="prod-slide-thumb"><a><img src="{{ prod_thumb.img}}"></a></li>
+                            <li class="prod-slide-thumb"><a><img src="{{ prod_thumb.img}}" width="78" height="78"></a></li>
                         {% endfor %}
                     </ul>
                 </div>

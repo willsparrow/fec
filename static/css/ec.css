@@ -9,6 +9,12 @@ body {
     /*min-width: 1090px;*/
     background-color: #fff;
 }
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
 
 .prod-description {
     font-size: 12px;
