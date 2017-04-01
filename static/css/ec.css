@@ -184,7 +184,6 @@ body {
  */
 .prod{
     display: block;
-    max-width: 245px;
     margin-left: auto;
     margin-right: auto;
 }
