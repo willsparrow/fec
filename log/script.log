@@ -2672,3 +2672,4 @@ ProgrammingError: (1146, "Table 'fec.t_prod_detail' doesn't exist")
 [2017-04-11 15:12:27,466] [Thread-8:3020] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-04-11 16:23:16,267] [Thread-5:2668] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-04-11 16:39:51,398] [Thread-43:2640] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-04-19 10:25:59,865] [Thread-14:2076] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

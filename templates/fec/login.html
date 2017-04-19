@@ -3,7 +3,7 @@
 {% block login %}
     <div class="container login">
         <div class="row">
-            <div class="col-md-4"><h2>登陆</h2></div>
+            <div class="col-md-4"></div>
             <div class="col-md-8">
                 {% if form.errors %}
                 <p class="alert alert-info">密码或用户名错误！</p>
@@ -21,11 +21,14 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" value="login" class="btn btn-default">登陆</button>
+                                <button type="submit" value="login" class="btn btn-default" style="width: 195px">登陆</button>
                                 <input type="hidden" name="next" value="/">
                                 <!--
                                     <input type="hidden" name="next" value="/prod_list">
                                 -->
+                            </div>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a href="{% url 'register' %}">去注册>></a>
                             </div>
                         </div>
                     </form>
