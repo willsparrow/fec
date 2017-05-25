@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vue.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/vue.js">
+      <file leaf-file-name="bootstrap-paper.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/bootstrap-paper/css/bootstrap-paper.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="14867" selection-start-line="7" selection-start-column="14867" selection-end-line="7" selection-end-column="14867" />
+            <state relative-caret-position="250">
+              <caret line="10" column="144032" selection-start-line="10" selection-start-column="144032" selection-end-line="10" selection-end-column="144032" />
               <folding />
             </state>
           </provider>
@@ -61,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/apps/ec/forms.py" />
         <option value="$PROJECT_DIR$/apps/ec/templates/ec/add_to_cart.html" />
         <option value="$PROJECT_DIR$/apps/ec/templates/ec/add_to_cart_message.html" />
         <option value="$PROJECT_DIR$/apps/ec/templates/ec/add_to_cart_result.html" />
@@ -112,6 +111,7 @@
         <option value="$PROJECT_DIR$/fec/settings.py" />
         <option value="$PROJECT_DIR$/static/js/jquery-1.11.3.js" />
         <option value="$PROJECT_DIR$/static/js/vue.js" />
+        <option value="$PROJECT_DIR$/static/bootstrap-paper/css/bootstrap-paper.css" />
       </list>
     </option>
   </component>
@@ -247,6 +247,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-paper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap-paper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -719,7 +759,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/Django-1.8.6-py2.7.egg/django/core/management/__init__.py" />
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/WANGPENGLONG801.xml" />
     <entry file="file://$PROJECT_DIR$/.idea/dictionaries/WANGPENGLONG.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1002,7 +1041,15 @@
     <entry file="file://$PROJECT_DIR$/static/js/vue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="7" column="14867" selection-start-line="7" selection-start-column="14867" selection-end-line="7" selection-end-column="14867" />
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bootstrap-paper/css/bootstrap-paper.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="144032" selection-start-line="10" selection-start-column="144032" selection-end-line="10" selection-end-column="144032" />
           <folding />
         </state>
       </provider>
