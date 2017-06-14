@@ -2676,3 +2676,100 @@ ProgrammingError: (1146, "Table 'fec.t_prod_detail' doesn't exist")
 [2017-04-19 14:24:36,783] [Thread-3:2284] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-05-03 16:01:34,522] [Thread-9:3292] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-05-24 10:22:34,019] [Thread-13:4008] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-14 13:16:36,736] [Thread-3:580] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-14 13:17:03,361] [Thread-12:2432] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 437, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 31, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = settings.AccessKeyID
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\conf\__init__.py", line 49, in __getattr__
+    return getattr(self._wrapped, name)
+AttributeError: 'Settings' object has no attribute 'AccessKeyID'
+[2017-06-14 13:33:11,658] [Thread-11:2336] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 452, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 41, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = parser.get("Base", "AccessKeyId")
+  File "C:\Python27\lib\ConfigParser.py", line 607, in get
+    raise NoSectionError(section)
+NoSectionError: No section: 'Base'
+[2017-06-14 13:37:00,127] [Thread-8:236] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 42, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = parser.get("Base", "AccessKeyId")
+  File "C:\Python27\lib\ConfigParser.py", line 607, in get
+    raise NoSectionError(section)
+NoSectionError: No section: 'Base'
+[2017-06-14 13:41:08,051] [Thread-14:2076] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 42, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = parser.get("Base", "AccessKeyId")
+  File "C:\Python27\lib\ConfigParser.py", line 607, in get
+    raise NoSectionError(section)
+NoSectionError: No section: 'Base'
+[2017-06-14 13:41:51,930] [Thread-6:1168] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 42, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = parser.get("Base", "AccessKeyId")
+  File "C:\Python27\lib\ConfigParser.py", line 607, in get
+    raise NoSectionError(section)
+NoSectionError: No section: 'Base'
+[2017-06-14 13:44:03,690] [Thread-6:2096] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 453, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 42, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = parser.get("Base", "AccessKeyId")
+  File "C:\Python27\lib\ConfigParser.py", line 607, in get
+    raise NoSectionError(section)
+NoSectionError: No section: 'Base'
+[2017-06-14 13:56:59,043] [Thread-2:1488] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 26, in <module>
+    from fec import mns
+  File "D:\PycharmProjects\fec\fec\mns.py", line 6
+SyntaxError: Non-ASCII character '\xe7' in file D:\PycharmProjects\fec\fec\mns.py on line 6, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details

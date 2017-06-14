@@ -116,3 +116,13 @@ class ProdThumb(models.Model):
     seq = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
+
+
+class SmsLog(models.Model):
+    class Meta:
+        db_table = 't_sms_log'
+    order_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    receiver = models.CharField(max_length=100, null=True)
+    message_id = models.CharField(max_length=100, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)
