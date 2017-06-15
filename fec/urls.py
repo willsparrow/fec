@@ -25,7 +25,12 @@ urlpatterns = [
     url(r'^$', get_prod_list, name='index'),
     url(r'^accounts/login/$', login, {'template_name': 'fec/login.html'}, name='login'),
     url(r'^logout/$', logout_then_login, name='logout'),
+    url(r'^send_verifycode/$', send_verifycode, name='send_verifycode'),
     url(r'^register/$', register, name='register'),
+    url(r'^reset_password_step1/$', reset_password_step1, name='reset_password_step1'),
+    url(r'^reset_password_step2/$', reset_password_step2, name='reset_password_step2'),
+    url(r'^reset_password_step3/$', reset_password_step3, name='reset_password_step3'),
+    url(r'^reset_password_step4/$', reset_password_step4, name='reset_password_step4'),
     url(r'^test/', test, name='test'),
     # ec urls
     url(r'^prod_list/$', get_prod_list, name='prod_list'),

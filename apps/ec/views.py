@@ -42,6 +42,7 @@ def send_orderid_to_shopkeeper_by_sms(shopkeeper, order_id):
         sms_log = SmsLog()
         sms_log.order_id = order_id
         sms_log.receiver = shopkeeper
+        sms_log.type = 'orderNotifyToShopkeeper'
         sms_log.message_id = re_msg.message_id
         sms_log.created_date = timezone.now()
         sms_log.updated_date = timezone.now()

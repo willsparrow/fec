@@ -30,6 +30,7 @@ class Prod(models.Model):
     weight = models.CharField(max_length=100, null=True)
     age = models.CharField(max_length=100, null=True)
     keywords = models.CharField(max_length=1000, null=True)
+
     def __str__(self):
         return self.code
 
@@ -55,6 +56,7 @@ class Cust(models.Model):
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+
     def __str__(self):
         return str(self.id)
 
@@ -78,6 +80,7 @@ class So(models.Model):
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+
     def __str__(self):
         return str(self.id)
 
@@ -94,6 +97,7 @@ class Sol(models.Model):
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+
     def __str__(self):
         return str(self.id)
 
@@ -123,6 +127,33 @@ class SmsLog(models.Model):
         db_table = 't_sms_log'
     order_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     receiver = models.CharField(max_length=100, null=True)
+    type = models.CharField(max_length=100, null=True)
     message_id = models.CharField(max_length=100, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
+
+
+class Md5(models.Model):
+    class Meta:
+        db_table = 't_md5'
+    original = models.CharField(max_length=100, null=True)
+    md5 = models.CharField(max_length=100, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class Verifycode(models.Model):
+    class Meta:
+        db_table = 't_verifycode'
+    mobilephone = models.CharField(max_length=100, null=True)
+    verifycode = models.CharField(max_length=100, null=True)
+    status = models.CharField(max_length=100, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)
+    expire_date = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return str(self.id)

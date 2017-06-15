@@ -87,3 +87,13 @@ $(document).ready(function(){
     )
 
 });
+
+// 发送短信验证码
+function send_verifycode(mobilephone) {
+    $("#verifycode").removeAttr("disabled");
+    console.log(mobilephone);
+    $.post("/send_verifycode/", {'mobilephone':mobilephone}, function(ret){
+        $(".alert").html(ret);
+        $(".alert").css('display','block');
+    });
+}
