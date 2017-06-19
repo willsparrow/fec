@@ -3247,3 +3247,65 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
     return int(value)
 ValueError: invalid literal for int() with base 10: ''
+[2017-06-19 10:22:25,789] [Thread-4:3412] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-19 10:23:08,197] [Thread-3:3748] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 151, in get_response
+    % (callback.__module__, view_name))
+ValueError: The view fec.main.register_step1 didn't return an HttpResponse object. It returned None instead.
+[2017-06-19 10:24:10,244] [Thread-3:2324] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:25:21,519] [Thread-3:3496] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:29:11,158] [Thread-5:1708] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:29:14,529] [Thread-6:3532] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:29:56,263] [Thread-3:2076] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:32:11,686] [Thread-3:2656] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:33:57,951] [Thread-3:2236] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 10:39:23,407] [Thread-4:3532] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step1/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 223, in get_response
+    response = middleware_method(request, response)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'tuple' object has no attribute 'get'

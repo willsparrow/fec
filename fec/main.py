@@ -38,6 +38,95 @@ def test(request):
                   'fec/pseudo-element-before-after.html')
 
 
+def send_verifycode_to_mobilephone(mobilephone, template_code, description):
+    access_key_id = mns.AccessKeyId
+    access_key_secret = mns.AccessKeySecret
+    endpoint = mns.Endpoint
+    topic = mns.Topic
+    sign_name = mns.SignName
+
+    my_account = Account(endpoint, access_key_id, access_key_secret)
+    my_topic = my_account.get_topic(topic)
+    msg_body1 = "sms-message1."
+    code = random.randint(100000, 999999)
+    logger.debug(code)
+    direct_sms_attr1 = DirectSMSInfo(free_sign_name=sign_name, template_code=template_code, single=False)
+    direct_sms_attr1.add_receiver(receiver=mobilephone, params={"code": str(code)})
+    msg1 = TopicMessage(msg_body1, direct_sms=direct_sms_attr1)
+    try:
+        verifycode = Verifycode()
+        verifycode.mobilephone = mobilephone
+        verifycode.verifycode = str(code)
+        verifycode.status = 1
+        verifycode.created_date = timezone.now()
+        verifycode.updated_date = timezone.now()
+        verifycode.expire_date = timezone.now() + datetime.timedelta(minutes=5)
+        verifycode.save()
+
+        re_msg = my_topic.publish_message(msg1)
+        sms_log = SmsLog()
+        sms_log.receiver = mobilephone
+        sms_log.type = description
+        sms_log.message_id = re_msg.message_id
+        sms_log.created_date = timezone.now()
+        sms_log.updated_date = timezone.now()
+        sms_log.save()
+        logger.debug("Publish Message Succeed. MessageBody:%s MessageID:%s" % (msg_body1, re_msg.message_id))
+    except MNSExceptionBase, e:
+        if e.type == "TopicNotExist":
+            logger.debug("Topic not exist, please create it.")
+        logger.debug("Publish Message Fail. Exception:%s" % e)
+
+
+def validate_verifycode(mobilephone, verifycode):
+    verifycode = Verifycode.objects.filter(mobilephone=mobilephone, verifycode=verifycode)
+    if len(verifycode) == 1:
+        if timezone.now() < verifycode[0].expire_date:
+            return True
+    else:
+        return False
+
+
+def register_step1(request):
+    if request.method == 'POST':
+        mobilephone = request.POST.get('mobilephone')
+        exist = len(Cust.objects.filter(mobilephone=mobilephone).annotate(cnt=Count('mobilephone')))
+        if exist == 1:
+            context_dict = {'mobilephone': mobilephone,
+                            'msg': '您输入的手机号码已被注册，如果忘记密码，请点击忘记密码进行密码找回。'}
+            return render(request,
+                          'fec/register_step1.html',
+                          context_dict)
+        else:
+            send_verifycode_to_mobilephone(mobilephone, mns.TemplateCodeForRegister, 'verifyCodeToRegister')
+            context_dict = {'mobilephone': mobilephone,
+                            'msg': '注册短信验证码已发送至您的手机，请填写手机验证码进行注册。'}
+            return render(request,
+                          'fec/register_step2.html',
+                          context_dict)
+    return render(request,
+                  'fec/register_step1.html')
+
+
+def register_step2(request):
+    if request.method == 'POST':
+        mobilephone = request.POST.get('mobilephone')
+        verifycode = request.POST.get('verifycode')
+        if validate_verifycode(mobilephone, verifycode):
+            form = UserCreationForm()
+            context_dict = {'mobilephone': mobilephone,
+                            'form': form}
+            return render(request,
+                          'fec/register.html',
+                          context_dict)
+        else:
+            context_dict = {'mobilephone': mobilephone,
+                            'msg': '您输入的验证码不正确，请重新输入或重新注册。'}
+            return render(request,
+                          'fec/register_step2.html',
+                          context_dict)
+
+
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username', '')
@@ -63,7 +152,8 @@ def register(request):
         form = UserCreationForm()
     return render(request,
                   'fec/register.html',
-                  {'form': form, })
+                  {'mobilephone': mobilephone,
+                   'form': form})
 
 
 # 通过查看django login()源码, 实现在模板中fec/register.html指定input的next, 在form提交后redirect至next指向的地址
@@ -113,58 +203,11 @@ def get_mobilephone_from_md5(md5):
 
 def send_verifycode(request):
     mobilephone = get_mobilephone_from_md5(request.POST.get('mobilephone'))
-
-    access_key_id = mns.AccessKeyId
-    access_key_secret = mns.AccessKeySecret
-    endpoint = mns.Endpoint
-    topic = mns.Topic
-    sign_name = mns.SignName
-    template_code_for_verifycode = mns.TemplateCodeForVerifyCode
-
-    my_account = Account(endpoint, access_key_id, access_key_secret)
-    my_topic = my_account.get_topic(topic)
-    msg_body1 = "sms-message1."
-    code = random.randint(100000, 999999)
-    logger.debug(code)
-    direct_sms_attr1 = DirectSMSInfo(free_sign_name=sign_name, template_code=template_code_for_verifycode, single=False)
-    direct_sms_attr1.add_receiver(receiver=mobilephone, params={"code": str(code)})
-    msg1 = TopicMessage(msg_body1, direct_sms=direct_sms_attr1)
-    try:
-        verifycode = Verifycode()
-        verifycode.mobilephone = mobilephone
-        verifycode.verifycode = str(code)
-        verifycode.status = 1
-        verifycode.created_date = timezone.now()
-        verifycode.updated_date = timezone.now()
-        verifycode.expire_date = timezone.now() + datetime.timedelta(minutes=5)
-        verifycode.save()
-
-        re_msg = my_topic.publish_message(msg1)
-        sms_log = SmsLog()
-        sms_log.receiver = mobilephone
-        sms_log.type = 'verifyCodeToResetPassword'
-        sms_log.message_id = re_msg.message_id
-        sms_log.created_date = timezone.now()
-        sms_log.updated_date = timezone.now()
-        sms_log.save()
-        logger.debug("Publish Message Succeed. MessageBody:%s MessageID:%s" % (msg_body1, re_msg.message_id))
-    except MNSExceptionBase, e:
-        if e.type == "TopicNotExist":
-            logger.debug("Topic not exist, please create it.")
-        logger.debug("Publish Message Fail. Exception:%s" % e)
+    send_verifycode_to_mobilephone(mobilephone, mns.TemplateCodeForResetPassword, 'verifyCodeToResetPassword')
     context_dict = {'msg': '已发送，请及时查收。'}
     return render(request,
                   'fec/_msg.html',
                   context_dict)
-
-
-def validate_verifycode(mobilephone, verifycode):
-    verifycode = Verifycode.objects.filter(mobilephone=mobilephone, verifycode=verifycode)
-    if len(verifycode) == 1:
-        if timezone.now() < verifycode[0].expire_date:
-            return True
-    else:
-        return False
 
 
 def reset_password_step1(request):
