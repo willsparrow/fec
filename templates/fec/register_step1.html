@@ -15,6 +15,9 @@
                             <label for="mobilephone" class="col-sm-2 control-label">手机号码：</label>
                             <div class="col-sm-10">
                                 <input id="mobilephone" maxlength="30" name="mobilephone" type="text">
+                                {% if exist %}
+                                     <a href="{% url 'reset_password_step1' %}">忘记密码>></a>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="form-group">

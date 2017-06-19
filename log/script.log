@@ -3309,3 +3309,4 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\clickjacking.py", line 31, in process_response
     if response.get('X-Frame-Options', None) is not None:
 AttributeError: 'tuple' object has no attribute 'get'
+[2017-06-19 11:11:01,400] [Thread-3:668] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

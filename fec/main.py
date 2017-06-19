@@ -93,7 +93,8 @@ def register_step1(request):
         exist = len(Cust.objects.filter(mobilephone=mobilephone).annotate(cnt=Count('mobilephone')))
         if exist == 1:
             context_dict = {'mobilephone': mobilephone,
-                            'msg': '您输入的手机号码已被注册，如果忘记密码，请点击忘记密码进行密码找回。'}
+                            'msg': '您输入的手机号码已被注册，如果忘记密码，请点击忘记密码进行密码找回。',
+                            'exist': 1}
             return render(request,
                           'fec/register_step1.html',
                           context_dict)
