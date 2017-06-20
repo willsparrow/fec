@@ -4,6 +4,12 @@
 body {
     padding-top: 70px;
 }
+
+body, button, code, input, select, textarea {
+    font-family: "Microsoft Yahei","微软雅黑",verdana;
+    color: #333;
+}
+
 body {
     min-height: 100%;
     /*min-width: 1090px;*/
@@ -204,6 +210,54 @@ body {
 
 .prod .prod-price h2{
     color: #e4393c;
+}
+
+.prod hr{
+    display: block;
+    width: 130px;
+    height: 1px;
+    padding: 0;
+    margin: 6px auto 14px;
+    border: 0;
+    border-top: 1px solid #e8e8e8;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #b4a078;
+}
+
+.prod h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.prod .title {
+    margin-bottom: 4px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.prod h4.title {
+    padding: 0 10px;
+}
+.prod .price {
+    color: #d4282d;
+    text-align: center;
+}
+
+.prod p.price {
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 /*
  *设置加入购物车按钮效果

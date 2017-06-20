@@ -3343,3 +3343,4 @@ Traceback (most recent call last):
 UnboundLocalError: local variable 'mobilephone' referenced before assignment
 [2017-06-20 15:10:22,697] [Thread-3:3404] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-06-20 15:25:51,802] [Thread-3:824] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-20 16:17:23,101] [Thread-2:2788] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

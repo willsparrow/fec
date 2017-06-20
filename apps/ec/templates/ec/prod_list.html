@@ -26,13 +26,14 @@
                                 <img class="responsive-img" src="{{ prod.img_m }}" width="245" height="245">
                             </a>
                         </div>
-                        <div>
-                            {{ prod.price }}
+                        <div class="title">
+                            <h4 class="title"><a href="{% url 'prod_detail' prod_id=prod.id %}">{{ prod.title }}</a></h4>
                         </div>
                         <div>
-                            <a href="{% url 'prod_detail' prod_id=prod.id %}">{{ prod.title }}</a>
+                            <p class="price"><span>¥</span><span>{{ prod.price }}</span></p>
                         </div>
                         <div>
+                            <hr>
                             {{ prod.description }}
                         </div>
                         <div class="mask text-center">
