@@ -358,3 +358,14 @@ body {
 	-o-transition: all .5s ease-out;
 	transition: all .5s ease-out;
 }
+
+/*
+ *设置login register form效果
+ */
+.form-horizontal{
+    width: 380px;
+}
+
+.form-horizontal input{
+    width: 218px;
+}

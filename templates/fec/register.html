@@ -5,36 +5,37 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-8">
-                {% if form.username.errors %}
-                    <p class="alert alert-info">用户已存在！</p>
-                {% endif %}
-                {% if form.password2.errors %}
-                    <p class="alert alert-info">密码不一致！</p>
-                {% endif %}
+
                 <div id="register">
                     <form class="form-horizontal" method="post" action="{% url 'register' %}">
-                    {% csrf_token %}
+                        {% if form.username.errors %}
+                            <p class="alert alert-info" align="center">用户已存在！</p>
+                        {% endif %}
+                        {% if form.password2.errors %}
+                            <p class="alert alert-info" align="center">密码不一致！</p>
+                        {% endif %}
+                        {% csrf_token %}
                         <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label">用户名：</label>
-                            <div class="col-sm-10">{{ form.username }}</div>
+                            <label for="username" class="col-sm-4 control-label">用户名：</label>
+                            <div class="col-sm-8">{{ form.username }}</div>
                         </div>
                         <div class="form-group">
-                            <label for="mobilephone" class="col-sm-2 control-label">手机号码：</label>
-                            <div class="col-sm-10">
-                                <div class="col-sm-10"><strong>{{ mobilephone }}</strong></div>
-                                <div class="col-sm-10"><input id="mobilephone" name="mobilephone" value="{{ mobilephone }}" type="hidden"></div>
+                            <label for="mobilephone" class="col-sm-4 control-label">手机号码：</label>
+                            <div class="col-sm-8">
+                                <div class="col-sm-8"><strong>{{ mobilephone }}</strong></div>
+                                <div class="col-sm-8"><input id="mobilephone" name="mobilephone" value="{{ mobilephone }}" type="hidden"></div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="passowrd1" class="col-sm-2 control-label">密码：</label>
-                            <div class="col-sm-10">{{ form.password1 }}</div>
+                            <label for="passowrd1" class="col-sm-4 control-label">密码：</label>
+                            <div class="col-sm-8">{{ form.password1 }}</div>
                         </div>
                         <div class="form-group">
-                            <label for="passowrd1" class="col-sm-2 control-label">确认密码：</label>
-                            <div class="col-sm-10">{{ form.password2 }}</div>
+                            <label for="passowrd1" class="col-sm-4 control-label">确认密码：</label>
+                            <div class="col-sm-8">{{ form.password2 }}</div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <div class="col-sm-offset-4 col-sm-8">
                                 <button type="submit" value="register" class="btn btn-default">注册</button>
                                  <!--
                                     <input type="hidden" name="next" value="{% url 'login' %}">

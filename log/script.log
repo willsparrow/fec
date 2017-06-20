@@ -3310,3 +3310,34 @@ Traceback (most recent call last):
     if response.get('X-Frame-Options', None) is not None:
 AttributeError: 'tuple' object has no attribute 'get'
 [2017-06-19 11:11:01,400] [Thread-3:668] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-20 09:32:27,707] [Thread-3:1340] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-20 09:33:55,496] [Thread-14:2712] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\fec\main.py", line 119, in register_step2
+    form.username(widget=forms.TextInput(attrs={'class': 'form-control'}))
+AttributeError: 'UserCreationForm' object has no attribute 'username'
+[2017-06-20 09:46:55,204] [Thread-15:800] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-20 09:51:07,328] [Thread-22:3472] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-20 10:05:36,332] [Thread-62:3808] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register_step2/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\fec\main.py", line 119, in register_step2
+    context_dict = {'mobilephone': mobilephone,
+AttributeError: 'UserCreationForm' object has no attribute 'username'
+[2017-06-20 10:59:28,388] [Thread-58:3620] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\fec\main.py", line 157, in register
+    {'mobilephone': mobilephone,
+UnboundLocalError: local variable 'mobilephone' referenced before assignment
+[2017-06-20 10:59:32,111] [Thread-59:4060] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\fec\main.py", line 157, in register
+    {'mobilephone': mobilephone,
+UnboundLocalError: local variable 'mobilephone' referenced before assignment

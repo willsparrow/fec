@@ -5,32 +5,33 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-8">
-                {% if form.errors %}
-                <p class="alert alert-info">密码或用户名错误！</p>
-                {% endif %}
+
                 <div id="login">
                     <form class="form-horizontal" method="post" action="{% url 'login' %}">
-                    {% csrf_token %}
+                        {% if form.errors %}
+                            <p class="alert alert-info" align="center">密码或用户名错误！</p>
+                        {% endif %}
+                        {% csrf_token %}
                         <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label">用户名：</label>
-                            <div class="col-sm-10">{{ form.username }}</div>
+                            <label for="username" class="col-sm-4 control-label">用户名：</label>
+                            <div class="col-sm-8">{{ form.username }}</div>
                         </div>
                         <div class="form-group">
-                            <label for="passowrd" class="col-sm-2 control-label">密码：</label>
-                            <div class="col-sm-10">{{ form.password }}</div>
+                            <label for="passowrd" class="col-sm-4 control-label">密码：</label>
+                            <div class="col-sm-8">{{ form.password }}</div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <div class="col-sm-offset-4 col-sm-8">
                                 <button type="submit" value="login" class="btn btn-default" style="width: 195px">登陆</button>
                                 <input type="hidden" name="next" value="/">
                                 <!--
                                     <input type="hidden" name="next" value="/prod_list">
                                 -->
                             </div>
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <a href="{% url 'register' %}">去注册>></a>
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <a href="{% url 'register_step1' %}">去注册>></a>
                             </div>
-                            <div class="col-sm-offset-2 col-sm-10">
+                            <div class="col-sm-offset-4 col-sm-8">
                                 <a href="{% url 'reset_password_step1' %}">忘记密码>></a>
                             </div>
                         </div>
