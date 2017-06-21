@@ -60,7 +60,8 @@ def index(request):
 
 # 查询所有商品信息
 def get_prod_list(request):
-    prods = Prod.objects.all()
+    # prods = Prod.objects.all()
+    prods = Prod.objects.filter(status=1)
     logger.debug('查询所有商品信息')
     logger.debug(prods)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})

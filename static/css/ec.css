@@ -259,6 +259,15 @@ a:hover {
     margin: 0;
     padding: 0;
 }
+
+.prod .desc {
+    width: 100%;
+     margin: 0;
+    padding: 0 10px;
+    line-height: 18px;
+    color: #999;
+}
+
 /*
  *设置加入购物车按钮效果
  */

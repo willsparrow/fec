@@ -3344,3 +3344,12 @@ UnboundLocalError: local variable 'mobilephone' referenced before assignment
 [2017-06-20 15:10:22,697] [Thread-3:3404] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-06-20 15:25:51,802] [Thread-3:824] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-06-20 16:17:23,101] [Thread-2:2788] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 10:13:43,526] [Thread-4:2104] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 10:43:30,262] [Thread-3:2208] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 10:44:52,102] [Thread-13:3036] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 11:21:06,438] [Thread-4:3036] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 11:30:11,177] [Thread-13:984] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 12:49:39,464] [Thread-2:984] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 14:44:55,552] [Thread-5:1660] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 14:46:55,023] [Thread-14:2456] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-06-21 14:51:50,956] [Thread-18:2460] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
