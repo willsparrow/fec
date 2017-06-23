@@ -1,21 +1,30 @@
 /*
+ *设置全局样式
+ */
+a {
+    color: #333;
+}
+a:hover {
+    color: #b4a078;
+}
+/*
  *设置导航nav固定在顶部效果
  */
 body {
     padding-top: 70px;
 }
-
 body, button, code, input, select, textarea {
     font-family: "Microsoft Yahei","微软雅黑",verdana;
     color: #333;
 }
-
 body {
     min-height: 100%;
     /*min-width: 1090px;*/
     background-color: #fff;
 }
-
+/*
+ *设置图片自适应
+ */
 .responsive-img {
     width: 100%;
     height: auto;
@@ -69,7 +78,6 @@ li.dropdown:hover > ul.dropdown-menu {
     display: block;
     margin-top: 0;
 }
-
 /*
  *设置购物车hover显示效果
  */
@@ -83,7 +91,6 @@ li.dropdown:hover > ul.dropdown-menu {
     top: 100px;
     width: 100%;
 }
-
 /*
  *设置注册框的位置
  */
@@ -93,7 +100,6 @@ li.dropdown:hover > ul.dropdown-menu {
     top: 100px;
     width: 100%;
 }
-
 /*
  *设置页脚footer
  */
@@ -101,13 +107,11 @@ html {
     position: relative;
     min-height: 100%;
 }
-
 body {
     min-height: 500px;
     /* Margin bottom by footer height */
     margin-bottom: 60px;
 }
-
 .footer {
     position: absolute;
     bottom: 0px;
@@ -118,7 +122,6 @@ body {
     padding-top: 16px;
     background-color: #414141;
     text-align: center;
-
 }
 .footer a{
     color: #999;
@@ -203,15 +206,12 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .prod input {
     text-align: center;
 }
-
 .prod .prod-price h2{
     color: #e4393c;
 }
-
 .prod hr{
     display: block;
     width: 130px;
@@ -221,15 +221,6 @@ body {
     border: 0;
     border-top: 1px solid #e8e8e8;
 }
-
-a {
-    color: #333;
-}
-
-a:hover {
-    color: #b4a078;
-}
-
 .prod h4 {
     display: block;
     -webkit-margin-before: 1.33em;
@@ -239,13 +230,11 @@ a:hover {
     font-weight: bold;
     font-size: 100%;
 }
-
 .prod .title {
     margin-bottom: 4px;
     height: 20px;
     line-height: 20px;
 }
-
 .prod h4.title {
     padding: 0 10px;
 }
@@ -253,13 +242,11 @@ a:hover {
     color: #d4282d;
     text-align: center;
 }
-
 .prod p.price {
     display: block;
     margin: 0;
     padding: 0;
 }
-
 .prod .desc {
     width: 100%;
      margin: 0;
@@ -267,7 +254,6 @@ a:hover {
     line-height: 18px;
     color: #999;
 }
-
 /*
  *设置加入购物车按钮效果
  */
@@ -283,7 +269,6 @@ a:hover {
     -ms-transition: all 0.3s ease-out 0.5s;
     transition: all 0.3s ease-out 0.5s;
 }
-
 .prod .mask {
     -webkit-transform: translateY(-200px);
     -moz-transform: translateY(-200px);
@@ -296,7 +281,6 @@ a:hover {
     -ms-transition: all 0.2s ease-in-out 0.3s;
     transition: all 0.2s ease-in-out 0.3s;
 }
-
 .prod .mask button {
     display: inline-block;
     text-decoration: none;
@@ -309,13 +293,11 @@ a:hover {
     box-shadow: 0 0 1px #000;
     border-radius: 0px;
 }
-
 .prod .mask button:hover {
     -webkit-box-shadow: 0 0 5px #000;
     -moz-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000;
 }
-
 .prod:hover .mask {
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: alpha(opacity=100);
@@ -331,7 +313,6 @@ a:hover {
     -ms-animation: bounceY 0.9s linear;
     animation: bounceY 0.9s linear;
 }
-
 .prod:hover .mask {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -344,7 +325,6 @@ a:hover {
     -ms-transition-delay: 0s;
     transition-delay: 0s;
 }
-
 @keyframes bounceY {
     0% {
         transform: translateY(-205px);
@@ -365,7 +345,6 @@ a:hover {
         transform: translateY(0px);
     }
 }
-
 @-moz-keyframes bounceY {
     0% {
         -moz-transform: translateY(-205px);
@@ -386,7 +365,6 @@ a:hover {
         -moz-transform: translateY(0px);
     }
 }
-
 @-webkit-keyframes bounceY {
     0% {
         -webkit-transform: translateY(-205px);
@@ -407,6 +385,9 @@ a:hover {
         -webkit-transform: translateY(0px);
     }
 }
+/*
+ *设置hover图片放大效果
+ */
 .zoom:hover img{
 	-webkit-transform: matrix(1.04, 0, 0, 1.04, 0, 0);
 	-moz-transform: matrix(1.04, 0, 0, 1.04, 0, 0);
@@ -421,14 +402,47 @@ a:hover {
 	-o-transition: all .5s ease-out;
 	transition: all .5s ease-out;
 }
-
 /*
  *设置login register form效果
  */
 .form-horizontal{
     width: 380px;
 }
-
 .form-horizontal input{
     width: 218px;
+}
+/*
+ *设置activity bar效果
+ */
+.activity{
+    text-align: center;
+}
+.activity_logo{
+    text-align: center;
+    display: block;
+}
+.search{
+    margin:0 auto;
+    float: right;
+    display: inline;
+}
+.search input[type=text]{
+    float: left;
+    border-bottom: 1px solid #D8CEBC;
+    font-size: 12px;
+    line-height: 23px;
+    color: #333;
+    width: 252px;
+    margin-top: 9px;
+    height: 23px;
+}
+.search .glyphicon-search{
+    float: right;
+    font-size: 18px;
+    line-height: 23px;
+    color: #333;
+    margin-top: 9px;
+    width: 20px;
+    height: 23px;
+    display: block;
 }

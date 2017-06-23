@@ -1,0 +1,15 @@
+<div class="container">
+        <div class="row activity">
+            <div class="activity_logo">
+                <p>生活优选，品质生活</p>
+            </div>
+            <div class="search">
+                <form id="search" class="navbar-form navbar-left" action="{% url 'prod_list_by_keywords'%}">
+                    <div class="form-group">
+                        <input id="keywords" name="keywords" type="text" class="form-control search" placeholder="搜索">
+                        <a href="#" name="submit" onclick="document.getElementById('search').submit();return false"><span class="glyphicon glyphicon-search"></span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
