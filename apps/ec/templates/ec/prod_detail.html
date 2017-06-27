@@ -18,7 +18,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-5">
                 <div class="prod-img-m zoom">
-                    <img class="responsive-img" src="{{ prod.img_m }}" width="430" height="430">
+                    <img class="responsive-img" src="{{ prod.img_url }}" width="430" height="430">
                 </div>
             </div>
 
@@ -26,7 +26,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-2 visible-lg visible-md slide" style="max-width: 78px; margin-right: 68px">
                     <ul>
                         {% for prod_thumb in prod_thumbs %}
-                            <li class="prod-slide-thumb zoom"><a><img src="{{ prod_thumb.img}}" width="78" height="78"></a></li>
+                            <li class="prod-slide-thumb zoom"><a><img src="{{ prod_thumb.img_url}}" width="78" height="78"></a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -41,15 +41,6 @@
                 </div>
                 <div class="prod-id">
                     商品编号:<strong>{{ prod.id }}</strong>
-                </div>
-                <div class="prod-color">
-                    颜色:<strong>{{ prod.color }}</strong>
-                </div>
-                <div class="prod-spec">
-                    规格:<strong>{{ prod.spec }}</strong>
-                </div>
-                <div class="prod-size">
-                    型号:<strong>{{ prod.size }}</strong>
                 </div>
                 <div class="prod-ship">
                     支付方式:<strong>货到付款</strong>
@@ -71,7 +62,7 @@
             <div class="col-xs-12 col-sm-12 col-md-10">
                 <div class="prod-details">
                     {% for prod_detail in prod_details %}
-                        <img class="responsive-img" src="{{ prod_detail.img}}">
+                        <img class="responsive-img" src="{{ prod_detail.img_url}}">
                     {% endfor %}
                 </div>
             </div>

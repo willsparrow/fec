@@ -193,7 +193,7 @@ def add_to_cart(request):
         sol.cust_id = cust_id
         sol.prod_id = prod.id
         sol.name = prod.name
-        sol.img_t = prod.img_t
+        sol.img_url = prod.img_url
         sol.price = prod.price
         sol.qty = qty
         sol.created_date = timezone.now()
@@ -225,7 +225,7 @@ def get_cart_info(cust_id):
                                   status=1).values('so_id',
                                                    'prod_id',
                                                    'name',
-                                                   'img_t',
+                                                   'img_url',
                                                    'price').annotate(qty=Sum('qty'),
                                                                      amt=Sum('qty') * F('price'))
         # 聚合购物车商品总数
@@ -263,7 +263,7 @@ def add_prod(request):
     sol.cust_id = cust_id
     sol.prod_id = prod.id
     sol.name = prod.name
-    sol.img_t = prod.img_t
+    sol.img_url = prod.img_url
     sol.price = prod.price
     sol.qty = 1
     sol.created_date = timezone.now()
@@ -289,7 +289,7 @@ def del_prod(request):
     sol.cust_id = cust_id
     sol.prod_id = prod.id
     sol.name = prod.name
-    sol.img_t = prod.img_t
+    sol.img_url = prod.img_url
     sol.price = prod.price
     sol.qty = -1
     sol.created_date = timezone.now()
@@ -362,7 +362,7 @@ def deduct_stock(so_id):
                               status=1).values('so_id',
                                                'prod_id',
                                                'name',
-                                               'img_t',
+                                               'img_url',
                                                'price').annotate(qty=Sum('qty'),
                                                                  amt=Sum('qty') * F('price'))
     # 根据订单上经过聚合的商品进行扣库存操作
@@ -476,7 +476,7 @@ def get_order_info(so_id):
                               status=888).values('so_id',
                                                  'prod_id',
                                                  'name',
-                                                 'img_t',
+                                                 'img_url',
                                                  'price').annotate(qty=Sum('qty'),
                                                                    amt=Sum('qty') * F('price'))
     # 20170112之前因为在checkout confirm时没有更新订单商品总数、总金额，在查看时用如下代码做订单信息更新

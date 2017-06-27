@@ -30,7 +30,7 @@
                         <th scope="row">{{ forloop.counter }}</th>
                         <td>
                             <a href="{% url 'prod_detail' prod_id=prod.id %}">
-                                <img src="{{ prod.img_t }}">
+                                <img src="{{ prod.img_url }}">
                             </a>
                         </td>
                         <td>
