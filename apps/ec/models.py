@@ -78,7 +78,7 @@ class Sku(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     qty = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     img_url = models.CharField(max_length=100, null=True)
-    pv = models.CharField(max_length=1000, null=True)
+    pvs = models.CharField(max_length=1000, null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)

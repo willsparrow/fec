@@ -107,15 +107,6 @@ def get_prod_list_by_keywords(request):
                   context_dict)
 
 
-def get_prod_detail_imgs(prod_id):
-    cnt = ProdDetail.objects.filter(prod_id=prod_id).count()
-    if cnt == 0:
-        prod_details = 0
-    else:
-        prod_details = ProdDetail.objects.filter(prod_id=prod_id)
-    return prod_details
-
-
 def get_prod_thumb_imgs(prod_id):
     cnt = ProdThumb.objects.filter(prod_id=prod_id).count()
     if cnt == 0:
@@ -125,15 +116,59 @@ def get_prod_thumb_imgs(prod_id):
     return prod_thumbs
 
 
+def get_prod_detail_imgs(prod_id):
+    cnt = ProdDetail.objects.filter(prod_id=prod_id).count()
+    if cnt == 0:
+        prod_details = 0
+    else:
+        prod_details = ProdDetail.objects.filter(prod_id=prod_id)
+    return prod_details
+
+
+def get_prod_properties(prod_id):
+    cnt = ProdProperty.objects.filter(prod_id=prod_id).count()
+    if cnt == 0:
+        properties = 0
+    else:
+        properties = ProdProperty.objects.filter(prod_id=prod_id)
+    return properties
+
+
+def get_prod_property_values(property_id):
+    cnt = ProdPv.objects.filter(property_id=property_id).count()
+    if cnt == 0:
+        values = 0
+    else:
+        values = ProdPv.objects.filter(property_id=property_id)
+    return values
+
+
+def get_prod_pvs(prod_id):
+    property_list = []
+    properties = get_prod_properties(prod_id)
+    if properties != 0:
+        for property in properties:
+            property_dict={}
+            property_dict['id'] = property.id
+            property_dict['name'] = property.name
+            property_dict['values'] = get_prod_property_values(property.id)
+            property_list.append(property_dict)
+        return property_list
+    else:
+        return 0
+
+
 # 查询某个商品的详情信息
 def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
     add_to_cart_form = AddToCartForm(initial={'qty': 1})
     prod_details = get_prod_detail_imgs(prod_id)
     prod_thumbs = get_prod_thumb_imgs(prod_id)
+    prod_pvs = get_prod_pvs(prod_id)
     context_dict = {'prod': prod,
                     'prod_details': prod_details,
                     'prod_thumbs': prod_thumbs,
+                    'prod_pvs': prod_pvs,
                     'add_to_cart_form': add_to_cart_form}
     return render(request,
                   'ec/prod_detail.html',

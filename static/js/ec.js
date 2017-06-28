@@ -87,6 +87,11 @@ $(document).ready(function(){
         }
     )
 
+    // 商品属性选择
+    $(".tab").click(function () {
+        $(this).parent().parent().children().children(".tab-selected").removeClass("tab-selected");
+        $(this).addClass("tab-selected");
+    })
 });
 
 // 发送短信验证码

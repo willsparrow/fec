@@ -45,8 +45,32 @@
                 <div class="prod-ship">
                     支付方式:<strong>货到付款</strong>
                 </div>
+                {% if prod_pvs != 0 %}
+                    <div class="properties">
+                        {% for prod_pv in prod_pvs%}
+                            <div class="property">
+                                <span class="p-name">{{ prod_pv.name }}</span>
+                                <div class="property-values">
+                                    <ul class="values">
+                                        {% for value in prod_pv.values %}
+                                            {% if value.img_url %}
+                                                <li class="value">
+                                                    <a class="tab"><img src="{{ value.img_url }}"></a>
+                                                </li>
+                                            {% else %}
+                                                <li class="value">
+                                                    <a><span>{{ value.name }}</span></a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div class="prod-qty">
-                    <h5>库存:<strong>{{ prod.qty }}</strong></h5>
+                    <h5><span>库存:<strong>{{ prod.qty }}</strong></span></h5>
                 </div>
                 <div class="prod-price">
                     <h2>￥:{{ prod.price }}</h2>

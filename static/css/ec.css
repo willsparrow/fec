@@ -7,6 +7,9 @@ a {
 a:hover {
     color: #b4a078;
 }
+div {
+    display: block;
+}
 /*
  *设置导航nav固定在顶部效果
  */
@@ -39,38 +42,7 @@ body {
     line-height: 18px;
     color: #999;
 }
-/*
- *设置prod side thumbs
- */
-.slide ul{
-    padding: 0px;
-}
-.slide li {
-    position: relative;
-    zoom: 1;
-    width: 78px;
-    height: 78px;
-    display: block;
-    overflow: hidden;
-    margin-bottom: 10px;
-    vertical-align: top;
-}
-.slide li a{
-    display: block;
-    width: 78px;
-    height: 78px;
-    border: 2px solid #e8e8e8;
-}
-.slide li.z-active a{
-    margin:0;
-    border:2px solid #b4a078
-}
-.slide li.prod-slide-thumb img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: #f4f4f4;
-}
+
 /*
  *设置导航nav menu的hover的下拉效果
  */
@@ -253,6 +225,97 @@ body {
     padding: 0 10px;
     line-height: 18px;
     color: #999;
+}
+/*
+ *设置prod side thumbs展示效果
+ */
+.slide ul{
+    padding: 0px;
+}
+.slide li {
+    position: relative;
+    zoom: 1;
+    width: 78px;
+    height: 78px;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+.slide li a{
+    display: block;
+    width: 78px;
+    height: 78px;
+    border: 2px solid #e8e8e8;
+}
+.slide li.z-active a{
+    margin:0;
+    border:2px solid #b4a078
+}
+.slide li.prod-slide-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+}
+/*
+ *设置prod property展示效果
+ */
+.info .price {
+    background-color: #f5f3ef;
+    border-top: 1px dotted #dedede;
+    border-bottom: 1px dotted #dedede;
+    padding: 0 0 13px;
+    line-height: 24px;
+    font-size: 13px;
+    position: relative;
+}
+.prod ol, ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.prod .properties{
+    margin-top: 20px;
+}
+.property .p-name{
+    line-height: 50px;
+    float: left;
+    font-size: 12px;
+    color: #666;
+    width: 54px;
+    white-space: normal;
+}
+.property .property-values{
+    position: relative;
+    float: left;
+    margin-bottom: 3px;
+    width: 438px;
+}
+.values li{
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    padding: 1px;
+}
+.values a {
+    border: 1px solid #ddd;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.value img{
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+}
+.value .tab-selected {
+    border: 2px solid #b4a078;
+    color: #333;
 }
 /*
  *设置加入购物车按钮效果
