@@ -92,5 +92,19 @@
             </div>
         </div>
     {% endif %}
+    <div id="prod_pv">
 
+    </div>
+    <script type="text/javascript">
+        var prod_pv = new Vue({
+            el: '#prod_pv',
+            data:{
+                properties:properties,
+                skus:skus
+            },
+            methods:{
+
+            }
+        })
+    </script>
 {% endblock %}

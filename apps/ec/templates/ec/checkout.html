@@ -64,8 +64,46 @@
 
 
     <script type="text/javascript">
-        new Vue({
+        var chinaAddress = new Vue({
             el: '#chinaAddress',
+            data: {
+                addressList: null,
+                province: '陕西',
+                city: '渭南',
+                area: '临渭区'
+            },
+            methods: {
+                setCitiesAreas: function (event) {
+                    console.log("change");
+                    console.log(this.province);
+                    for (var i = 0; i < this.addressList.length; i++) {
+                        if (this.addressList[i].name == this.province) {
+                            console.log('set city');
+                            this.cities = this.addressList[i].city;
+                            this.city = this.cities[0].name;
+                            this.areas = this.cities[0].area;
+                            this.area = this.areas[0];
+                        }
+                        //console.log(this.addressList[i].name);
+                    }
+                },
+                setAreas: function (event) {
+                    for (var i = 0; i < this.cities.length; i++) {
+                        if (this.cities[i].name == this.city) {
+                            this.areas = this.cities[i].area;
+                            this.area = this.areas[0];
+                        }
+                    }
+                }
+            }
+        })
+
+        $.getJSON("http://static.mbailian.com/js/chinaAddress.json",function (data) {
+            chinaAddress.addressList = data;
+        })
+
+        new Vue({
+            el: '#chinaAddress1',
             data: {
                 addressList: [{
                     "name": "北京",
