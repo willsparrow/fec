@@ -4617,3 +4617,4 @@ Traceback (most recent call last):
     return int(value)
 ValueError: invalid literal for int() with base 10: ''
 [2017-07-04 15:04:59,118] [Thread-5:3620] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-04 18:35:13,107] [Thread-5:3908] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

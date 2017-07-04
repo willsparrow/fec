@@ -19,7 +19,7 @@
 
             <div class="col-xs-12 col-sm-12 col-md-5">
                 <div class="prod-img-m zoom">
-                    <img class="responsive-img" src="{{ prod.img_url }}" width="430" height="430">
+                    <img class="responsive-img" :src="prod_img_url" width="430" height="430">
                 </div>
             </div>
 
@@ -121,6 +121,7 @@
                 prod_id:null,
                 prod_price:null,
                 prod_qty:null,
+                prod_img_url:null,
                 properties:null,
                 selectdProperties:null,
                 selectdPvs:null,
@@ -133,10 +134,16 @@
                 setSelectdValue: function (valueId, propertyId) {
                     pvs = [];
                     selectdProperties = 0;
+                    prod_img_url = null;
                     $.each(this.properties, function () {
                         // console.log(this.id);
                         if (this.id == propertyId){
                             this.selected_value = valueId;
+                            $.each(this.values, function () {
+                                if(this.id == valueId){
+                                    prod_img_url = this.img_url;
+                                }
+                            });
                         }
                         if (this.selected_value != null){
                             selectdProperties += 1;
@@ -149,6 +156,7 @@
                     });
                     this.selectdPvs = pvs;
                     this.selectdProperties = selectdProperties;
+                    this.prod_img_url = prod_img_url;
                     // console.log(this.selectdProperties);
                     // console.log(JSON.stringify(this.selectdPvs));
                     $("#id_prod_sku_pvs").val(JSON.stringify(this.selectdPvs));
@@ -247,6 +255,7 @@
         prod.prod_id = {{ prod.id }};
         prod.prod_price = {{ prod.price }};
         prod.prod_qty = {{ prod.qty }};
+        prod.prod_img_url = "{{ prod.img_url }}";
         $.getJSON("{% url 'ec:prod_pvs_json' prod_id=prod.id %}", function (data) {
                 prod.properties = data;
             });
