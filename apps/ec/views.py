@@ -4,6 +4,7 @@
 import logging
 import json
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
@@ -158,6 +159,51 @@ def get_prod_pvs(prod_id):
         return 0
 
 
+def get_prod_pvs_json(request, prod_id):
+    prod_id = int(prod_id)
+    property_list = []
+    properties = get_prod_properties(prod_id)
+    if properties != 0:
+        for property in properties:
+            property_dict = {}
+            property_dict['id'] = int(property.id)
+            property_dict['name'] = property.name
+            property_dict['selected_value'] = None
+            values = []
+            property_values = get_prod_property_values(property.id)
+            for property_value in property_values:
+                value ={}
+                value['id'] = int(property_value.id)
+                value['property_id'] = int(property_value.property_id)
+                value['value'] = property_value.value
+                value['img_url'] = property_value.img_url
+                values.append(value)
+            property_dict['values'] = values
+            property_list.append(property_dict)
+        return HttpResponse(json.dumps(property_list))
+    else:
+        return HttpResponse(0)
+
+
+def get_prod_skus_json(request, prod_id):
+    logger.debug("查询prod#" + str(prod_id) + "的sku json")
+    cnt = Sku.objects.filter(prod_id=prod_id).count()
+    if cnt != 0:
+        skus = Sku.objects.filter(prod_id=prod_id)
+        sku_list = []
+        for sku in skus:
+            sku_dict = {}
+            sku_dict['id'] = sku.id
+            sku_dict['prod_id'] = int(sku.prod_id)
+            sku_dict['price'] = str(sku.price)
+            sku_dict['qty'] = int(sku.qty)
+            sku_dict['pvs'] = sku.pvs
+            sku_list.append(sku_dict)
+        return HttpResponse(json.dumps(sku_list))
+    else:
+        return HttpResponse(0)
+
+
 # 查询某个商品的详情信息
 def get_prod_detail(request, prod_id):
     prod = Prod.objects.get(id=prod_id)
@@ -247,6 +293,52 @@ def add_to_cart(request):
                   context_dict)
 
 
+@login_required
+def add_sku_to_cart(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    prod_id = request.POST.get('prod_id')
+    sku_id = request.POST.get('sku_id')
+    qty = request.POST.get('qty')
+    print(prod_id)
+    print(sku_id)
+    print(qty)
+    prod = Prod.objects.get(id=prod_id)
+    sku = Sku.objects.get(id=sku_id)
+    amount = int(qty) * sku.price
+    # check库存
+    if sku.qty < int(qty):
+        enough = 0
+    else:
+        enough = 1
+        # 创建订单
+        so_id = create_order(cust_id)
+        # 创建订单行
+        sol = Sol()
+        sol.so_id = so_id
+        sol.cust_id = cust_id
+        sol.prod_id = prod.id
+        sol.sku_id = sku.id
+        sol.name = prod.name
+        sol.img_url = sku.img_url
+        sol.price = sku.price
+        sol.qty = qty
+        sol.created_date = timezone.now()
+        sol.updated_date = timezone.now()
+        sol.status = 1
+        sol.save()
+        logger.debug('创建订单行#' + str(sol.id))
+        qty = sol.qty
+        amount = int(sol.qty) * prod.price
+    context_dict = {'sku': sku,
+                    'prod_name': sol.name,
+                    'qty': qty,
+                    'enough': enough,
+                    'amount': amount}
+    return render(request,
+                  'ec/_add_to_cart_message.html',
+                  context_dict)
+
+
 def get_cart_info(cust_id):
     # 查询该用户是否有购物车信息
     cust = Cust.objects.get(id=cust_id)
@@ -259,6 +351,7 @@ def get_cart_info(cust_id):
         sols = Sol.objects.filter(cust_id=cust_id,
                                   status=1).values('so_id',
                                                    'prod_id',
+                                                   'sku_id',
                                                    'name',
                                                    'img_url',
                                                    'price').annotate(qty=Sum('qty'),
@@ -288,6 +381,35 @@ def get_cart_detail(request):
 
 
 @login_required
+def add_sku(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    so_id = create_order(cust_id)
+    prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    sku = Sku.objects.get(id=request.POST.get('sku_id'))
+    # 创建订单行
+    sol = Sol()
+    sol.so_id = so_id
+    sol.cust_id = cust_id
+    sol.prod_id = prod.id
+    sol.sku_id = sku.id
+    sol.name = prod.name
+    sol.img_url = sku.img_url
+    sol.price = sku.price
+    sol.qty = 1
+    sol.created_date = timezone.now()
+    sol.updated_date = timezone.now()
+    sol.status = 1
+    sol.save()
+    logger.debug('创建订单行#' + str(sol.id))
+    qty = sol.qty
+    amount = int(sol.qty) * prod.price
+    context_dict = get_cart_info(cust_id)
+    return render(request,
+                  'ec/_cart_detail.html',
+                  context_dict)
+
+
+@login_required
 def add_prod(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
     so_id = create_order(cust_id)
@@ -301,6 +423,34 @@ def add_prod(request):
     sol.img_url = prod.img_url
     sol.price = prod.price
     sol.qty = 1
+    sol.created_date = timezone.now()
+    sol.updated_date = timezone.now()
+    sol.status = 1
+    sol.save()
+    logger.debug('创建订单行#' + str(sol.id))
+    qty = sol.qty
+    amount = int(sol.qty) * prod.price
+    context_dict = get_cart_info(cust_id)
+    return render(request,
+                  'ec/_cart_detail.html',
+                  context_dict)
+
+
+@login_required
+def del_sku(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    so_id = create_order(cust_id)
+    prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    sku = Sku.objects.get(id=request.POST.get('sku_id'))
+    sol = Sol()
+    sol.so_id = so_id
+    sol.cust_id = cust_id
+    sol.prod_id = prod.id
+    sol.sku_id = sku.id
+    sol.name = prod.name
+    sol.img_url = sku.img_url
+    sol.price = prod.price
+    sol.qty = -1
     sol.created_date = timezone.now()
     sol.updated_date = timezone.now()
     sol.status = 1
@@ -334,6 +484,47 @@ def del_prod(request):
     logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty
     amount = int(sol.qty) * prod.price
+    context_dict = get_cart_info(cust_id)
+    return render(request,
+                  'ec/_cart_detail.html',
+                  context_dict)
+
+
+@login_required
+def rmv_sku(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    so_id = create_order(cust_id)
+    prod = Prod.objects.get(id=request.POST.get('prod_id'))
+    sku = Sku.objects.get(id=request.POST.get('sku_id'))
+    cnt_sol = Sol.objects.filter(cust_id=cust_id,
+                                 so_id=so_id).count()
+    cnt_sol_sku = Sol.objects.filter(cust_id=cust_id,
+                                     so_id=so_id,
+                                     sku_id=sku.id).count()
+    # No select distinct prod_id
+    # cnt_so_prod = Sol.objects.filter(cust_id=cust_id,
+    #                                  so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
+    print cnt_sol_sku
+    logger.debug('订单#' + str(so_id) + 'sku distinct数:' + str(cnt_sol_sku))
+    if cnt_sol == cnt_sol_sku:
+        # 购物车只有一种商品时，在移除该商品的同时需要删除订单信息
+        # Sol.objects.filter(cust_id=cust_id,
+        #                    so_id=so_id,
+        #                    prod_id=prod.id,
+        #                    status=1).delete()
+        Sol.objects.filter(cust_id=cust_id,
+                           so_id=so_id,
+                           status=1).delete()
+        logger.debug('删除sku#' + str(sku.id) + '订单行')
+        So.objects.get(id=so_id).delete()
+        logger.debug('删除sku#' + str(sku.id) + '所在订单#' + str(so_id))
+    else:
+        Sol.objects.filter(cust_id=cust_id,
+                           so_id=so_id,
+                           prod_id=prod.id,
+                           sku_id=sku.id,
+                           status=1).delete()
+        logger.debug('删除sku#' + str(sku.id) + '订单行')
     context_dict = get_cart_info(cust_id)
     return render(request,
                   'ec/_cart_detail.html',
@@ -428,6 +619,45 @@ def deduct_stock(so_id):
     return context_dict
 
 
+@transaction.atomic
+def deduct_sku_stock(so_id):
+    # 根据订单id对订单行在产品维度进行聚合
+    sols = Sol.objects.filter(so_id=so_id,
+                              status=1).values('so_id',
+                                               'prod_id',
+                                               'sku_id',
+                                               'name',
+                                               'img_url',
+                                               'price').annotate(qty=Sum('qty'),
+                                                                 amt=Sum('qty') * F('price'))
+    # 根据订单上经过聚合的商品进行扣库存操作
+    # 锁库存
+    for sol in sols:
+        Sku.objects.select_for_update().get(id=sol['sku_id'])
+    # check库存
+    # 缺货商品列表
+    skus = []
+    for sol in sols:
+        sku = Sku.objects.select_for_update().get(id=sol['sku_id'])
+        if sku.qty < sol['qty']:
+            skus.append(sku)
+    # 扣库存
+    if len(skus) > 0:
+        context_dict = {
+            'success': 0,
+            'skus': skus
+        }
+    else:
+        for sol in sols:
+            skus = Sku.objects.select_for_update().get(id=sol['sku_id'])
+            sku.qty = sku.qty - sol['qty']
+            sku.save()
+        context_dict = {
+            'success': 1
+        }
+    return context_dict
+
+
 @login_required
 def checkout_confirm(request):
     # 查询客户信息
@@ -440,7 +670,7 @@ def checkout_confirm(request):
     cust.save()
     # 查询客户订单信息
     so = So.objects.filter(cust_id=cust.id, status=1)[0]
-    context_dict = deduct_stock(so.id)
+    context_dict = deduct_sku_stock(so.id)
     # 扣库存成功
     if context_dict['success'] == 1:
         # 修改客户订单的地址信息
@@ -483,7 +713,6 @@ def checkout_confirm(request):
         return render(request,
                       'ec/checkout_lack.html',
                       context_dict)
-
 
 
 @login_required

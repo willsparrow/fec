@@ -5,7 +5,8 @@
             <span class="glyphicon glyphicon-plus"/>
         </div>
         {{ add_to_cart_form.qty }}
-        <input id="id_prod_id" name="prod_id" type="number" value="{{ prod.id }}" style="display:none;">
+        <input id="id_prod_id" name="prod_id" type="text" value="{{ prod.id }}" style="display:none;">
+        <input id="id_prod_sku_pvs" name="prod_sku_pvs" type="text" style="display:none;">
         <div class="prod-qty-del" style="display:inline;">
             <span class="glyphicon glyphicon-minus"/>
         </div>

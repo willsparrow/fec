@@ -46,10 +46,12 @@
                                     <td>
                                         <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
                                                style="display:none;">
+                                        <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
+                                               style="display:none;">
                                         <div class="icon-add btn btn-default" style="display:inline;">
                                             <span class="glyphicon glyphicon-plus"/>
                                         </div>
-                                        <input id="id_prod_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
+                                        <input id="id_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
                                         <div {% if sol.qty <= 1  %}class="icon-del btn btn-default disabled"{% else %}class="icon-del btn btn-default"{% endif %} style="display:inline;">
                                             <span class="glyphicon glyphicon-minus"/>
                                         </div>
@@ -58,6 +60,8 @@
                                     <td>{{ sol.amt }}</td>
                                     <td>
                                         <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
+                                               style="display:none;">
+                                        <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
                                                style="display:none;">
                                         <div class="icon-rmv btn btn-default" style="display:inline;">
                                             <span class="glyphicon glyphicon-remove"/>

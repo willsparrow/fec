@@ -140,6 +140,7 @@ class Sol(models.Model):
     so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     cust_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     prod_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    sku_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     name = models.CharField(max_length=100, null=True)
     img_url = models.CharField(max_length=100, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)

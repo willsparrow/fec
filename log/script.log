@@ -3452,3 +3452,1167 @@ OperationalError: (1054, "Unknown column 't_prod.img_url' in 'field list'")
 [2017-06-27 15:47:02,523] [Thread-6:2872] [django.request:170] [base:get_response] [WARNING]- Not Found: /None
 [2017-06-27 15:47:05,085] [Thread-9:2512] [django.request:170] [base:get_response] [WARNING]- Not Found: /None
 [2017-06-27 15:47:15,806] [Thread-12:2668] [django.request:170] [base:get_response] [WARNING]- Not Found: /None
+[2017-06-29 13:52:25,467] [Thread-2:3344] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 1 argument (0 given)
+[2017-06-29 13:52:50,082] [Thread-2:2824] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 2 arguments (0 given)
+[2017-06-29 13:54:13,516] [Thread-3:1788] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 2 arguments (0 given)
+[2017-06-29 13:54:14,608] [Thread-4:4476] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 2 arguments (0 given)
+[2017-06-29 13:54:15,144] [Thread-5:4892] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 2 arguments (0 given)
+[2017-06-29 13:54:21,677] [Thread-2:4732] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 42, in <module>
+    url(r'^prod_pvs_json/(?P<prod_id>\d+)/$', get_prod_pvs_json(), name='prod_pvs_json'),
+TypeError: get_prod_pvs_json() takes exactly 1 argument (0 given)
+[2017-06-29 13:55:49,776] [Thread-7:1576] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:56:11,549] [Thread-8:2840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:56:32,043] [Thread-9:3972] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:56:47,736] [Thread-10:4512] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:30,073] [Thread-2:4140] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:32,638] [Thread-3:3860] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:33,759] [Thread-4:2640] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:34,740] [Thread-5:2036] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:35,619] [Thread-6:396] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:36,309] [Thread-7:1228] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:36,825] [Thread-8:3412] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:37,148] [Thread-9:2716] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:37,398] [Thread-10:1736] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:37,627] [Thread-11:3952] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:57:37,805] [Thread-12:1976] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 13:58:22,279] [Thread-2:1680] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: get_prod_pvs_json() got multiple values for keyword argument 'prod_id'
+[2017-06-29 14:01:40,819] [Thread-2:1440] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, json.dumps(property_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('1') is not JSON serializable
+[2017-06-29 14:02:27,540] [Thread-2:2468] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 98, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+TemplateDoesNotExist: [{"selectd_value": null, "values": [{"value": "\u4e1b\u6797\u7eff", "id": 1, "property_id": 1}, {"value": "\u704c\u6728\u7eff", "id": 2, "property_id": 1}, {"value": "\u6d77\u6d6a\u84dd", "id": 3, "property_id": 1}, {"value": "\u6781\u5149\u7eff", "id": 4, "property_id": 1}, {"value": "\u7ecf\u5178\u9ed1", "id": 5, "property_id": 1}, {"value": "\u7ecf\u5178\u7ea2", "id": 6, "property_id": 1}, {"value": "\u73ab\u7470\u7d2b", "id": 7, "property_id": 1}, {"value": "\u7cd6\u679c\u7ea2", "id": 8, "property_id": 1}, {"value": "\u751c\u5fc3\u7c89", "id": 9, "property_id": 1}, {"value": "\u590f\u5a01\u5937\u7c89", "id": 10, "property_id": 1}], "id": 1, "name": "\u989c\u8272"}]
+[2017-06-29 14:02:32,529] [Thread-3:5032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 98, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 46, in get_template
+    raise TemplateDoesNotExist(template_name)
+TemplateDoesNotExist: [{"selectd_value": null, "values": [{"value": "\u4e1b\u6797\u7eff", "id": 1, "property_id": 1}, {"value": "\u704c\u6728\u7eff", "id": 2, "property_id": 1}, {"value": "\u6d77\u6d6a\u84dd", "id": 3, "property_id": 1}, {"value": "\u6781\u5149\u7eff", "id": 4, "property_id": 1}, {"value": "\u7ecf\u5178\u9ed1", "id": 5, "property_id": 1}, {"value": "\u7ecf\u5178\u7ea2", "id": 6, "property_id": 1}, {"value": "\u73ab\u7470\u7d2b", "id": 7, "property_id": 1}, {"value": "\u7cd6\u679c\u7ea2", "id": 8, "property_id": 1}, {"value": "\u751c\u5fc3\u7c89", "id": 9, "property_id": 1}, {"value": "\u590f\u5a01\u5937\u7c89", "id": 10, "property_id": 1}], "id": 1, "name": "\u989c\u8272"}]
+[2017-06-29 14:04:15,930] [Thread-2:2176] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:04:25,723] [Thread-2:3992] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:04:27,371] [Thread-3:4576] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:04:31,118] [Thread-4:4888] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:05:21,778] [Thread-6:152] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:05:46,361] [Thread-8:2392] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:05:48,515] [Thread-9:2260] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:09:09,398] [Thread-11:1744] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:09:56,331] [Thread-13:3224] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_pvs_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 182, in get_prod_pvs_json
+    return render(request, 'ec/_msg.html', json.dumps(property_list))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 72, in render
+    context = make_context(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 272, in make_context
+    context.push(original_context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 55, in push
+    return ContextDict(self, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\context.py", line 20, in __init__
+    super(ContextDict, self).__init__(*args, **kwargs)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+[2017-06-29 14:17:04,674] [Thread-4:1364] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/prod_pvs_json/
+[2017-06-29 14:17:18,700] [Thread-5:4152] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/prod_pvs_json/
+[2017-06-29 14:23:47,436] [Thread-3:4324] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:23:47,714] [Thread-5:3508] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:23:51,806] [Thread-7:3296] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:23:52,368] [Thread-9:4364] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:25:13,463] [Thread-11:228] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:25:13,966] [Thread-13:2668] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:30:58,736] [Thread-3:4988] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:30:59,059] [Thread-5:688] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:32:12,826] [Thread-7:3404] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:32:13,144] [Thread-9:2636] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:34:00,490] [Thread-11:3932] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.name }}
+[2017-06-29 14:34:00,999] [Thread-13:3696] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.name }}
+[2017-06-29 14:34:54,236] [Thread-16:3300] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:34:54,618] [Thread-18:3132] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:35:01,763] [Thread-20:4544] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:35:02,312] [Thread-22:2716] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:36:21,234] [Thread-4:1988] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:36:21,647] [Thread-6:2076] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.value }}
+[2017-06-29 14:50:35,464] [Thread-22:4316] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:50:35,832] [Thread-24:3124] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:51:45,250] [Thread-26:5116] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 14:51:45,749] [Thread-28:664] [django.request:170] [base:get_response] [WARNING]- Not Found: /prod_detail/29/{{ value.img_url }}
+[2017-06-29 15:55:36,676] [Thread-12:4088] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 203, in get_prod_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_prod_pv_json' with arguments '()' and keyword arguments '{u'prod_id': 29L}' not found. 0 pattern(s) tried: []
+[2017-06-29 15:56:10,273] [Thread-2:2348] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 203, in get_prod_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_prod_pv_json' with arguments '()' and keyword arguments '{u'prod_id': 29L}' not found. 0 pattern(s) tried: []
+[2017-06-29 15:56:13,503] [Thread-3:4180] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 203, in get_prod_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_prod_pv_json' with arguments '()' and keyword arguments '{u'prod_id': 29L}' not found. 0 pattern(s) tried: []
+[2017-06-29 15:56:17,730] [Thread-4:2568] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /prod_detail/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 203, in get_prod_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'get_prod_pv_json' with arguments '()' and keyword arguments '{u'prod_id': 29L}' not found. 0 pattern(s) tried: []
+[2017-07-03 11:18:44,569] [Thread-65:4856] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 244, in add_to_cart
+    prod = Prod.objects.get(id=prod_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: Prod matching query does not exist.
+[2017-07-03 13:30:11,563] [Thread-5:3564] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 199, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:30:15,875] [Thread-8:4324] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 199, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:31:16,298] [Thread-11:2660] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 199, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:31:29,798] [Thread-4:3808] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 199, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:32:20,953] [Thread-7:2480] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 199, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:37:27,132] [Thread-4:1208] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 189, in get_prod_skus_json
+    logger.debug("鏌ヨprod" + prod_id + "鐨剆ku json")
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+[2017-07-03 13:38:31,496] [Thread-4:676] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 189, in get_prod_skus_json
+    logger.debug("鏌ヨprod" + prod_id + "鐨剆ku json")
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+[2017-07-03 13:39:14,092] [Thread-4:2636] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 194, in get_prod_skus_json
+    for sku in skus:
+TypeError: 'int' object is not iterable
+[2017-07-03 13:39:57,611] [Thread-3:908] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 189, in get_prod_skus_json
+    logger.debug("鏌ヨprod" + prod_id + "鐨剆ku json")
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xe6 in position 0: ordinal not in range(128)
+[2017-07-03 13:41:03,612] [Thread-2:4920] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 194, in get_prod_skus_json
+    for sku in skus:
+TypeError: 'int' object is not iterable
+[2017-07-03 13:41:26,086] [Thread-2:4468] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 202, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:41:28,563] [Thread-3:3428] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 202, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('128.00') is not JSON serializable
+[2017-07-03 13:41:49,869] [Thread-2:4732] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/prod_skus_json/29/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 202, in get_prod_skus_json
+    return HttpResponse(json.dumps(sku_list))
+  File "C:\Python27\lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: Decimal('29') is not JSON serializable
+[2017-07-03 16:01:28,161] [Thread-4:4132] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 375, in get_cart_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 329, in render
+    return nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 217, in render
+    nodelist.append(node.render(context))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_detail' with arguments '()' and keyword arguments '{u'prod_id': ''}' not found. 1 pattern(s) tried: ['prod_detail/(?P<prod_id>\\d+)/$']
+[2017-07-03 16:02:40,322] [Thread-5:4036] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 375, in get_cart_detail
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 329, in render
+    return nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 217, in render
+    nodelist.append(node.render(context))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_detail' with arguments '()' and keyword arguments '{u'prod_id': ''}' not found. 1 pattern(s) tried: ['prod_detail/(?P<prod_id>\\d+)/$']
+[2017-07-03 16:03:09,130] [Thread-9:4220] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 375, in get_cart_detail
+    'ec/cart.html',
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 329, in render
+    return nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 217, in render
+    nodelist.append(node.render(context))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'prod_detail' with arguments '()' and keyword arguments '{u'prod_id': ''}' not found. 1 pattern(s) tried: ['prod_detail/(?P<prod_id>\\d+)/$']
+[2017-07-03 16:08:42,177] [Thread-6:2780] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/add_sku_to_cart/
+[2017-07-03 16:09:44,773] [Thread-3:4580] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 303, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: Sku matching query does not exist.
+[2017-07-03 16:10:58,885] [Thread-5:2508] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 306, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: Sku matching query does not exist.
+[2017-07-03 16:23:56,223] [Thread-6:220] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-03 16:55:55,249] [Thread-76:3064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 439, in rmv_prod
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 252, in create_order
+    so = So.objects.filter(cust_id=cust_id, status=1)[0]
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 201, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+[2017-07-03 16:55:55,572] [Thread-78:4840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 377, in get_cart_detail
+    context_dict = get_cart_info(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 361, in get_cart_info
+    status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 201, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+[2017-07-03 16:55:56,267] [Thread-79:1196] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 461, in rmv_prod
+    So.objects.get(id=so_id).delete()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-03 16:55:56,295] [Thread-74:4920] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 461, in rmv_prod
+    So.objects.get(id=so_id).delete()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-03 16:55:56,335] [Thread-80:164] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/rmv_prod/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 461, in rmv_prod
+    So.objects.get(id=so_id).delete()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-04 09:49:13,637] [Thread-31:3604] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-04 09:58:31,934] [Thread-47:3636] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-04 11:03:20,403] [Thread-45:3540] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 306, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1310, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1338, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1209, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1102, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 105, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 143, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+[2017-07-04 11:04:14,016] [Thread-54:388] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 306, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1310, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1338, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1209, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1102, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 105, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 143, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''

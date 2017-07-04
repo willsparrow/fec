@@ -29,22 +29,22 @@
                     <tr>
                         <th scope="row">{{ forloop.counter }}</th>
                         <td>
-                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
-                                <img src="{{ prod.img_url }}">
+                            <a href="{% url 'prod_detail' prod_id=sku.prod_id %}">
+                                <img src="{{ sku.img_url }}">
                             </a>
                         </td>
                         <td>
-                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
-                                {{ prod.id }}
+                            <a href="{% url 'prod_detail' prod_id=sku.prod_id %}">
+                                {{ sku.id }}
                             </a>
                         </td>
                         <td>
-                            <a href="{% url 'prod_detail' prod_id=prod.id %}">
-                                {{ prod.name }}
+                            <a href="{% url 'prod_detail' prod_id=sku.prod_id %}">
+                                {{ sku.id }}
                             </a>
                         </td>
-                        <td>{{ prod.qty }}</td>
-                        <td>{{ prod.price }}</td>
+                        <td>{{ sku.qty }}</td>
+                        <td>{{ sku.price }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>

@@ -2,6 +2,7 @@
 
 {% block message %}
     {% include "ec/_add_to_cart_message.html" %}
+    {% include "ec/_msg.html" %}
 {% endblock %}
 
 {% block prods %}
@@ -13,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div class="row prod">
+        <div id = "prod" class="row prod">
             <div class="col-xs-12 col-sm-12 col-md-1"></div>
 
             <div class="col-xs-12 col-sm-12 col-md-5">
@@ -46,27 +47,20 @@
                     支付方式:<strong>货到付款</strong>
                 </div>
                 {% if prod_pvs != 0 %}
-                    <div class="properties">
-                        {% for prod_pv in prod_pvs%}
-                            <div class="property">
-                                <span class="p-name">{{ prod_pv.name }}</span>
+                    <div id="prod_pv" class="prod">
+                        <div class="properties">
+                            <div v-for="(property, index) in properties" v-bind:index="index" class="property">
+                                <span class="p-name" :class="propertyClassName(index)">{% verbatim %} {{ property.name }} {% endverbatim %}</span>
                                 <div class="property-values">
                                     <ul class="values">
-                                        {% for value in prod_pv.values %}
-                                            {% if value.img_url %}
-                                                <li class="value">
-                                                    <a class="tab"><img src="{{ value.img_url }}"></a>
-                                                </li>
-                                            {% else %}
-                                                <li class="value">
-                                                    <a><span>{{ value.name }}</span></a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
+                                        <li v-for="value in property.values" v-on:click="setSelectdValue(value.id, value.property_id)" class="value">
+                                            <a v-if="value.img_url" class="tab" :class="isValueSelected(value.id)"><img :src="value.img_url"></a>
+                                            <a v-else class="tab-txt" :class="isValueSelected(value.id)"><span class="txt">{% verbatim %} {{ value.value }} {% endverbatim %}</span></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                        {% endfor %}
+                        </div>
                     </div>
                 {% endif %}
                 <div class="prod-qty">
@@ -75,7 +69,29 @@
                 <div class="prod-price">
                     <h2>￥:{{ prod.price }}</h2>
                 </div>
-                <div>{% include "ec/_add_to_cart_form.html" %}</div>
+                <div>
+                    <form action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
+                        {% csrf_token %}
+                        <div class="prod-qty" style="display:inline;">
+                            <div class="prod-qty-add" style="display:inline;" v-on:click="addProdQty()">
+                                <span class="glyphicon glyphicon-plus"/>
+                            </div>
+                            <input id="id_qty" v-model="qty" min="1" name="qty" step="1" type="number" value="1">
+                            <input id="id_prod_id" name="prod_id" type="text" value="{{ prod.id }}" style="display:none;">
+                            <input id="id_prod_sku_pvs" name="prod_sku_pvs" type="text" style="display:none;">
+                            <div class="prod-qty-del" style="display:inline;" v-on:click="delProdQty()">
+                                <span class="glyphicon glyphicon-minus"/>
+                            </div>
+                        </div>
+                        <div>
+                            {% if request.user.is_authenticated %}
+                                <button type="button" class="btn btn-default btn-add-to-cart" v-on:click="addSkuToCart()">加入购物车</button>
+                            {% else %}
+                                <button type="submit" class="btn btn-default btn-add-to-cart">加入购物车</button>
+                            {% endif %}
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -92,19 +108,127 @@
             </div>
         </div>
     {% endif %}
-    <div id="prod_pv">
 
-    </div>
     <script type="text/javascript">
-        var prod_pv = new Vue({
-            el: '#prod_pv',
+        var prod = new Vue({
+            el: '#prod',
             data:{
-                properties:properties,
-                skus:skus
+                prod_id:null,
+                properties:null,
+                selectdProperties:null,
+                selectdPvs:null,
+                qty: 1,
+                skus:null,
+                sku_id:null,
+                msg:null
             },
             methods:{
-
+                setSelectdValue: function (valueId, propertyId) {
+                    pvs = [];
+                    selectdProperties = 0;
+                    $.each(this.properties, function () {
+                        // console.log(this.id);
+                        if (this.id == propertyId){
+                            this.selected_value = valueId;
+                        }
+                        if (this.selected_value != null){
+                            selectdProperties += 1;
+                            // console.log(selectdProperties);
+                            var pv = {};
+                            pv.propertyId = this.id;
+                            pv.valueId = this.selected_value;
+                            pvs.push(pv);
+                        }
+                    });
+                    this.selectdPvs = pvs;
+                    this.selectdProperties = selectdProperties;
+                    // console.log(this.selectdProperties);
+                    // console.log(JSON.stringify(this.selectdPvs));
+                    $("#id_prod_sku_pvs").val(JSON.stringify(this.selectdPvs));
+                    console.log($("#id_prod_sku_pvs").val());
+                    // console.log(this.pvs);
+                },
+                isValueSelected: function (value_id) {
+                    var isValueSelected = false;
+                    $.each(this.selectdPvs, function () {
+                        if (this.valueId == value_id){
+                            console.log(this.valueId);
+                            console.log("tab-selected");
+                            isValueSelected = true;
+                        }
+                    });
+                    if (isValueSelected){
+                        return 'tab-selected';
+                    }
+                    else{
+                        return null;
+                    }
+                },
+                propertyClassName: function (key) {
+                    return 'p-name-' + key;
+                },
+                addProdQty:function () {
+                    this.qty += 1;
+                },
+                delProdQty:function () {
+                    if(this.qty <= 1){
+                        this.qty = 1;
+                    }
+                    else{
+                        this.qty -= 1;
+                    }
+                },
+                addSkuToCart: function () {
+                    if(this.properties == 0){
+                        console.log(this.properties);
+                        prod_id = this.prod_id;
+                        sku_id = null;
+                        $.each(this.skus, function () {
+                            if(this.prod_id == prod_id){
+                                sku_id = this.id;
+                            }
+                        });
+                        this.sku_id = sku_id;
+                        console.log(this.prod_id);
+                        console.log(this.sku_id);
+                        console.log(this.qty);
+                        $.post("/ec/add_sku_to_cart/", {'prod_id':this.prod_id, 'sku_id':this.sku_id, 'qty':this.qty}, function(ret){
+                            //console.log(ret)
+                            $("#msg-add-to-cart").html(ret);
+                            $("#modal-add-to-cart").modal('show');
+                        });
+                    }
+                    else {
+                        if(this.selectdProperties < this.properties.length){
+                            $("#msg-contend").html("请选择玩整的商品属性！");
+                            $("#modal-msg").modal('show');
+                        }
+                        else {
+                            selectdPvs = this.selectdPvs;
+                            sku_id = null;
+                            $.each(this.skus, function () {
+                                if(this.pvs == JSON.stringify(selectdPvs)){
+                                    sku_id = this.id;
+                                }
+                            });
+                            this.sku_id = sku_id;
+                        }
+                        console.log(this.sku_id);
+                        $.post("/ec/add_sku_to_cart/", {'prod_id':this.prod_id, 'sku_id':this.sku_id, 'qty':this.qty}, function(ret){
+                            //console.log(ret)
+                            $("#msg-add-to-cart").html(ret);
+                            $("#modal-add-to-cart").modal('show');
+                        });
+                    }
+                }
             }
         })
+        prod.prod_id = {{ prod.id }};
+        $.getJSON("{% url 'ec:prod_pvs_json' prod_id=prod.id %}", function (data) {
+                prod.properties = data;
+            });
+        $.getJSON("{% url 'ec:prod_skus_json' prod_id=prod.id %}", function (data) {
+                prod.skus = data;
+            });
     </script>
 {% endblock %}
