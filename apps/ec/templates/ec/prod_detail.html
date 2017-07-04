@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div id = "prod" class="row prod">
+        <div id="prod" class="row prod">
             <div class="col-xs-12 col-sm-12 col-md-1"></div>
 
             <div class="col-xs-12 col-sm-12 col-md-5">
@@ -40,12 +40,22 @@
                 <div class="prod-description">
                     {{ prod.description }}
                 </div>
-                <div class="prod-id">
-                    商品编号:<strong>{{ prod.id }}</strong>
+
+                <div class="prod-info">
+                    <div class="prod-id">
+                        <span class="label-name">商品编号</span><strong>{{ prod.id }}</strong>
+                    </div>
+                    <div class="prod-price">
+                        <span class="label-name label-price">价格</span><span class="label-name label-price price"><span>￥</span><span>{% verbatim %} {{ prod_price }} {% endverbatim %}</span></span>
+                    </div>
+                     <div class="prod-qty">
+                        <span class="label-name">库存</span><strong>{% verbatim %} {{ prod_qty }} {% endverbatim %}</strong>
+                    </div>
+                    <div class="prod-ship">
+                        <span class="label-name">支付方式</span><span>货到付款</span>
+                    </div>
                 </div>
-                <div class="prod-ship">
-                    支付方式:<strong>货到付款</strong>
-                </div>
+
                 {% if prod_pvs != 0 %}
                     <div id="prod_pv" class="prod">
                         <div class="properties">
@@ -63,12 +73,7 @@
                         </div>
                     </div>
                 {% endif %}
-                <div class="prod-qty">
-                    <h5><span>库存:<strong>{{ prod.qty }}</strong></span></h5>
-                </div>
-                <div class="prod-price">
-                    <h2>￥:{{ prod.price }}</h2>
-                </div>
+
                 <div>
                     <form action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
                         {% csrf_token %}
@@ -114,6 +119,8 @@
             el: '#prod',
             data:{
                 prod_id:null,
+                prod_price:null,
+                prod_qty:null,
                 properties:null,
                 selectdProperties:null,
                 selectdPvs:null,
@@ -147,6 +154,20 @@
                     $("#id_prod_sku_pvs").val(JSON.stringify(this.selectdPvs));
                     console.log($("#id_prod_sku_pvs").val());
                     // console.log(this.pvs);
+                    prod_price = this.prod_price;
+                    prod_qty = this.prod_qty;
+                    if(this.selectdProperties == this.properties.length){
+                        $.each(this.skus, function () {
+                            if (this.pvs == JSON.stringify(pvs)){
+                                prod_price = this.price;
+                                prod_qty = this.qty;
+                            }
+                        });
+                    }
+                    this.prod_price = prod_price;
+                    this.prod_qty = prod_qty;
+                    console.log("sdfafa");
+                    console.log(this.prod_price);
                 },
                 isValueSelected: function (value_id) {
                     var isValueSelected = false;
@@ -224,6 +245,8 @@
             }
         })
         prod.prod_id = {{ prod.id }};
+        prod.prod_price = {{ prod.price }};
+        prod.prod_qty = {{ prod.qty }};
         $.getJSON("{% url 'ec:prod_pvs_json' prod_id=prod.id %}", function (data) {
                 prod.properties = data;
             });

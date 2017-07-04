@@ -224,9 +224,9 @@ def get_prod_detail(request, prod_id):
 # 创建订单
 def create_order(cust_id):
     logger.debug('查询该客户是否有未处理的订单')
-    cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
+    cnt = So.objects.filter(cust_id=cust_id, status=1).count()
     logger.debug(cnt)
-    if len(cnt) == 0:
+    if cnt == 0:
         logger.debug('该客户还没有订单, 创建订单')
         so = So()
         cust = Cust.objects.get(id=cust_id)
@@ -318,7 +318,7 @@ def add_sku_to_cart(request):
         sol.cust_id = cust_id
         sol.prod_id = prod.id
         sol.sku_id = sku.id
-        sol.name = prod.name
+        sol.name = sku.name
         sol.img_url = sku.img_url
         sol.price = sku.price
         sol.qty = qty
@@ -330,7 +330,6 @@ def add_sku_to_cart(request):
         qty = sol.qty
         amount = int(sol.qty) * prod.price
     context_dict = {'sku': sku,
-                    'prod_name': sol.name,
                     'qty': qty,
                     'enough': enough,
                     'amount': amount}
@@ -342,8 +341,8 @@ def add_sku_to_cart(request):
 def get_cart_info(cust_id):
     # 查询该用户是否有购物车信息
     cust = Cust.objects.get(id=cust_id)
-    cnt = So.objects.filter(cust_id=cust_id, status=1).annotate(cnt=Count('id'))
-    if len(cnt) == 0:
+    cnt = So.objects.filter(cust_id=cust_id, status=1).count()
+    if cnt == 0:
         context_dict = {'cnt': 0,
                         'cust': cust}
     else:
@@ -392,7 +391,7 @@ def add_sku(request):
     sol.cust_id = cust_id
     sol.prod_id = prod.id
     sol.sku_id = sku.id
-    sol.name = prod.name
+    sol.name = sku.name
     sol.img_url = sku.img_url
     sol.price = sku.price
     sol.qty = 1
@@ -447,7 +446,7 @@ def del_sku(request):
     sol.cust_id = cust_id
     sol.prod_id = prod.id
     sol.sku_id = sku.id
-    sol.name = prod.name
+    sol.name = sku.name
     sol.img_url = sku.img_url
     sol.price = prod.price
     sol.qty = -1
@@ -504,7 +503,6 @@ def rmv_sku(request):
     # No select distinct prod_id
     # cnt_so_prod = Sol.objects.filter(cust_id=cust_id,
     #                                  so_id=so_id).values('prod_id').distinct().annotate(count=Count())[0]['count']
-    print cnt_sol_sku
     logger.debug('订单#' + str(so_id) + 'sku distinct数:' + str(cnt_sol_sku))
     if cnt_sol == cnt_sol_sku:
         # 购物车只有一种商品时，在移除该商品的同时需要删除订单信息
@@ -703,8 +701,8 @@ def checkout_confirm(request):
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
-        send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
+        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
         return render(request,
                       'ec/checkout_confirm.html',
                       context_dict)

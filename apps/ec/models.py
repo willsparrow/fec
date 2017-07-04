@@ -74,6 +74,7 @@ class Sku(models.Model):
     class Meta:
         db_table = 't_sku'
     prod_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    name = models.CharField(max_length=100, null=True)
     code = models.CharField(max_length=100, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     qty = models.DecimalField(max_digits=10, decimal_places=0, null=True)
