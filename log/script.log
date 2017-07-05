@@ -4620,3 +4620,4 @@ ValueError: invalid literal for int() with base 10: ''
 [2017-07-04 18:35:13,107] [Thread-5:3908] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-05 09:00:11,769] [Thread-3:3688] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-05 09:48:02,993] [Thread-2:3404] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-05 10:00:17,009] [Thread-3:3572] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

@@ -63,7 +63,7 @@
                                 <div class="property-values">
                                     <ul class="values">
                                         <li v-for="value in property.values" v-on:click="setSelectdValue(value.id, value.property_id)" class="value">
-                                            <a v-if="value.img_url" class="tab" :class="isValueSelected(value.id)"><img :src="value.img_url"></a>
+                                            <a v-if="value.img_url" class="tab tab-img" :class="isValueSelected(value.id)"><img :src="value.img_url"></a>
                                             <a v-else class="tab-txt" :class="isValueSelected(value.id)"><span class="txt">{% verbatim %} {{ value.value }} {% endverbatim %}</span></a>
                                         </li>
                                     </ul>
@@ -156,7 +156,9 @@
                     });
                     this.selectdPvs = pvs;
                     this.selectdProperties = selectdProperties;
-                    this.prod_img_url = prod_img_url;
+                    if (prod_img_url != null){
+                        this.prod_img_url = prod_img_url;
+                    }
                     // console.log(this.selectdProperties);
                     // console.log(JSON.stringify(this.selectdPvs));
                     $("#id_prod_sku_pvs").val(JSON.stringify(this.selectdPvs));
