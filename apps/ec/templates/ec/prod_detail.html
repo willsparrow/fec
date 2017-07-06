@@ -63,7 +63,7 @@
                                 <div class="property-values">
                                     <ul class="values">
                                         <li v-for="value in property.values" v-on:click="setSelectdValue(value.id, value.property_id)" class="value">
-                                            <a v-if="value.img_url" class="tab tab-img" :class="isValueSelected(value.id)"><img :src="value.img_url"></a>
+                                            <a v-if="value.img_url" class="tab tab-img" :class="isValueSelected(value.id)" :title="value.value"><img :src="value.img_url"></a>
                                             <a v-else class="tab-txt" :class="isValueSelected(value.id)"><span class="txt">{% verbatim %} {{ value.value }} {% endverbatim %}</span></a>
                                         </li>
                                     </ul>
@@ -74,16 +74,16 @@
                 {% endif %}
 
                 <div>
-                    <form action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
+                    <form class="prod-qty-form" action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
                         {% csrf_token %}
-                        <div class="prod-qty" style="display:inline;">
-                            <div class="prod-qty-add" style="display:inline;" v-on:click="addProdQty()">
+                        <div class="prod-qty-input">
+                            <div class="prod-qty-icon prod-qty-add" v-on:click="addProdQty()">
                                 <span class="glyphicon glyphicon-plus"/>
                             </div>
-                            <input id="id_qty" v-model="qty" min="1" name="qty" step="1" type="number" value="1">
+                            <input id="id_qty" v-model="qty" min="1" name="qty" step="1" type="text" value="1">
                             <input id="id_prod_id" name="prod_id" type="text" value="{{ prod.id }}" style="display:none;">
                             <input id="id_prod_sku_pvs" name="prod_sku_pvs" type="text" style="display:none;">
-                            <div class="prod-qty-del" style="display:inline;" v-on:click="delProdQty()">
+                            <div class="prod-qty-icon prod-qty-del" v-on:click="delProdQty()">
                                 <span class="glyphicon glyphicon-minus"/>
                             </div>
                         </div>
@@ -101,10 +101,13 @@
     </div>
 
     {% if prod_details != 0 %}
-        <div class="container">
+        <div class="container prod-details">
             <div class="col-xs-12 col-sm-12 col-md-1"></div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-                <div class="prod-details">
+                <div class="detail-head">
+                    <span>详情</span>
+                </div>
+                <div class="detail-img">
                     {% for prod_detail in prod_details %}
                         <img class="responsive-img" src="{{ prod_detail.img_url}}">
                     {% endfor %}
@@ -231,7 +234,7 @@
                     }
                     else {
                         if(this.selectdProperties < this.properties.length){
-                            $("#msg-contend").html("请选择玩整的商品属性！");
+                            $("#msg-contend").html("请选择完整的商品属性！");
                             $("#modal-msg").modal('show');
                         }
                         else {

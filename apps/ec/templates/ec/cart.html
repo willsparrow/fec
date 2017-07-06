@@ -44,16 +44,18 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
-                                               style="display:none;">
-                                        <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
-                                               style="display:none;">
-                                        <div class="icon-add btn btn-default" style="display:inline;">
-                                            <span class="glyphicon glyphicon-plus"/>
-                                        </div>
-                                        <input id="id_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
-                                        <div {% if sol.qty <= 1  %}class="icon-del btn btn-default disabled"{% else %}class="icon-del btn btn-default"{% endif %} style="display:inline;">
-                                            <span class="glyphicon glyphicon-minus"/>
+                                        <div class="prod-qty-input">
+                                            <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
+                                                   style="display:none;">
+                                            <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
+                                                   style="display:none;">
+                                            <div class="icon-add prod-qty-icon prod-qty-add" style="display:inline;">
+                                                <span class="glyphicon glyphicon-plus"/>
+                                            </div>
+                                            <input id="id_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
+                                            <div {% if sol.qty <= 1  %}class="icon-del prod-qty-icon prod-qty-del disabled"{% else %}class="icon-del prod-qty-icon prod-qty-del"{% endif %} style="display:inline;">
+                                                <span class="glyphicon glyphicon-minus"/>
+                                            </div>
                                         </div>
                                     </td>
                                     <td>{{ sol.price }}</td>
