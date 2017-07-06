@@ -81,6 +81,7 @@ class Sku(models.Model):
     img_url = models.CharField(max_length=100, null=True)
     pvs = models.CharField(max_length=1000, null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    description = models.CharField(max_length=1000, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
 
@@ -149,6 +150,7 @@ class Sol(models.Model):
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    description = models.CharField(max_length=1000, null=True)
 
     def __str__(self):
         return str(self.id)

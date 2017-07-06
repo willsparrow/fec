@@ -325,6 +325,7 @@ def add_sku_to_cart(request):
         sol.created_date = timezone.now()
         sol.updated_date = timezone.now()
         sol.status = 1
+        sol.description = sku.description
         sol.save()
         logger.debug('创建订单行#' + str(sol.id))
         qty = sol.qty
@@ -353,8 +354,9 @@ def get_cart_info(cust_id):
                                                    'sku_id',
                                                    'name',
                                                    'img_url',
-                                                   'price').annotate(qty=Sum('qty'),
-                                                                     amt=Sum('qty') * F('price'))
+                                                   'price',
+                                                   'description').annotate(qty=Sum('qty'),
+                                                                           amt=Sum('qty') * F('price'))
         # 聚合购物车商品总数
         total = Sol.objects.filter(cust_id=cust_id,
                                    status=1).values('so_id').annotate(total=Sum(F('qty')))[0]['total']
@@ -398,6 +400,7 @@ def add_sku(request):
     sol.created_date = timezone.now()
     sol.updated_date = timezone.now()
     sol.status = 1
+    sol.description = sku.description
     sol.save()
     logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty
@@ -739,8 +742,9 @@ def get_order_info(so_id):
                                                  'prod_id',
                                                  'name',
                                                  'img_url',
-                                                 'price').annotate(qty=Sum('qty'),
-                                                                   amt=Sum('qty') * F('price'))
+                                                 'price',
+                                                 'description').annotate(qty=Sum('qty'),
+                                                                         amt=Sum('qty') * F('price'))
     # 20170112之前因为在checkout confirm时没有更新订单商品总数、总金额，在查看时用如下代码做订单信息更新
     # 聚合购物车商品总数
     # total = Sol.objects.filter(so_id=so_id,

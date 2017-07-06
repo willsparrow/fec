@@ -39,6 +39,9 @@
                                 <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
                                     {{ sol.name }}
                                 </a>
+                                <div>
+                                    {{ sol.description }}
+                                </div>
                             </td>
                             <td>{{ sol.qty }}</td>
                             <td>{{ sol.price }}</td>
