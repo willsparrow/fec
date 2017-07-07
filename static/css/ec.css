@@ -176,6 +176,14 @@ body {
     text-align:center;
     vertical-align:middle;
 }
+.cart .prod-description{
+    color: #999;
+    padding-top: 9px;
+    padding-bottom: 0px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+}
 /*
  *设置商品展示
  */
@@ -385,9 +393,11 @@ body {
     margin: -1px;
 }
 .prod-qty-input{
+    margin-top: 18px;
     border: 1px solid #ddd;
     overflow: hidden;
     display: inline-block;
+    min-width: 120px;
 }
 .prod-qty-input .prod-qty-icon{
     cursor: pointer;
@@ -421,6 +431,7 @@ body {
     -webkit-box-shadow: inset 0 0px 0 #ddd;
 }
 .prod-qty-form .btn{
+    margin-top: 18px;
     text-align: center;
     width: 140px;
     height: 50px;

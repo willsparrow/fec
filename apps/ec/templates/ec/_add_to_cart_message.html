@@ -15,7 +15,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row cart">
                             <div>
                                 <table class="table table-hover">
                                     <thead>
@@ -33,7 +33,7 @@
                                         <td><img src="{{ sku.img_url }}" width="78px" height="78px"></td>
                                         <td>
                                             <a>{{ sku.name}}</a>
-                                            <div>{{ sku.description }}</div>
+                                            <div class="prod-description">{{ sku.description }}</div>
                                         </td>
                                         <td>{{ qty }}</td>
                                         <td>{{ amount }}</td>
