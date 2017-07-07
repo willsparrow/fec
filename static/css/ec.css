@@ -34,7 +34,6 @@ body {
     max-width: 100%;
     display: block;
 }
-
 .prod-description {
     font-size: 12px;
     padding-bottom: 20px;
@@ -42,7 +41,6 @@ body {
     line-height: 18px;
     color: #999;
 }
-
 /*
  *设置导航nav menu的hover的下拉效果
  */
@@ -60,8 +58,9 @@ li.dropdown:hover > ul.dropdown-menu {
 .login {
     position: relative;
     min-height: 500px;
+    width: 264px;
     top: 100px;
-    width: 100%;
+    margin: 0 auto;
 }
 /*
  *设置注册框的位置
@@ -69,8 +68,15 @@ li.dropdown:hover > ul.dropdown-menu {
 .register {
     position: relative;
     min-height: 500px;
+    width: 264px;
     top: 100px;
-    width: 100%;
+    margin: 0 auto;
+}
+/*
+ *设置login register form效果
+ */
+.form-horizontal input{
+    width: 218px;
 }
 /*
  *设置页脚footer
@@ -595,15 +601,6 @@ body {
 	-ms-transition: all .5s ease-out;
 	-o-transition: all .5s ease-out;
 	transition: all .5s ease-out;
-}
-/*
- *设置login register form效果
- */
-.form-horizontal{
-    width: 380px;
-}
-.form-horizontal input{
-    width: 218px;
 }
 /*
  *设置activity bar效果
