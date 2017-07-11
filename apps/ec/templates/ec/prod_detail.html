@@ -77,14 +77,14 @@
                     <form class="prod-qty-form" action="{% url 'ec:add_to_card' %}" method="post" style="position: relative">
                         {% csrf_token %}
                         <div class="prod-qty-input">
-                            <div class="prod-qty-icon prod-qty-add" v-on:click="addProdQty()">
-                                <span class="glyphicon glyphicon-plus"/>
+                            <div class="prod-qty-icon prod-qty-del" v-on:click="delProdQty()">
+                                <span class="glyphicon glyphicon-minus"/>
                             </div>
                             <input id="id_qty" v-model="qty" min="1" name="qty" step="1" type="text" value="1">
                             <input id="id_prod_id" name="prod_id" type="text" value="{{ prod.id }}" style="display:none;">
                             <input id="id_prod_sku_pvs" name="prod_sku_pvs" type="text" style="display:none;">
-                            <div class="prod-qty-icon prod-qty-del" v-on:click="delProdQty()">
-                                <span class="glyphicon glyphicon-minus"/>
+                            <div class="prod-qty-icon prod-qty-add" v-on:click="addProdQty()">
+                                <span class="glyphicon glyphicon-plus"/>
                             </div>
                         </div>
                         <div>

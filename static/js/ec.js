@@ -37,6 +37,7 @@ $(document).ready(function(){
         // $(this).parent().children("input#id_prod_qty").val(parseInt($(this).parent().children("input#id_prod_qty").val()) + 1);
         console.log($(this).parent().children("input#id_qty").val());
         console.log(prod_id);
+        console.log(sku_id);
         qty = parseInt($(this).parent().children("input#id_qty").val());
         if (qty == 1){
             console.log($(this).attr("class"));

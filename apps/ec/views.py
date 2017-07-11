@@ -456,6 +456,7 @@ def del_sku(request):
     sol.created_date = timezone.now()
     sol.updated_date = timezone.now()
     sol.status = 1
+    sol.description = sku.description
     sol.save()
     logger.debug('创建订单行#' + str(sol.id))
     qty = sol.qty

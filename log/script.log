@@ -4763,3 +4763,5 @@ Traceback (most recent call last):
     import mns
 ImportError: No module named mns
 [2017-07-07 10:31:37,835] [Thread-4:2112] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-07 16:20:19,121] [Thread-2:3808] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-11 10:16:17,414] [Thread-5:3444] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

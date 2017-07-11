@@ -112,43 +112,8 @@ body {
     width: 50px;
 }
 
-.icon-add {
-    display: inline-block;
-    margin-bottom: 0;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 2px;
-    font-size: 13px;
-    line-height: 1.846;
-    border-radius: 1px;
-    transition: all 0.4s;
-    /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
-    width: 15px;
-}
-
 .icon-add:hover {
     background-color: #FFF4E8;
-}
-
-.icon-del {
-    display: inline-block;
-    margin-bottom: 0;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 2px;
-    font-size: 13px;
-    line-height: 1.846;
-    border-radius: 1px;
-    transition: all 0.4s;
-    /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
 }
 
 .icon-del:hover {
@@ -197,6 +162,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
 }
 .prod input {
     text-align: center;
@@ -415,10 +381,10 @@ body {
     background: #fff;
     text-align: center;
 }
-.prod-qty-input .prod-qty-add{
+.prod-qty-input .prod-qty-del{
     border-right: 1px solid #ddd;
 }
-.prod-qty-input .prod-qty-del{
+.prod-qty-input .prod-qty-add{
     border-left: 1px solid #ddd;
 }
 .prod-qty-input input {
