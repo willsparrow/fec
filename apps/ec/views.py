@@ -798,7 +798,7 @@ def get_order_detail(request, so_id):
 
 @login_required
 def wxpay(request):
-    so = So.objects.get(id=160)
+    so = So.objects.get(id=159)
     context_dict = {'so': so}
     return render(request,
                   'ec/wxpay.html',

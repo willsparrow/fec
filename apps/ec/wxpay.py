@@ -15,7 +15,7 @@ def unifiedorder(so_id):
     """
     so = So.objects.get(id=so_id)
     wxpay_request_dict = {}
-    wxpay_request_dict['appid'] = wxpay_settings.app_id
+    wxpay_request_dict['appid'] = wxpay_settings.appid
     wxpay_request_dict['mch_id'] = wxpay_settings.mch_id
     wxpay_request_dict['nonce_str'] = ''
     wxpay_request_dict['sign'] = ''
@@ -25,8 +25,8 @@ def unifiedorder(so_id):
     wxpay_request_dict['spbill_create_ip'] = '115.29.239.5'
     wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback'
     wxpay_request_dict['trade_type'] = 'NATIVE'
-    wxpay = WXPay(app_id=wxpay_request_dict['appid'],
-                  mch_id=wxpay_request_dict['mch_id'],
+    wxpay = WXPay(app_id=wxpay_settings.appid,
+                  mch_id=wxpay_settings.mch_id,
                   key=wxpay_settings.key,
                   cert_pem_path=None,
                   key_pem_path=None)
