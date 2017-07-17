@@ -815,6 +815,7 @@ def generate_wxpay_qrcode(request, order_id):
     return response
 
 
+@csrf_exempt
 def wxpay_callback(request):
     print request.body
     xml = unifiedorder_callback(xml=request.body)
