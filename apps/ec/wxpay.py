@@ -23,7 +23,7 @@ def unifiedorder(so_id):
     wxpay_request_dict['out_trade_no'] = so.id
     wxpay_request_dict['total_fee'] = int(so.amount * 100)
     wxpay_request_dict['spbill_create_ip'] = '115.29.239.5'
-    wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback'
+    wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback/'
     wxpay_request_dict['trade_type'] = 'NATIVE'
     wxpay = WXPay(app_id=wxpay_settings.appid,
                   mch_id=wxpay_settings.mch_id,
@@ -78,7 +78,9 @@ def unifiedorder_callback(xml):
     """
     wxpay_util = WXPayUtil()
     wxpay_result_dict = wxpay_util.xml2dict(xml)
+    print wxpay_result_dict
     if wxpay_result_dict['return_code'] == 'SUCCESS':
+        print 'SUCCESS'
         if wxpay_util.is_signature_valid(data=wxpay_result_dict, key=wxpay_settings.key):
             so = So.objects.get(id=wxpay_result_dict['out_trade_no'])
             if wxpay_result_dict['total_fee'] == int(so.amount * 100):
@@ -107,9 +109,17 @@ def unifiedorder_callback(xml):
                     wxpay_callback_dict['return_code'] = 'SUCCESS'
                     xml = wxpay_util.dict2xml(wxpay_callback_dict)
                     return xml
+        else:
+            wxpay_callback_dict = {}
+            wxpay_callback_dict['return_code'] = 'FAIL'
+            xml = wxpay_util.dict2xml(wxpay_callback_dict)
+            print xml
+            return xml
+
     else:
         wxpay_callback_dict = {}
         wxpay_callback_dict['return_code'] = 'FAIL'
         xml = wxpay_util.dict2xml(wxpay_callback_dict)
+        print xml
         return xml
 

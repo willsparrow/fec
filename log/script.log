@@ -4976,3 +4976,33 @@ Traceback (most recent call last):
 RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/ec/xml_post/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
 [2017-07-17 13:22:31,934] [Thread-3:2628] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF cookie not set.): /ec/xml_post/
 [2017-07-17 14:51:59,990] [Thread-4:3860] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-17 15:30:54,114] [Thread-12:1528] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /wxpay_callback/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 821, in wxpay_callback
+    xml = unifiedorder_callback(xml=request.body)
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 80, in unifiedorder_callback
+    wxpay_result_dict = wxpay_util.xml2dict(xml)
+  File "D:\PycharmProjects\fec\libs\pay\wxpay.py", line 130, in xml2dict
+    root = ElementTree.fromstring(xml_str)
+  File "C:\Python27\lib\xml\etree\ElementTree.py", line 1311, in XML
+    parser.feed(text)
+  File "C:\Python27\lib\xml\etree\ElementTree.py", line 1653, in feed
+    self._raiseerror(v)
+  File "C:\Python27\lib\xml\etree\ElementTree.py", line 1517, in _raiseerror
+    raise err
+ParseError: junk after document element: line 2, column 0
+[2017-07-17 15:31:40,838] [Thread-13:2316] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /wxpay_callback/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\views\decorators\csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 821, in wxpay_callback
+    xml = unifiedorder_callback(xml=request.body)
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 85, in unifiedorder_callback
+    so = So.objects.get(id=wxpay_result_dict['out_trade_no'])
+KeyError: 'out_trade_no'
