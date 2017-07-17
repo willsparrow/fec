@@ -13,4 +13,18 @@
             </div>
         </div>
     </div>
+    <script>
+    function get_order_status() {
+        $.get("{% url 'ec:check_wxpay_result' order_id=so.id %}", function(data,status){
+             if (data == 1){
+                 window.clearInterval(t1);
+                 console.log('paied');
+                 window.location.href="{% url 'ec:checkout_end' order_id=so.id %}";
+             }else{
+                 console.log('not paied');
+             }
+         });
+    }
+    var t1 = window.setInterval(get_order_status,1000);
+    </script>
 {% endblock %}

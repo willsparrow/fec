@@ -709,19 +709,32 @@ def checkout_confirm(request):
             sol.save()
         context_dict = {
             'cust': cust,
+            'so': so,
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
         # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
+        # return render(request,
+        #               'ec/checkout_confirm.html',
+        #               context_dict)
         return render(request,
-                      'ec/checkout_confirm.html',
+                      'ec/wxpay.html',
                       context_dict)
     else:
         # 扣库存失败
         return render(request,
                       'ec/checkout_lack.html',
                       context_dict)
+
+
+@login_required
+def checkout_end(request, order_id):
+    so = So.objects.get(id=order_id)
+    context_dict = {'so': so}
+    return render(request,
+                  'ec/checkout_confirm.html',
+                  context_dict)
 
 
 @login_required
@@ -797,8 +810,8 @@ def get_order_detail(request, so_id):
 
 
 @login_required
-def wxpay(request):
-    so = So.objects.get(id=167)
+def wxpay(request, order_id):
+    so = So.objects.get(id=order_id)
     context_dict = {'so': so}
     return render(request,
                   'ec/wxpay.html',
@@ -820,6 +833,14 @@ def wxpay_callback(request):
     print request.body
     xml = unifiedorder_callback(xml=request.body)
     return HttpResponse(xml)
+
+
+def check_wxpay_result(request, order_id):
+    cnt = WXPayResult.objects.filter(so_id=order_id).count()
+    if cnt == 1:
+        return HttpResponse(1)
+    else:
+        return HttpResponse(0)
 
 
 def xml(request):

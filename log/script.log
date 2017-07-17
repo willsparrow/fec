@@ -5006,3 +5006,497 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 85, in unifiedorder_callback
     so = So.objects.get(id=wxpay_result_dict['out_trade_no'])
 KeyError: 'out_trade_no'
+[2017-07-17 16:08:14,187] [Thread-8:3160] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 313, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1310, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1338, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1209, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1102, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 105, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 143, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+[2017-07-17 16:08:25,319] [Thread-12:4008] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 716, in checkout_confirm
+    send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 35, in send_orderid_to_shopkeeper_by_sms
+    access_key_id = mns.AccessKeyId
+AttributeError: 'module' object has no attribute 'AccessKeyId'
+[2017-07-17 16:09:55,401] [Thread-12:3408] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 313, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1310, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1338, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1209, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1102, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 105, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 143, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+[2017-07-17 16:27:28,723] [Thread-4:2164] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-17 16:28:32,345] [Thread-15:1588] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:32,398] [Thread-16:1104] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:32,480] [Thread-17:2324] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:32,588] [Thread-18:2720] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:32,821] [Thread-19:3304] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:32,951] [Thread-20:2248] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,089] [Thread-21:2632] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,196] [Thread-22:3684] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,295] [Thread-23:392] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,395] [Thread-24:1516] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,502] [Thread-25:3068] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,739] [Thread-26:3540] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,776] [Thread-27:1276] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,799] [Thread-28:2644] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,821] [Thread-29:3728] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:33,894] [Thread-30:596] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,003] [Thread-31:2968] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,115] [Thread-32:1252] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,221] [Thread-33:1228] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,329] [Thread-34:1832] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,438] [Thread-35:1480] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,551] [Thread-36:2768] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,655] [Thread-37:1132] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,769] [Thread-38:3884] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,921] [Thread-39:2616] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:34,996] [Thread-40:3516] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,107] [Thread-41:2172] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,200] [Thread-42:2948] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,309] [Thread-43:1436] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,430] [Thread-44:3828] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,532] [Thread-45:1428] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,637] [Thread-46:2604] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,757] [Thread-47:1248] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,855] [Thread-48:3968] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:35,970] [Thread-49:2452] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,128] [Thread-50:2960] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,239] [Thread-51:3628] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,357] [Thread-53:1484] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,404] [Thread-52:3856] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,509] [Thread-54:3900] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,618] [Thread-55:3520] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,726] [Thread-56:2064] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,834] [Thread-57:2964] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:36,956] [Thread-58:4008] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,059] [Thread-59:412] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,171] [Thread-60:836] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,312] [Thread-61:3212] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,375] [Thread-62:3556] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,480] [Thread-63:3088] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,572] [Thread-64:928] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,677] [Thread-65:524] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,773] [Thread-66:3956] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,878] [Thread-67:1536] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:37,973] [Thread-68:3140] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,073] [Thread-69:3188] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,171] [Thread-70:2268] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,288] [Thread-71:3840] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,434] [Thread-72:2716] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,476] [Thread-73:3368] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,572] [Thread-74:3584] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,677] [Thread-75:1896] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,776] [Thread-76:2992] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,871] [Thread-77:3424] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:38,992] [Thread-78:3340] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,098] [Thread-79:4068] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,173] [Thread-80:1892] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,266] [Thread-81:696] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,375] [Thread-82:3504] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,513] [Thread-83:2796] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,572] [Thread-84:3744] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,671] [Thread-85:3380] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,773] [Thread-86:760] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,882] [Thread-87:3732] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:39,970] [Thread-88:4060] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,073] [Thread-89:2100] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,173] [Thread-90:1628] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,275] [Thread-91:3892] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,372] [Thread-92:2464] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,477] [Thread-93:3036] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,733] [Thread-94:152] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,819] [Thread-95:3624] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,859] [Thread-96:272] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:40,882] [Thread-97:3872] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,059] [Thread-98:3760] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,211] [Thread-99:2020] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,503] [Thread-100:3080] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,678] [Thread-101:3832] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,792] [Thread-102:628] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,947] [Thread-103:3164] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:41,986] [Thread-104:3868] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,009] [Thread-105:3172] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,046] [Thread-106:1820] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,076] [Thread-107:3768] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,171] [Thread-108:2096] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,273] [Thread-109:3116] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,375] [Thread-110:2396] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,483] [Thread-111:1328] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,575] [Thread-112:1164] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,674] [Thread-113:2844] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,775] [Thread-114:1472] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:42,874] [Thread-115:3252] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,052] [Thread-116:1208] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,078] [Thread-117:2888] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,184] [Thread-118:3792] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,280] [Thread-119:1092] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,375] [Thread-120:164] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,473] [Thread-121:2912] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,575] [Thread-122:676] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,676] [Thread-123:2556] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,786] [Thread-124:2512] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,872] [Thread-125:3688] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:43,973] [Thread-126:2264] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,154] [Thread-127:1372] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,216] [Thread-128:3096] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,296] [Thread-129:2108] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,375] [Thread-130:3284] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,482] [Thread-131:2288] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,575] [Thread-132:3436] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,674] [Thread-133:1860] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,775] [Thread-134:1916] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,878] [Thread-135:3460] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:44,973] [Thread-136:3452] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,078] [Thread-137:2420] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,250] [Thread-138:2736] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,308] [Thread-139:2080] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,394] [Thread-140:1460] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,548] [Thread-141:3992] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,594] [Thread-142:4056] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,700] [Thread-143:2160] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,789] [Thread-144:780] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,888] [Thread-145:3128] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:45,974] [Thread-146:536] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,072] [Thread-147:2484] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,187] [Thread-148:356] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,361] [Thread-149:3404] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,413] [Thread-150:2320] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,490] [Thread-151:1712] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,589] [Thread-152:984] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,686] [Thread-153:3124] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,779] [Thread-154:1884] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,875] [Thread-155:992] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:46,973] [Thread-156:2544] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,075] [Thread-157:3444] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,174] [Thread-158:1804] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,273] [Thread-159:3104] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,615] [Thread-160:3180] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,687] [Thread-161:3972] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,719] [Thread-162:2240] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,734] [Thread-163:1996] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,776] [Thread-164:3672] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,871] [Thread-165:3312] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:47,986] [Thread-166:2072] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,072] [Thread-167:3676] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,176] [Thread-168:4000] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,276] [Thread-169:3244] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,377] [Thread-170:4084] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,474] [Thread-171:3432] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,573] [Thread-172:4028] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,844] [Thread-173:2384] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,907] [Thread-174:4012] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:48,973] [Thread-175:1608] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,073] [Thread-176:2868] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,174] [Thread-177:396] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,273] [Thread-178:3476] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,403] [Thread-179:2076] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,473] [Thread-180:3236] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,585] [Thread-181:3920] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,680] [Thread-182:3472] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,785] [Thread-183:3260] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,872] [Thread-184:3352] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:49,992] [Thread-185:2980] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,082] [Thread-186:3076] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,176] [Thread-187:2084] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,273] [Thread-188:1956] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,388] [Thread-189:2780] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,476] [Thread-190:3168] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,572] [Thread-191:2164] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,678] [Thread-192:3328] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,783] [Thread-193:2448] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,871] [Thread-194:3716] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:50,976] [Thread-195:1732] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,095] [Thread-196:2920] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,177] [Thread-197:3544] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,273] [Thread-198:3704] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,372] [Thread-199:3336] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,470] [Thread-200:1312] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,594] [Thread-201:2180] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,694] [Thread-202:3060] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,785] [Thread-203:1736] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:51,874] [Thread-204:4076] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,016] [Thread-205:3780] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,141] [Thread-206:3488] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,578] [Thread-207:172] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,828] [Thread-208:1376] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,937] [Thread-209:3464] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,953] [Thread-210:1424] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,969] [Thread-211:2584] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:28:52,983] [Thread-212:3656] [django.request:170] [base:get_response] [WARNING]- Not Found: /ec/check_wxpay_reslut/170
+[2017-07-17 16:30:56,005] [Thread-3:2988] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-17 16:31:07,040] [Thread-10:4028] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 723, in checkout_confirm
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'check_wxpay_result' with arguments '()' and keyword arguments '{u'order_id': 171L}' not found. 0 pattern(s) tried: []
+[2017-07-17 16:31:55,960] [Thread-11:1424] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 681, in checkout_confirm
+    so = So.objects.filter(cust_id=cust.id, status=1)[0]
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 201, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+[2017-07-17 16:33:19,710] [Thread-14:3640] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 681, in checkout_confirm
+    so = So.objects.filter(cust_id=cust.id, status=1)[0]
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 201, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+[2017-07-17 16:39:01,598] [Thread-3:1184] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-17 16:50:13,454] [Thread-2:596] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 832
+    so =
+        ^
+SyntaxError: invalid syntax
+[2017-07-17 16:50:14,627] [Thread-3:2080] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 832
+    so =
+        ^
+SyntaxError: invalid syntax
+[2017-07-17 16:50:17,345] [Thread-4:2988] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 832
+    so =
+        ^
+SyntaxError: invalid syntax
+[2017-07-17 16:50:19,720] [Thread-5:1564] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 832
+    so =
+        ^
+SyntaxError: invalid syntax
+[2017-07-17 16:53:51,750] [Thread-2:2368] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 833
+    else:
+       ^
+IndentationError: expected an indented block
+[2017-07-17 16:53:52,321] [Thread-3:3872] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 833
+    else:
+       ^
+IndentationError: expected an indented block
+[2017-07-17 16:55:32,782] [Thread-2:3840] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/check_wxpay_result/174/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 55, in <module>
+    url(r'^ec/', include('apps.ec.urls', namespace='ec')),
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\conf\urls\__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\apps\ec\urls.py", line 26
+    url(r'^order_list/$', get_order_list, name='order_list'),
+      ^
+SyntaxError: invalid syntax
+[2017-07-17 16:56:40,867] [Thread-20:4092] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /checkout_confirm/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 681, in checkout_confirm
+    so = So.objects.filter(cust_id=cust.id, status=1)[0]
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 201, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
