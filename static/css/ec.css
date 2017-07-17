@@ -603,3 +603,27 @@ body {
     height: 23px;
     display: block;
 }
+/*
+ *设置微信支付显示
+ */
+#order-info{
+    border-bottom: 1px solid #D8CEBC;
+}
+#wxpay-info{
+    text-align: center;
+    margin: 0 auto;
+    max-width: 256px;
+    max-height:409px;
+}
+#wxpay-info #wxpay-logo{
+    width: 208px;
+    height:56px;
+}
+#wxpay-info #wxpay-qrcode{
+    width: 256px;
+    height:256px;
+}
+#wxpay-info #wxpay-tip{
+    width: 208px;
+    height:68px;
+}

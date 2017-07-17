@@ -4765,3 +4765,213 @@ ImportError: No module named mns
 [2017-07-07 10:31:37,835] [Thread-4:2112] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-07 16:20:19,121] [Thread-2:3808] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-11 10:16:17,414] [Thread-5:3444] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-14 16:36:39,484] [Thread-6:2388] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-14 16:36:51,434] [Thread-7:3092] [django.request:170] [base:get_response] [WARNING]- Not Found: /generate_qrcode
+[2017-07-14 23:37:12,766] [Thread-2:2800] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 25, in <module>
+    from .wxpay import *
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 7
+SyntaxError: Non-ASCII character '\xe5' in file D:\PycharmProjects\fec\apps\ec\wxpay.py on line 7, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+[2017-07-14 23:37:13,476] [Thread-3:2076] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\common.py", line 74, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 646, in is_valid_path
+    resolve(path, urlconf)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 521, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 365, in resolve
+    for pattern in self.url_patterns:
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 401, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "C:\Python27\lib\importlib\__init__.py", line 37, in import_module
+    __import__(name)
+  File "D:\PycharmProjects\fec\fec\urls.py", line 20, in <module>
+    from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 25, in <module>
+    from .wxpay import *
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 7
+SyntaxError: Non-ASCII character '\xe5' in file D:\PycharmProjects\fec\apps\ec\wxpay.py on line 7, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+[2017-07-14 23:38:44,039] [Thread-7:3040] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-14 23:39:30,312] [Thread-3:3336] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_qrcode/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 798, in generate_qrcode
+    img = qrcode.make(unifiedorder(160))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 27, in unifiedorder
+    wxpay = WXPay(app_id=wxpay_request_dict['appid'], mch_id=wxpay_request_dict['mch_id'], key='onlythestrongsurvive198809271113')
+TypeError: __init__() takes at least 6 arguments (4 given)
+[2017-07-14 23:41:05,997] [Thread-5:3864] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_qrcode/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 798, in generate_qrcode
+    img = qrcode.make(unifiedorder(160))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 27, in unifiedorder
+    wxpay = WXPay(app_id=wxpay_request_dict['appid'],
+TypeError: __init__() takes at least 6 arguments (4 given)
+[2017-07-14 23:41:08,671] [Thread-7:3872] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_qrcode/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 798, in generate_qrcode
+    img = qrcode.make(unifiedorder(160))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 27, in unifiedorder
+    wxpay = WXPay(app_id=wxpay_request_dict['appid'],
+TypeError: __init__() takes at least 6 arguments (4 given)
+[2017-07-14 23:41:20,334] [Thread-2:4000] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_qrcode/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 798, in generate_qrcode
+    img = qrcode.make(unifiedorder(160))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 48, in unifiedorder
+    wxpay_log.save()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\base.py", line 734, in save
+    force_update=force_update, update_fields=update_fields)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\base.py", line 762, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\base.py", line 846, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\base.py", line 885, in _do_insert
+    using=using, raw=raw)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\utils.py", line 98, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\backends\mysql\base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Python27\lib\site-packages\MySQLdb\cursors.py", line 174, in execute
+    self.errorhandler(self, exc, value)
+  File "C:\Python27\lib\site-packages\MySQLdb\connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+ProgrammingError: (1146, "Table 'fec.t_wxpay_log' doesn't exist")
+[2017-07-17 10:02:51,237] [Thread-2:3924] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_qrcode/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 801, in generate_qrcode
+    context_dict)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\shortcuts.py", line 67, in render
+    template_name, context, request=request, using=using)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader.py", line 99, in render_to_string
+    return template.render(context, request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\backends\django.py", line 74, in render
+    return self.template.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 210, in render
+    return self._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 135, in render
+    return compiled_parent._render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 202, in _render
+    return self.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\base.py", line 905, in render
+    bit = self.render_node(node, context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\debug.py", line 79, in render_node
+    return node.render(context)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 507, in render
+    six.reraise(*exc_info)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\template\defaulttags.py", line 493, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 578, in reverse
+    return force_text(iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs)))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\urlresolvers.py", line 495, in _reverse_with_prefix
+    (lookup_view_s, args, kwargs, len(patterns), patterns))
+NoReverseMatch: Reverse for 'generate_wxpay_qrcode' with arguments '()' and keyword arguments '{u'order_id': 160}' not found. 0 pattern(s) tried: []
+[2017-07-17 10:08:55,430] [Thread-2:3924] [django.request:170] [base:get_response] [WARNING]- Not Found: //wxpay/
+[2017-07-17 10:08:59,174] [Thread-4:2052] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:01,089] [Thread-3:3384] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:10,927] [Thread-2:3204] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:12,763] [Thread-3:3556] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:14,438] [Thread-4:3808] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:14,674] [Thread-5:2384] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:14,895] [Thread-6:3580] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:15,233] [Thread-7:3868] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:15,483] [Thread-8:2100] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:15,686] [Thread-9:3648] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:15,897] [Thread-10:2024] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 10:09:16,076] [Thread-11:3936] [django.request:170] [base:get_response] [WARNING]- Not Found: /wxpay/
+[2017-07-17 11:08:22,486] [Thread-3:492] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /wxpay/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+TypeError: wxpay() takes exactly 2 arguments (1 given)
+[2017-07-17 13:12:27,996] [Thread-2:1916] [django.request:170] [base:get_response] [WARNING]- Not Found: /ex/xml/
+[2017-07-17 13:18:57,811] [Thread-4:3032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/xml_post
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/ec/xml_post/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2017-07-17 13:20:01,200] [Thread-5:3000] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/xml_post
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/ec/xml_post/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2017-07-17 13:21:05,042] [Thread-6:3892] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/xml_post
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/ec/xml_post/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2017-07-17 13:21:25,413] [Thread-2:2520] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/xml_post
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 108, in get_response
+    response = middleware_method(request)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\middleware\common.py", line 84, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/ec/xml_post/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2017-07-17 13:22:31,934] [Thread-3:2628] [django.request:98] [csrf:_reject] [WARNING]- Forbidden (CSRF cookie not set.): /ec/xml_post/

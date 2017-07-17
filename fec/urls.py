@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth.views import login, logout_then_login
 from .main import *
 from apps.ec.views import get_prod_list, get_prod_list_by_category, get_prod_list_by_keywords, get_prod_detail, add_to_cart, get_cart_detail, checkout, checkout_confirm, get_order_list, get_order_detail, get_prod_pvs_json
+from apps.ec.views import wxpay, wxpay_callback
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -46,6 +47,8 @@ urlpatterns = [
     url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
     url(r'^order_list/$', get_order_list, name='order_list'),
     url(r'^order_detail/(?P<so_id>\d+)/$', get_order_detail, name='order_detail'),
+    url(r'^wxpay/$', wxpay, name='wxpay'),
+    url(r'^wxpay_callback/$', wxpay_callback, name='wxpay_callback'),
 ]
 
 urlpatterns += [

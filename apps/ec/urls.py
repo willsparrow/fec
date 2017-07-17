@@ -24,4 +24,9 @@ urlpatterns = [
     url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
     url(r'^order_list/$', get_order_list, name='order_list'),
     url(r'^order_detail/(?P<so_id>\d+)/$', get_order_detail, name='order_detail'),
+    url(r'^wxpay/$', wxpay, name='wxpay'),
+    url(r'^generate_wxpay_qrcode/(?P<order_id>\d+)/$', generate_wxpay_qrcode, name='generate_wxpay_qrcode'),
+    url(r'^wxpay_callback/$', wxpay_callback, name='wxpay_callback'),
+    url(r'^xml/$', xml, name='xml'),
+    url(r'^xml_post/$', xml_post, name='xml_post'),
 ]

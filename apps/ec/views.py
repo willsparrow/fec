@@ -14,11 +14,18 @@ from django.db.models import Sum
 from django.db.models import Count
 from django.db.models import F
 from django.db import transaction
-
 # MNS
 from libs.mns.mns_python_sdk.mns.account import Account
 from libs.mns.mns_python_sdk.mns.topic import *
 from fec import mns
+# qrcode
+import qrcode
+from django.utils.six import BytesIO
+# wxpay
+from .wxpay import *
+# CSRF
+from django.views.decorators.csrf import csrf_exempt
+
 # Create your views here.
 
 logger = logging.getLogger('django')
@@ -787,3 +794,44 @@ def get_order_detail(request, so_id):
     return render(request,
                   'ec/order_detail.html',
                   context_dict)
+
+
+@login_required
+def wxpay(request):
+    so = So.objects.get(id=160)
+    context_dict = {'so': so}
+    return render(request,
+                  'ec/wxpay.html',
+                  context_dict)
+
+
+@login_required
+def generate_wxpay_qrcode(request, order_id):
+    img = qrcode.make(unifiedorder(order_id))
+    buf = BytesIO()
+    img.save(buf)
+    image_stream = buf.getvalue()
+    response = HttpResponse(image_stream, content_type="image/png")
+    return response
+
+
+def wxpay_callback(request):
+    print request.body
+    xml = unifiedorder_callback(xml=request.body)
+    return HttpResponse(xml)
+
+
+def xml(request):
+    xml='''
+<xml>
+  <return_code><![CDATA[SUCCESS]]></return_code>
+  <return_msg><![CDATA[OK]]></return_msg>
+</xml>'''
+    return HttpResponse(xml)
+
+
+@csrf_exempt
+def xml_post(request):
+    print request.body
+    return HttpResponse(0)
+
