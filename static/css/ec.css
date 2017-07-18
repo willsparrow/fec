@@ -380,7 +380,7 @@ body {
     border: 1px solid #ddd;
     overflow: hidden;
     display: inline-block;
-    min-width: 120px;
+    min-width: 146px;
 }
 .prod-qty-input .prod-qty-icon{
     cursor: pointer;
