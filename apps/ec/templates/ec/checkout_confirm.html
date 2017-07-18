@@ -12,9 +12,15 @@
                 <h5>{{ cust.name }}您好:</h5>
                 <div class="bs-component">
                     <blockquote>
-                        <p>您的订单:<a href="{% url 'order_detail' so.id %}"><h2>{{ so.id }}</h2></a>已受理成功，预计今明两天送达，欢迎再次购物，谢谢!</p>
-                        <small>竭诚为您服务</small>
-                        <h6><a href="{% url 'index' %}">再来一单>></a></h6>
+                        {% if paied == 1 %}
+                            <p>您的订单:<a href="{% url 'order_detail' so.id %}"><h2>{{ so.id }}</h2></a>已受理成功，预计今明两天送达，欢迎再次购物，谢谢!</p>
+                            <small>竭诚为您服务</small>
+                            <h6><a href="{% url 'index' %}">再来一单>></a></h6>
+                        {% else %}
+                            <p>您的订单:<a href="{% url 'order_detail' so.id %}"><h2>{{ so.id }}</h2></a>已受理提交，还未付款，点击<a href="{% url 'ec:wxpay' order_id=so.id%}">去付款</a>进行付款结算，谢谢!</p>
+                            <h6><a href="{% url 'ec:wxpay' order_id=so.id%}">去付款>></a></h6>
+                            <small>竭诚为您服务</small>
+                        {% endif %}
                     </blockquote>
                 </div>
             </div>

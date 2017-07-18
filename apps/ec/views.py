@@ -652,7 +652,12 @@ def checkout_confirm(request):
 @login_required
 def checkout_end(request, order_id):
     so = So.objects.get(id=order_id)
-    context_dict = {'so': so}
+    cnt = WXPayResult.objects.filter(so_id=so.id).count()
+    paied = 1
+    if cnt == 0:
+        paied = 0
+    context_dict = {'so': so,
+                    'paied': paied}
     return render(request,
                   'ec/checkout_confirm.html',
                   context_dict)
