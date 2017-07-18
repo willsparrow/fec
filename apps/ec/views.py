@@ -8,16 +8,17 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from .models import *
 from .forms import *
 from django.db.models import Sum
 from django.db.models import Count
 from django.db.models import F
 from django.db import transaction
+# FEC
+from .models import *
+# prod
+from .prod import *
 # MNS
-from libs.mns.mns_python_sdk.mns.account import Account
-from libs.mns.mns_python_sdk.mns.topic import *
-from fec import settings_mns
+from .mns import *
 # qrcode
 import qrcode
 from django.utils.six import BytesIO
@@ -26,40 +27,11 @@ from .wxpay import *
 # CSRF
 from django.views.decorators.csrf import csrf_exempt
 
+
 # Create your views here.
 
+
 logger = logging.getLogger('django')
-
-
-def send_orderid_to_shopkeeper_by_sms(shopkeeper, order_id):
-    access_key_id = settings_mns.AccessKeyId
-    access_key_secret = settings_mns.AccessKeySecret
-    endpoint = settings_mns.Endpoint
-    topic = settings_mns.Topic
-    sign_name = settings_mns.SignName
-    template_code_for_shopkeeper = settings_mns.TemplateCodeForShopkeeper
-
-    my_account = Account(endpoint, access_key_id, access_key_secret)
-    my_topic = my_account.get_topic(topic)
-    msg_body1 = "sms-message1."
-    direct_sms_attr1 = DirectSMSInfo(free_sign_name=sign_name, template_code=template_code_for_shopkeeper, single=False)
-    direct_sms_attr1.add_receiver(receiver=shopkeeper, params={"order_id": str(order_id)})
-    msg1 = TopicMessage(msg_body1, direct_sms=direct_sms_attr1)
-    try:
-        re_msg = my_topic.publish_message(msg1)
-        sms_log = SmsLog()
-        sms_log.order_id = order_id
-        sms_log.receiver = shopkeeper
-        sms_log.type = 'orderNotifyToShopkeeper'
-        sms_log.message_id = re_msg.message_id
-        sms_log.created_date = timezone.now()
-        sms_log.updated_date = timezone.now()
-        sms_log.save()
-        logger.debug("Publish Message Succeed. MessageBody:%s MessageID:%s" % (msg_body1, re_msg.message_id))
-    except MNSExceptionBase, e:
-        if e.type == "TopicNotExist":
-            logger.debug("Topic not exist, please create it.")
-        logger.debug("Publish Message Fail. Exception:%s" % e)
 
 
 def index(request):
@@ -115,55 +87,21 @@ def get_prod_list_by_keywords(request):
                   context_dict)
 
 
-def get_prod_thumb_imgs(prod_id):
-    cnt = ProdThumb.objects.filter(prod_id=prod_id).count()
-    if cnt == 0:
-        prod_thumbs = 0
-    else:
-        prod_thumbs = ProdThumb.objects.filter(prod_id=prod_id)
-    return prod_thumbs
-
-
-def get_prod_detail_imgs(prod_id):
-    cnt = ProdDetail.objects.filter(prod_id=prod_id).count()
-    if cnt == 0:
-        prod_details = 0
-    else:
-        prod_details = ProdDetail.objects.filter(prod_id=prod_id)
-    return prod_details
-
-
-def get_prod_properties(prod_id):
-    cnt = ProdProperty.objects.filter(prod_id=prod_id).count()
-    if cnt == 0:
-        properties = 0
-    else:
-        properties = ProdProperty.objects.filter(prod_id=prod_id)
-    return properties
-
-
-def get_prod_property_values(property_id):
-    cnt = ProdPv.objects.filter(property_id=property_id).count()
-    if cnt == 0:
-        values = 0
-    else:
-        values = ProdPv.objects.filter(property_id=property_id)
-    return values
-
-
-def get_prod_pvs(prod_id):
-    property_list = []
-    properties = get_prod_properties(prod_id)
-    if properties != 0:
-        for property in properties:
-            property_dict={}
-            property_dict['id'] = property.id
-            property_dict['name'] = property.name
-            property_dict['values'] = get_prod_property_values(property.id)
-            property_list.append(property_dict)
-        return property_list
-    else:
-        return 0
+# 查询某个商品的详情信息
+def get_prod_detail(request, prod_id):
+    prod = Prod.objects.get(id=prod_id)
+    add_to_cart_form = AddToCartForm(initial={'qty': 1})
+    prod_details = get_prod_detail_imgs(prod_id)
+    prod_thumbs = get_prod_thumb_imgs(prod_id)
+    prod_pvs = get_prod_pvs(prod_id)
+    context_dict = {'prod': prod,
+                    'prod_details': prod_details,
+                    'prod_thumbs': prod_thumbs,
+                    'prod_pvs': prod_pvs,
+                    'add_to_cart_form': add_to_cart_form}
+    return render(request,
+                  'ec/prod_detail.html',
+                  context_dict)
 
 
 def get_prod_pvs_json(request, prod_id):
@@ -209,23 +147,6 @@ def get_prod_skus_json(request, prod_id):
         return HttpResponse(json.dumps(sku_list))
     else:
         return HttpResponse(0)
-
-
-# 查询某个商品的详情信息
-def get_prod_detail(request, prod_id):
-    prod = Prod.objects.get(id=prod_id)
-    add_to_cart_form = AddToCartForm(initial={'qty': 1})
-    prod_details = get_prod_detail_imgs(prod_id)
-    prod_thumbs = get_prod_thumb_imgs(prod_id)
-    prod_pvs = get_prod_pvs(prod_id)
-    context_dict = {'prod': prod,
-                    'prod_details': prod_details,
-                    'prod_thumbs': prod_thumbs,
-                    'prod_pvs': prod_pvs,
-                    'add_to_cart_form': add_to_cart_form}
-    return render(request,
-                  'ec/prod_detail.html',
-                  context_dict)
 
 
 # 创建订单
@@ -697,7 +618,7 @@ def checkout_confirm(request):
         so.total = total
         so.amount = amount
         # 修改客户订单的状态
-        so.status = 888
+        so.status = 6
         so.save()
         # 查询客户订单对应的订单行信息
         sols = Sol.objects.filter(cust_id=cust.id,
@@ -705,7 +626,7 @@ def checkout_confirm(request):
                                   status=1)
         # 修改客户订单对应的订单行的状态
         for sol in sols:
-            sol.status = 888
+            sol.status = 6
             sol.save()
         context_dict = {
             'cust': cust,
@@ -713,7 +634,7 @@ def checkout_confirm(request):
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
         # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
         # return render(request,
         #               'ec/checkout_confirm.html',
@@ -741,13 +662,13 @@ def checkout_end(request, order_id):
 def get_order_list(request):
     cust = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id)
     # 查询该用户是否有订单信息
-    cnt = So.objects.filter(cust_id=cust.id, status=888).annotate(cnt=Count('id'))
+    cnt = So.objects.filter(cust_id=cust.id, status__gt=1).annotate(cnt=Count('id'))
     if len(cnt) == 0:
         context_dict = {'cnt': 0,
                         'cust': cust}
     else:
         # 查询客户订单信息
-        sos = So.objects.filter(cust_id=cust.id, status=888).order_by('-id')
+        sos = So.objects.filter(cust_id=cust.id, status__gt=1).order_by('-id')
         context_dict = {'cust': cust,
                         'sos': sos}
     return render(request,
@@ -759,13 +680,13 @@ def get_order_info(so_id):
     # 对订单行信息进行展示聚合
     so = So.objects.get(id=so_id)
     sols = Sol.objects.filter(so_id=so_id,
-                              status=888).values('so_id',
-                                                 'prod_id',
-                                                 'name',
-                                                 'img_url',
-                                                 'price',
-                                                 'description').annotate(qty=Sum('qty'),
-                                                                         amt=Sum('qty') * F('price'))
+                              status__gt=1).values('so_id',
+                                                   'prod_id',
+                                                   'name',
+                                                   'img_url',
+                                                   'price',
+                                                   'description').annotate(qty=Sum('qty'),
+                                                                           amt=Sum('qty') * F('price'))
     # 20170112之前因为在checkout confirm时没有更新订单商品总数、总金额，在查看时用如下代码做订单信息更新
     # 聚合购物车商品总数
     # total = Sol.objects.filter(so_id=so_id,

@@ -1,5 +1,8 @@
 {% extends 'ec/index.html' %}
 
+{% block activity %}
+    {% include "ec/_activity_bar.html" %}
+{% endblock %}
 
 {% block sos %}
 <div class="container orders">
@@ -25,6 +28,7 @@
                             <th>件数</th>
                             <th>总额</th>
                             <th>创建时间</th>
+                            <th>状态</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +45,12 @@
                             <td>{{ so.total }}</td>
                             <td>{{ so.amount }}</td>
                             <td>{{ so.created_date|date:"Y-m-d H:i:s"  }}</td>
+                            <td>{% if so.status == 18 %}
+                                    <span>已付款</span>
+                                {% elif  so.status == 6%}
+                                    <a href="{% url 'ec:wxpay' order_id=so.id %}">待付款，去付款</a>
+                                {% endif %}
+                            </td>
                         </tr>
                     {% endfor %}
                     </tbody>

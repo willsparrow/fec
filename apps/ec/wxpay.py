@@ -109,6 +109,8 @@ def unifiedorder_callback(xml):
                     wxpay_result.updated_date = timezone.now()
                     wxpay_result.status = 1
                     wxpay_result.save()
+                    so.status = 18
+                    so.save()
                     wxpay_callback_dict = {}
                     wxpay_callback_dict['return_code'] = 'SUCCESS'
                     xml = wxpay_util.dict2xml(wxpay_callback_dict)
