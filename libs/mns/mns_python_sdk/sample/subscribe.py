@@ -7,9 +7,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/..")
 
 import time
 from sample_common import MNSSampleCommon
-from mns.account import Account
-from mns.topic import *
-from mns.subscription import *
+from settings_mns.account import Account
+from settings_mns.topic import *
+from settings_mns.subscription import *
 
 #参数合法性检查，订阅的Endpoint参数必须传入
 if len(sys.argv) < 2:

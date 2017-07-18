@@ -17,7 +17,7 @@ from django.db import transaction
 # MNS
 from libs.mns.mns_python_sdk.mns.account import Account
 from libs.mns.mns_python_sdk.mns.topic import *
-from fec import mns
+from fec import settings_mns
 # qrcode
 import qrcode
 from django.utils.six import BytesIO
@@ -32,12 +32,12 @@ logger = logging.getLogger('django')
 
 
 def send_orderid_to_shopkeeper_by_sms(shopkeeper, order_id):
-    access_key_id = mns.AccessKeyId
-    access_key_secret = mns.AccessKeySecret
-    endpoint = mns.Endpoint
-    topic = mns.Topic
-    sign_name = mns.SignName
-    template_code_for_shopkeeper = mns.TemplateCodeForShopkeeper
+    access_key_id = settings_mns.AccessKeyId
+    access_key_secret = settings_mns.AccessKeySecret
+    endpoint = settings_mns.Endpoint
+    topic = settings_mns.Topic
+    sign_name = settings_mns.SignName
+    template_code_for_shopkeeper = settings_mns.TemplateCodeForShopkeeper
 
     my_account = Account(endpoint, access_key_id, access_key_secret)
     my_topic = my_account.get_topic(topic)
@@ -713,7 +713,7 @@ def checkout_confirm(request):
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
         # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
         # return render(request,
         #               'ec/checkout_confirm.html',
@@ -830,7 +830,8 @@ def generate_wxpay_qrcode(request, order_id):
 
 @csrf_exempt
 def wxpay_callback(request):
-    print request.body
+    logger.debug('微信callback')
+    logger.debug(request.body)
     xml = unifiedorder_callback(xml=request.body)
     return HttpResponse(xml)
 

@@ -16,7 +16,7 @@ from django import forms
 # MNS
 from libs.mns.mns_python_sdk.mns.account import Account
 from libs.mns.mns_python_sdk.mns.topic import *
-import mns
+import settings_mns
 
 import hashlib
 import random
@@ -40,11 +40,11 @@ def test(request):
 
 
 def send_verifycode_to_mobilephone(mobilephone, template_code, description):
-    access_key_id = mns.AccessKeyId
-    access_key_secret = mns.AccessKeySecret
-    endpoint = mns.Endpoint
-    topic = mns.Topic
-    sign_name = mns.SignName
+    access_key_id = settings_mns.AccessKeyId
+    access_key_secret = settings_mns.AccessKeySecret
+    endpoint = settings_mns.Endpoint
+    topic = settings_mns.Topic
+    sign_name = settings_mns.SignName
 
     my_account = Account(endpoint, access_key_id, access_key_secret)
     my_topic = my_account.get_topic(topic)
@@ -100,7 +100,7 @@ def register_step1(request):
                           'fec/register_step1.html',
                           context_dict)
         else:
-            send_verifycode_to_mobilephone(mobilephone, mns.TemplateCodeForRegister, 'verifyCodeToRegister')
+            send_verifycode_to_mobilephone(mobilephone, settings_mns.TemplateCodeForRegister, 'verifyCodeToRegister')
             context_dict = {'mobilephone': mobilephone,
                             'msg': '注册短信验证码已发送至您的手机，请填写手机验证码进行注册。'}
             return render(request,
@@ -205,7 +205,7 @@ def get_mobilephone_from_md5(md5):
 
 def send_verifycode(request):
     mobilephone = get_mobilephone_from_md5(request.POST.get('mobilephone'))
-    send_verifycode_to_mobilephone(mobilephone, mns.TemplateCodeForResetPassword, 'verifyCodeToResetPassword')
+    send_verifycode_to_mobilephone(mobilephone, settings_mns.TemplateCodeForResetPassword, 'verifyCodeToResetPassword')
     context_dict = {'msg': '已发送，请及时查收。'}
     return render(request,
                   'fec/_msg.html',

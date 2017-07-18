@@ -7,8 +7,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/..")
 
 import time
 from sample_common import MNSSampleCommon
-from mns.account import Account
-from mns.topic import *
+from settings_mns.account import Account
+from settings_mns.topic import *
 
 #从sample.cfg中读取基本配置信息
 ## WARNING： Please do not hard code your accessId and accesskey in next line.(more information: https://yq.aliyun.com/articles/55947)

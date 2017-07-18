@@ -1,11 +1,14 @@
 # -*- coding: utf8 -*-
 # Copyright (C) 2017, www.meibailian.com
 
-
+import logging
 from django.utils import timezone
 from libs.pay.wxpay import *
 from .models import So, WXPayLog, WXPayQrcode, WXPayResult
-from fec import wxpay_settings
+from fec import settings_wxpay
+
+
+logger = logging.getLogger('django')
 
 
 def unifiedorder(so_id):
@@ -15,8 +18,8 @@ def unifiedorder(so_id):
     """
     so = So.objects.get(id=so_id)
     wxpay_request_dict = {}
-    wxpay_request_dict['appid'] = wxpay_settings.appid
-    wxpay_request_dict['mch_id'] = wxpay_settings.mch_id
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+    wxpay_request_dict['mch_id'] = settings_wxpay.mch_id
     wxpay_request_dict['nonce_str'] = ''
     wxpay_request_dict['sign'] = ''
     wxpay_request_dict['body'] = '美百联-在线支付'
@@ -25,9 +28,9 @@ def unifiedorder(so_id):
     wxpay_request_dict['spbill_create_ip'] = '115.29.239.5'
     wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback/'
     wxpay_request_dict['trade_type'] = 'NATIVE'
-    wxpay = WXPay(app_id=wxpay_settings.appid,
-                  mch_id=wxpay_settings.mch_id,
-                  key=wxpay_settings.key,
+    wxpay = WXPay(app_id=settings_wxpay.appid,
+                  mch_id=settings_wxpay.mch_id,
+                  key=settings_wxpay.key,
                   cert_pem_path=None,
                   key_pem_path=None)
     wxpay_request_dict = wxpay.fill_request_data(wxpay_request_dict)
@@ -80,10 +83,10 @@ def unifiedorder_callback(xml):
     wxpay_result_dict = wxpay_util.xml2dict(xml)
     print wxpay_result_dict
     if wxpay_result_dict['return_code'] == 'SUCCESS':
-        print 'SUCCESS'
-        if wxpay_util.is_signature_valid(data=wxpay_result_dict, key=wxpay_settings.key):
+        logger.debug('微信支付统一接口callback SUCESS')
+        if wxpay_util.is_signature_valid(data=wxpay_result_dict, key=settings_wxpay.key):
             so = So.objects.get(id=wxpay_result_dict['out_trade_no'])
-            if wxpay_result_dict['total_fee'] == int(so.amount * 100):
+            if int(wxpay_result_dict['total_fee']) == int(so.amount * 100):
                 cnt = WXPayResult.objects.filter(so_id=so.id).count()
                 if cnt == 0:
                     wxpay_result = WXPayResult()
@@ -114,13 +117,11 @@ def unifiedorder_callback(xml):
             wxpay_callback_dict = {}
             wxpay_callback_dict['return_code'] = 'FAIL'
             xml = wxpay_util.dict2xml(wxpay_callback_dict)
-            print xml
             return xml
 
     else:
         wxpay_callback_dict = {}
         wxpay_callback_dict['return_code'] = 'FAIL'
         xml = wxpay_util.dict2xml(wxpay_callback_dict)
-        print xml
         return xml
 

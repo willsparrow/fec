@@ -13,11 +13,11 @@ import sys
 import traceback
 import ConfigParser
 from optparse import OptionParser
-from mns.account import Account,AccountMeta
-from mns.queue import *
-from mns.topic import *
-from mns.subscription import *
-from mns.mns_exception import *
+from settings_mns.account import Account,AccountMeta
+from settings_mns.queue import *
+from settings_mns.topic import *
+from settings_mns.subscription import *
+from settings_mns.mns_exception import *
 
 global CONFIGFILE
 CONFIGFILE = "%s/.mnscredentials" % os.path.expanduser('~')

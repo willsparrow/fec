@@ -7,10 +7,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/..")
 
 import time
 from sample_common import MNSSampleCommon
-from mns.mns_common import *
-from mns.account import Account
-from mns.topic import *
-from mns.subscription import *
+from settings_mns.mns_common import *
+from settings_mns.account import Account
+from settings_mns.topic import *
+from settings_mns.subscription import *
 
 if len(sys.argv) < 3:
     print "Please specify endpoint. e.g. python subscribe_queueendpoint.py cn-hanghzou MySampleSubQueue"
