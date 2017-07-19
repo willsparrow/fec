@@ -115,6 +115,7 @@ class Cust(models.Model):
 class So(models.Model):
     class Meta:
         db_table = 't_so'
+    no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     cust_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     cust_name = models.CharField(max_length=100, null=True)
     cust_mobilephone = models.CharField(max_length=100, null=True)
@@ -140,6 +141,7 @@ class Sol(models.Model):
     class Meta:
         db_table = 't_sol'
     so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    so_no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     cust_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     prod_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     sku_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
@@ -161,6 +163,7 @@ class WXPayLog(models.Model):
     class Meta:
         db_table = 't_wxpay_log'
     so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    so_no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     appid = models.CharField(max_length=100, null=True)
     mch_id = models.CharField(max_length=100, null=True)
     device_info = models.CharField(max_length=100, null=True)
@@ -186,6 +189,7 @@ class WXPayQrcode(models.Model):
     class Meta:
         db_table = 't_wxpay_qrcode'
     so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    so_no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     appid = models.CharField(max_length=100, null=True)
     mch_id = models.CharField(max_length=100, null=True)
     device_info = models.CharField(max_length=100, null=True)
@@ -208,6 +212,7 @@ class WXPayResult(models.Model):
     class Meta:
         db_table = 't_wxpay_result'
     so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    so_no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
     return_code = models.CharField(max_length=100, null=True)
     return_msg = models.CharField(max_length=100, null=True)
     appid = models.CharField(max_length=100, null=True)

@@ -23,7 +23,7 @@ def unifiedorder(so_id):
     wxpay_request_dict['nonce_str'] = ''
     wxpay_request_dict['sign'] = ''
     wxpay_request_dict['body'] = '美百联-在线支付'
-    wxpay_request_dict['out_trade_no'] = so.id
+    wxpay_request_dict['out_trade_no'] = so.no
     wxpay_request_dict['total_fee'] = int(so.amount * 100)
     wxpay_request_dict['spbill_create_ip'] = '115.29.239.5'
     wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback/'
@@ -36,6 +36,7 @@ def unifiedorder(so_id):
     wxpay_request_dict = wxpay.fill_request_data(wxpay_request_dict)
     wxpay_log = WXPayLog()
     wxpay_log.so_id = so.id
+    wxpay_log.so_no = so.no
     wxpay_log.appid = wxpay_request_dict['appid']
     wxpay_log.mch_id = wxpay_request_dict['mch_id']
     wxpay_log.nonce_str = wxpay_request_dict['nonce_str']
@@ -55,6 +56,7 @@ def unifiedorder(so_id):
         resp_dict = wxpay.unifiedorder(wxpay_request_dict)
         wxpay_qrcode = WXPayQrcode()
         wxpay_qrcode.so_id = so.id
+        wxpay_qrcode.so_no = so.no
         wxpay_qrcode.appid = resp_dict['appid']
         wxpay_qrcode.mch_id = resp_dict['mch_id']
         wxpay_qrcode.nonce_str = resp_dict['nonce_str']
@@ -91,6 +93,7 @@ def unifiedorder_callback(xml):
                 if cnt == 0:
                     wxpay_result = WXPayResult()
                     wxpay_result.so_id = so.id
+                    wxpay_result.so_no = so.no
                     wxpay_result.return_code = wxpay_result_dict['return_code']
                     wxpay_result.appid = wxpay_result_dict['appid']
                     wxpay_result.mch_id = wxpay_result_dict['mch_id']

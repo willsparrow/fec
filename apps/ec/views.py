@@ -17,6 +17,8 @@ from django.db import transaction
 from .models import *
 # prod
 from .prod import *
+#so
+from .so import *
 # MNS
 from .mns import *
 # qrcode
@@ -158,6 +160,7 @@ def create_order(cust_id):
         logger.debug('该客户还没有订单, 创建订单')
         so = So()
         cust = Cust.objects.get(id=cust_id)
+        so.so_no = generate_so_no()
         so.cust_id = cust.id
         so.cust_name = cust.name
         so.cust_mobilephone = cust.mobilephone

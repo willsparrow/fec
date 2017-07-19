@@ -5601,3 +5601,255 @@ ValueError: invalid literal for int() with base 10: ''
 [2017-07-18 14:21:55,740] [Thread-2:3668] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-18 14:24:54,441] [Thread-7:3440] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-18 14:29:13,766] [Thread-30:3468] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-19 13:12:26,190] [Thread-8:3608] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:31,979] [Thread-10:2064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:41,357] [Thread-16:1624] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:49,664] [Thread-22:2184] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:52,331] [Thread-23:4000] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:53,582] [Thread-24:3428] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:54,282] [Thread-25:1064] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:54,549] [Thread-26:540] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:54,789] [Thread-27:1444] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:54,937] [Thread-28:3408] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:55,247] [Thread-29:2356] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:55,500] [Thread-30:984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:12:58,989] [Thread-34:3500] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:13:41,105] [Thread-42:3984] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:14:35,953] [Thread-5:4060] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 13, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 13:17:48,974] [Thread-5:3380] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 237, in add_sku_to_cart
+    sku = Sku.objects.get(id=sku_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 325, in get
+    clone = self.filter(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 679, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 697, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1310, in add_q
+    clause, require_inner = self._add_q(where_part, self.used_aliases)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1338, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1209, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\sql\query.py", line 1102, in build_lookup
+    return final_lookup(lhs, rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 105, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\lookups.py", line 143, in get_prep_lookup
+    return self.lhs.output_field.get_prep_lookup(self.lookup_name, self.rhs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 727, in get_prep_lookup
+    return self.get_prep_value(value)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: ''
+[2017-07-19 13:17:54,438] [Thread-6:284] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/add_sku_to_cart/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 245, in add_sku_to_cart
+    so_id = create_order(cust_id)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 163, in create_order
+    so.so_id = get_so_id()
+  File "D:\PycharmProjects\fec\apps\ec\so.py", line 17, in get_so_id
+    so_id = int(datetime.datetime.strptime(timezone.now(), '%Y%m%d') + str(uuid.uuid4().fields[-1])[:6])
+TypeError: strptime() argument 1 must be string, not datetime.datetime
+[2017-07-19 14:47:09,901] [Thread-7:536] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_wxpay_qrcode/207/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 752, in generate_wxpay_qrcode
+    img = qrcode.make(unifiedorder(order_id))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+AttributeError: 'module' object has no attribute 'appid'
