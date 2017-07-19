@@ -87,7 +87,7 @@ def unifiedorder_callback(xml):
     if wxpay_result_dict['return_code'] == 'SUCCESS':
         logger.debug('微信支付统一接口callback SUCESS')
         if wxpay_util.is_signature_valid(data=wxpay_result_dict, key=settings_wxpay.key):
-            so = So.objects.get(id=wxpay_result_dict['out_trade_no'])
+            so = So.objects.get(no=wxpay_result_dict['out_trade_no'])
             if int(wxpay_result_dict['total_fee']) == int(so.amount * 100):
                 cnt = WXPayResult.objects.filter(so_id=so.id).count()
                 if cnt == 0:
