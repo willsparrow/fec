@@ -5853,3 +5853,146 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
     wxpay_request_dict['appid'] = settings_wxpay.appid
 AttributeError: 'module' object has no attribute 'appid'
+[2017-07-19 15:50:24,299] [Thread-7:3032] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:55:54,109] [Thread-1:3664] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:55:55,414] [Thread-3:2156] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:55:55,877] [Thread-4:3592] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:55:56,088] [Thread-5:2740] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:56:36,526] [Thread-1:3256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:56:37,276] [Thread-3:152] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:56:37,822] [Thread-4:1560] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:56:38,032] [Thread-5:344] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:56:38,243] [Thread-6:3004] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 736, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.
+[2017-07-19 15:57:41,486] [Thread-1:284] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /order_detail/2123/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 737, in get_order_detail
+    so = So.objects.get(id=so_id)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
+    self.model._meta.object_name
+DoesNotExist: So matching query does not exist.

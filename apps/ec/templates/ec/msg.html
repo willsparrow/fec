@@ -1,0 +1,13 @@
+{% extends 'ec/index.html' %}
+
+{% block content %}
+     <div class="container msg">
+        <div class="row">
+            <div id="msg">
+                {% if msg %}
+                    <p class="alert alert-info" align="center">{{ msg }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

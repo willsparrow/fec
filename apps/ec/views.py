@@ -732,10 +732,27 @@ def get_order_info(so_id):
 
 @login_required
 def get_order_detail(request, so_id):
-    context_dict = get_order_info(so_id)
-    return render(request,
-                  'ec/order_detail.html',
-                  context_dict)
+    cnt = So.objects.filter(id=so_id).count()
+    # 防止url order_id传入无效的值
+    if cnt == 1:
+        so = So.objects.get(id=so_id)
+        cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+        # 防止查询到别的用户的订单
+        if cust_id == so.cust_id:
+            context_dict = get_order_info(so_id)
+            return render(request,
+                          'ec/order_detail.html',
+                          context_dict)
+        else:
+            context_dict = {'msg': '订单不存在！'}
+            return render(request,
+                          'ec/msg.html',
+                          context_dict)
+    else:
+        context_dict = {'msg': '订单不存在！'}
+        return render(request,
+                      'ec/msg.html',
+                      context_dict)
 
 
 @login_required
