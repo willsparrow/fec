@@ -7,7 +7,7 @@
                 <div class="col-md-2">
                     <h2></h2>
                 </div>
-                <div class="col-md-8">
+                <div class="col-sm-12 col-md-8">
                     {% if cnt == 0 %}
                         <h5>{{ cust.name }}您好:</h5>
                         <div class="bs-component">
@@ -23,10 +23,11 @@
                                 <th>#</th>
                                 <th>商品</th>
                                 <th>名称</th>
-                                <th>数量</th>
+                                <th class="hidden-xs">数量</th>
                                 <th>价格</th>
                                 <th>总额</th>
-                                <th>删除</th>
+                                <th class="hidden-xs">删除</th>
+                                <th class="visible-xs">编辑</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -46,7 +47,7 @@
                                             {{ sol.description }}
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class="hidden-xs">
                                         <div class="prod-qty-input">
                                             <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
                                                    style="display:none;">
@@ -63,7 +64,7 @@
                                     </td>
                                     <td>{{ sol.price }}</td>
                                     <td>{{ sol.amt }}</td>
-                                    <td>
+                                    <td class="hidden-xs">
                                         <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
                                                style="display:none;">
                                         <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
@@ -72,24 +73,31 @@
                                             <span class="glyphicon glyphicon-remove"/>
                                         </div>
                                     </td>
+                                    <td class="visible-xs">
+                                        <div class="icon-edit" style="display:inline;">
+                                            <span class="glyphicon glyphicon-pencil"/>
+                                        </div>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <th scope="row"></th>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>件数:</td>
+                                <td class="hidden-xs"></td>
+                                <td class="hidden-xs"></td>
+                                <td class="visible-xs"></td>
+                                <td><span>件数</span></td>
                                 <td>{{ total }}</td>
                             </tr>
                             <tr>
                                 <th scope="row"></th>
                                 <td></td>
                                 <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>共计:</td>
+                                <td class="hidden-xs"></td>
+                                <td class="hidden-xs"></td>
+                                <td class="visible-xs"></td>
+                                <td><span>共计</span></td>
                                 <td>{{ amount }}</td>
                             </tr>
                             </tbody>

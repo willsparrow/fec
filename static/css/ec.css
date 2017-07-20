@@ -130,7 +130,6 @@ body {
 .icon-del:hover {
     background-color: #FFF4E8;
 }
-
 .icon-rmv {
     display: inline-block;
     margin-bottom: 0;
@@ -147,8 +146,26 @@ body {
     /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
 }
-
 .icon-rmv:hover {
+    background-color: #FFF4E8;
+}
+.icon-edit {
+    display: inline-block;
+    margin-bottom: 0;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 2px;
+    font-size: 13px;
+    line-height: 1.846;
+    border-radius: 1px;
+    transition: all 0.4s;
+    /*box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);*/
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.4);
+}
+.icon-edit:hover {
     background-color: #FFF4E8;
 }
 .cart .table th{
