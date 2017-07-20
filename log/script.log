@@ -5996,3 +5996,25 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\query.py", line 334, in get
     self.model._meta.object_name
 DoesNotExist: So matching query does not exist.
+[2017-07-20 11:08:32,118] [Thread-24:1132] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:33,880] [Thread-26:1712] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:38,694] [Thread-29:676] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:40,250] [Thread-31:3944] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:47,351] [Thread-36:3664] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:57,401] [Thread-38:640] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:08:59,739] [Thread-40:2316] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:09:00,309] [Thread-42:2432] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:09:17,608] [Thread-43:4028] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:09:59,194] [Thread-49:2736] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:10:01,976] [Thread-50:3696] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:10:02,035] [Thread-51:3092] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:10:07,532] [Thread-52:3032] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:11:45,576] [Thread-54:1916] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:11:57,023] [Thread-55:676] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:07,085] [Thread-57:1040] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:12,030] [Thread-59:3952] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:13,898] [Thread-61:2248] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:15,424] [Thread-65:680] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:16,243] [Thread-67:1248] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:17,255] [Thread-69:2796] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
+[2017-07-20 11:13:23,387] [Thread-71:3268] [django.request:170] [base:get_response] [WARNING]- Not Found: /static/js/dataTables.bootstrap.min.js
