@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^del_sku/$', del_sku, name='del_sku'),
     url(r'^rmv_sku/$', rmv_sku, name='rmv_sku'),
     url(r'^cart/$', get_cart_detail, name='get_cart_detail'),
+    url(r'^cart_json/$', get_cart_info_json, name='get_cart_info_json'),
     url(r'^checkout/$', checkout, name='checkout'),
     url(r'^checkout_confirm/$', checkout_confirm, name='checkout_confirm'),
     url(r'^checkout_end/(?P<order_id>\d+)/$', checkout_end, name='checkout_end'),

@@ -304,11 +304,46 @@ def get_cart_info(cust_id):
 
 
 @login_required
+def get_cart_info_json(request):
+    cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
+    # 查询该用户是否有购物车信息
+    cust = Cust.objects.get(id=cust_id)
+    cnt = So.objects.filter(cust_id=cust_id, status=1).count()
+    if cnt == 0:
+        return HttpResponse(json.dumps(0))
+    else:
+        # 对明细进行购物车展示聚合
+        sols = Sol.objects.filter(cust_id=cust_id,
+                                  status=1).values('so_id',
+                                                   'prod_id',
+                                                   'sku_id',
+                                                   'name',
+                                                   'img_url',
+                                                   'price',
+                                                   'description').annotate(qty=Sum('qty'),
+                                                                           amt=Sum('qty') * F('price'))
+        list_sols = []
+        for sol in sols:
+            dict_sol = {}
+            dict_sol['so_id'] = str(sol['so_id'])
+            dict_sol['prod_id'] = str(sol['prod_id'])
+            dict_sol['sku_id'] = str(sol['sku_id'])
+            dict_sol['name'] = str(sol['name'])
+            dict_sol['img_url'] = str(sol['img_url'])
+            dict_sol['price'] = str(sol['price'])
+            dict_sol['description'] = str(sol['description'])
+            dict_sol['qty'] = str(sol['qty'])
+            dict_sol['amt'] = str(sol['amt'])
+            list_sols.append(dict_sol)
+    return HttpResponse(json.dumps(list_sols))
+
+
+@login_required
 def get_cart_detail(request):
     cust_id = Cust.objects.get(user_id=User.objects.get(username=request.user.username).id).id
     context_dict = get_cart_info(cust_id)
     return render(request,
-                  'ec/cart.html',
+                  'ec/cart.vue.html',
                   context_dict)
 
 

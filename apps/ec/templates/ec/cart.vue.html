@@ -1,0 +1,231 @@
+{% extends 'ec/index.html' %}
+
+{% block cart %}
+    <div id="block_cart" class="cart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <h2></h2>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    {% if cnt == 0 %}
+                        <h5>{{ cust.name }}您好:</h5>
+                        <div class="bs-component">
+                            <blockquote>
+                                <p>您的购物车空空如也，去购物吧~~</p>
+                                <small>竭诚为您服务！</small>
+                            </blockquote>
+                        </div>
+                    {% else %}
+                        <div class="text-center"><a href="#" class="icon-edit" v-on:click="switchEditOn()">编辑<span class="glyphicon glyphicon-pencil"/></a><a href="#" class="icon-ok" v-on:click="switchEditOff()">完成<span class="glyphicon glyphicon-ok"/></a></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>商品</th>
+                                    <th>名称</th>
+                                    <th :class="displayStatus2()">数量</th>
+                                    <th :class="displayStatus1()">数量</th>
+                                    <th :class="displayStatus()">价格</th>
+                                    <th :class="displayStatus()">总额</th>
+                                    <th :class="displayStatus2()">删除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(sol, index) in sols">
+                                    <th scope="row">{% verbatim %} {{ index + 1 }} {% endverbatim %}</th>
+                                    <td class="zoom">
+                                        <a :href="prodDetailUrl(sol.prod_id)">
+                                            <img :src="sol.img_url" width="78px" height="78px">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            {% verbatim %} {{ sol.name }} {% endverbatim %}
+                                        </a>
+                                        <div class="prod-description">
+                                            {% verbatim %} {{ sol.description }} {% endverbatim %}
+                                        </div>
+                                    </td>
+                                    <td :class="displayStatus2()">
+                                        <div class="prod-qty-input">
+                                            <div class="icon-del prod-qty-icon prod-qty-del" v-on:click="delSkuFromCart(sol.sku_id)">
+                                                <span class="glyphicon glyphicon-minus"/>
+                                            </div>
+                                            <input id="id_qty" type="text" name="qyt" :value="sol.qty"/>
+                                            <div class="icon-add prod-qty-icon prod-qty-add" v-on:click="addSkuToCart(sol.sku_id)">
+                                                <span class="glyphicon glyphicon-plus"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td :class="displayStatus1()">
+                                        {% verbatim %} {{ sol.qty }} {% endverbatim %}
+                                    </td>
+                                    <td :class="displayStatus()">
+                                        {% verbatim %} {{ sol.price }} {% endverbatim %}
+                                    </td>
+                                    <td :class="displayStatus()">
+                                        {% verbatim %} {{ sol.amt }} {% endverbatim %}
+                                    </td>
+                                    <td :class="displayStatus2()">
+                                        <div class="icon-add prod-qty-icon prod-qty-add" v-on:click="rmvSkuFromCart(sol.sku_id)">
+                                            <span class="glyphicon glyphicon-remove"/>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td :class="displayStatus2()"></td>
+                                    <td :class="displayStatus()"></td>
+                                    <td :class="displayStatus()"></td>
+                                    <td :class="displayStatus1()"></td>
+                                    <td :class="displayStatus2()"></td>
+                                    <td><span>件数:</span></td>
+                                    <td>{% verbatim %} {{ total }} {% endverbatim %}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td :class="displayStatus2()"></td>
+                                    <td :class="displayStatus()"></td>
+                                    <td :class="displayStatus()"></td>
+                                    <td :class="displayStatus1()"></td>
+                                    <td :class="displayStatus2()"></td>
+                                    <td><span>共计:</span></td>
+                                    <td>{% verbatim %} {{ amt }} {% endverbatim %}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form action="{% url 'checkout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-default btn-check-out" style="float: right">去结算</button>
+                        </form>
+                    {% endif %}
+
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var cart = new Vue({
+            el: '#block_cart',
+            data:{
+                sols: null,
+                amt: null,
+                total: null,
+                prodDetailurl: null,
+                editSwitch: 0,
+            },
+            methods:{
+                setCartAmt: function () {
+                    amt = 0;
+                    $.each(this.sols, function () {
+                        amt += Number(this.amt);
+
+                    });
+                    this.amt = amt;
+                },
+                setCartTotal: function () {
+                    total = 0;
+                    $.each(this.sols, function () {
+                        total += Number(this.qty);
+
+                    });
+                    this.total = total;
+                },
+                prodDetailUrl: function (prod_id) {
+                    return '/prod_detail/' + prod_id;
+                },
+                addSkuToCart: function (sku_id) {
+                    console.log('addSkuToCart');
+                    selected = 0;
+                    i = 0;
+                    $.each(this.sols, function () {
+                        if (this.sku_id == sku_id){
+                            selected = i;
+                        }
+                        i += 1;
+                    });
+                    console.log(this.sols[selected].qty);
+                    this.sols[selected].qty = Number(this.sols[selected].qty) + 1;
+                    this.sols[selected].amt = (Number(this.sols[selected].qty) * Number(this.sols[selected].price)).toFixed(2);
+                    this.setCartAmt();
+                    this.setCartTotal();
+                    $.post("/ec/add_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id, 'qty':1}, function(ret){
+                    });
+                },
+                delSkuFromCart: function (sku_id) {
+                    console.log('delSkuFromCart');
+                    selected = 0;
+                    i = 0;
+                    $.each(this.sols, function () {
+                        if (this.sku_id == sku_id){
+                            selected = i;
+                        }
+                        i += 1;
+                    });
+                    console.log(this.sols[selected].qty);
+                    this.sols[selected].qty = Number(this.sols[selected].qty) - 1;
+                    this.sols[selected].amt = (Number(this.sols[selected].qty) * Number(this.sols[selected].price)).toFixed(2);
+                    this.setCartAmt();
+                    this.setCartTotal();
+                    $.post("/ec/del_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id, 'qty':1}, function(ret){
+                        });
+                },
+                rmvSkuFromCart: function (sku_id) {
+                    console.log('rmvSkuFromCart');
+                    selected = 0;
+                    i = 0;
+                    $.each(this.sols, function () {
+                        if (this.sku_id == sku_id){
+                            selected = i;
+                        }
+                        i += 1;
+                    });
+                    console.log(this.sols[selected].qty);
+                    // this.sols.splice(selected,1);
+                    this.setCartAmt();
+                    this.setCartTotal();
+                    $.post("/ec/rmv_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id}, function(ret){
+                            location.reload();
+                        });
+                },
+                switchEditOn: function () {
+                    cart.editSwitch = 1;
+                },
+                switchEditOff: function () {
+                    cart.editSwitch = 0;
+                },
+                displayStatus: function () {
+                    console.log(this.editSwitch);
+                    if(this.editSwitch == 1){
+                        return "hide";
+                    }
+                    return null;
+                },
+                displayStatus1: function () {
+                    console.log(this.editSwitch);
+                    if(this.editSwitch == 1){
+                        return "hide";
+                    }
+                    return "visible-xs";
+                },
+                displayStatus2: function () {
+                    console.log(this.editSwitch);
+                    if(this.editSwitch == 1){
+                        return null;
+                    }
+                    return "hidden-xs";
+                },
+            }
+        })
+        $.getJSON("{% url 'ec:get_cart_info_json'%}", function (data) {
+            cart.sols = data;
+        });
+        cart.amt = Number({{ amount }}).toFixed(2);
+        cart.total = {{ total }};
+    </script>
+{% endblock %}
+
+{% block checkout %}
+{% endblock %}

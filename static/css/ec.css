@@ -150,7 +150,6 @@ body {
     background-color: #FFF4E8;
 }
 .icon-edit {
-    display: inline-block;
     margin-bottom: 0;
     touch-action: manipulation;
     cursor: pointer;
@@ -182,6 +181,44 @@ body {
     line-height: 16px;
     text-align: center;
     cursor: pointer;
+}
+.edit-on .prod-qty-input{
+    margin-top: 18px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display: inline-block;
+    min-width: 80px;
+}
+.edit-on .prod-qty-input .prod-qty-icon{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 30px;
+    line-height: 28px;
+    background: #fff;
+    text-align: center;
+}
+.edit-on .prod-qty-input .prod-qty-del{
+    border-right: 1px solid #ddd;
+}
+.edit-on .prod-qty-input .prod-qty-add{
+    border-left: 1px solid #ddd;
+}
+.edit-on .prod-qty-input input {
+    box-sizing: border-box;
+    border-radius: 0;
+    border: 0;
+    width: 30px;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+    height: 30px;
+    line-height: 28px;
+    background: #fff;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0 #ddd;
 }
 /*
  *设置商品展示
@@ -601,6 +638,8 @@ body {
  */
 .activity{
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .activity_logo{
     text-align: center;
@@ -615,7 +654,7 @@ body {
     float: left;
     border-bottom: 1px solid #D8CEBC;
     font-size: 12px;
-    line-height: 23px;
+    line-height: 18px;
     color: #333;
     width: 252px;
     margin-top: 9px;

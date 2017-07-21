@@ -27,7 +27,7 @@ $(document).ready(function(){
             // console.log(ret)
             // $("#block_cart").html(ret);
             location.reload();
-       });
+        });
 
     })
 
@@ -63,7 +63,6 @@ $(document).ready(function(){
             location.reload();
         });
     })
-
 /*    // 商品详情页增加商品数量
      $(".prod-qty-add").click(function () {
          qty = parseInt($(this).parent().children("input#id_qty").val());

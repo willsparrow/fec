@@ -17,6 +17,7 @@
                             </blockquote>
                         </div>
                     {% else %}
+                        <div class="visible-xs text-center"><a href="#" class="icon-edit">编辑<span class="glyphicon glyphicon-pencil"/></a><a href="#" class="icon-ok">完成<span class="glyphicon glyphicon-ok"/></a></div>
                         <table class="table">
                             <thead>
                             <tr>
@@ -24,10 +25,11 @@
                                 <th>商品</th>
                                 <th>名称</th>
                                 <th class="hidden-xs">数量</th>
-                                <th>价格</th>
-                                <th>总额</th>
-                                <th class="hidden-xs">删除</th>
-                                <th class="visible-xs">编辑</th>
+                                <th class="edit-off visible-xs">数量</th>
+                                <th class="edit-on" style="display: none">数量</th>
+                                <th class="edit-off">价格</th>
+                                <th class="edit-off">总额</th>
+                                <th class="edit-on hidden-xs">删除</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -62,20 +64,31 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{{ sol.price }}</td>
-                                    <td>{{ sol.amt }}</td>
-                                    <td class="hidden-xs">
+                                    <td class="edit-off visible-xs">{{ sol.qty }}</td>
+                                    <td class="edit-on" style="display: none">
+                                        <div class="prod-qty-input">
+                                            <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
+                                                   style="display:none;">
+                                            <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
+                                                   style="display:none;">
+                                            <div {% if sol.qty <= 1  %}class="icon-del prod-qty-icon prod-qty-del disabled"{% else %}class="icon-del prod-qty-icon prod-qty-del"{% endif %}>
+                                                <span class="glyphicon glyphicon-minus"/>
+                                            </div>
+                                            <input id="id_qty" type="text" name="qyt" value="{{ sol.qty }}"/>
+                                            <div class="icon-add-sm prod-qty-icon prod-qty-add">
+                                                <span class="glyphicon glyphicon-plus"/>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="edit-off">{{ sol.price }}</td>
+                                    <td class="edit-off">{{ sol.amt }}</td>
+                                    <td class="edit-on hidden-xs">
                                         <input id="id_prod_id" name="prod_id" type="number" value="{{ sol.prod_id }}"
                                                style="display:none;">
                                         <input id="id_sku_id" name="sku_id" type="number" value="{{ sol.sku_id }}"
                                                style="display:none;">
-                                        <div class="icon-rmv btn btn-default" style="display:inline;">
+                                        <div class="icon-rmv prod-qty-icon btn btn-default" style="display:inline;">
                                             <span class="glyphicon glyphicon-remove"/>
-                                        </div>
-                                    </td>
-                                    <td class="visible-xs">
-                                        <div class="icon-edit" style="display:inline;">
-                                            <span class="glyphicon glyphicon-pencil"/>
                                         </div>
                                     </td>
                                 </tr>
@@ -83,21 +96,23 @@
                             <tr>
                                 <th scope="row"></th>
                                 <td></td>
-                                <td></td>
+                                <td class="edit-off visible-xs"></td>
                                 <td class="hidden-xs"></td>
+                                <td class="edit-on hidden-xs"></td>
+                                <td class="edit-off visible-xs"></td>
                                 <td class="hidden-xs"></td>
-                                <td class="visible-xs"></td>
-                                <td><span>件数</span></td>
+                                <td><span>件数:</span></td>
                                 <td>{{ total }}</td>
                             </tr>
                             <tr>
                                 <th scope="row"></th>
                                 <td></td>
-                                <td></td>
+                                <td class="edit-off visible-xs"></td>
                                 <td class="hidden-xs"></td>
+                                <td class="edit-on hidden-xs"></td>
+                                <td class="edit-off visible-xs"></td>
                                 <td class="hidden-xs"></td>
-                                <td class="visible-xs"></td>
-                                <td><span>共计</span></td>
+                                <td><span>共计:</span></td>
                                 <td>{{ amount }}</td>
                             </tr>
                             </tbody>
