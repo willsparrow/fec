@@ -17,7 +17,7 @@
                             </blockquote>
                         </div>
                     {% else %}
-                        <div class="text-center"><a href="#" class="icon-edit" v-on:click="switchEditOn()">编辑<span class="glyphicon glyphicon-pencil"/></a><a href="#" class="icon-ok" v-on:click="switchEditOff()">完成<span class="glyphicon glyphicon-ok"/></a></div>
+                        <div class="text-center visible-xs"><a href="#" class="icon-edit" v-on:click="switchEditOn()">编辑<span class="glyphicon glyphicon-pencil"/></a><a href="#" class="icon-ok" v-on:click="switchEditOff()">完成<span class="glyphicon glyphicon-ok"/></a></div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -213,7 +213,7 @@
                 displayStatus2: function () {
                     console.log(this.editSwitch);
                     if(this.editSwitch == 1){
-                        return null;
+                        return "sm";
                     }
                     return "hidden-xs";
                 },

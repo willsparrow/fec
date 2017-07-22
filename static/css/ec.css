@@ -182,14 +182,14 @@ body {
     text-align: center;
     cursor: pointer;
 }
-.edit-on .prod-qty-input{
+.sm .prod-qty-input{
     margin-top: 18px;
     border: 1px solid #ddd;
     overflow: hidden;
     display: inline-block;
     min-width: 80px;
 }
-.edit-on .prod-qty-input .prod-qty-icon{
+.sm .prod-qty-input .prod-qty-icon{
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -199,13 +199,13 @@ body {
     background: #fff;
     text-align: center;
 }
-.edit-on .prod-qty-input .prod-qty-del{
+.sm .prod-qty-input .prod-qty-del{
     border-right: 1px solid #ddd;
 }
-.edit-on .prod-qty-input .prod-qty-add{
+.sm .prod-qty-input .prod-qty-add{
     border-left: 1px solid #ddd;
 }
-.edit-on .prod-qty-input input {
+.sm .prod-qty-input input {
     box-sizing: border-box;
     border-radius: 0;
     border: 0;
