@@ -152,6 +152,7 @@
                     this.setCartAmt();
                     this.setCartTotal();
                     $.post("/ec/add_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id, 'qty':1}, function(ret){
+
                     });
                 },
                 delSkuFromCart: function (sku_id) {
@@ -170,7 +171,8 @@
                     this.setCartAmt();
                     this.setCartTotal();
                     $.post("/ec/del_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id, 'qty':1}, function(ret){
-                        });
+
+                    });
                 },
                 rmvSkuFromCart: function (sku_id) {
                     console.log('rmvSkuFromCart');
@@ -182,13 +184,20 @@
                         }
                         i += 1;
                     });
-                    console.log(this.sols[selected].qty);
-                    // this.sols.splice(selected,1);
-                    this.setCartAmt();
-                    this.setCartTotal();
-                    $.post("/ec/rmv_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id}, function(ret){
+                    // console.log(this.sols[selected]);
+                    if (this.total == 1){
+                        $.post("/ec/rmv_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id}, function(ret){
                             location.reload();
                         });
+                    }
+                    else{
+                        $.post("/ec/rmv_sku/", {'prod_id':this.sols[selected].prod_id, 'sku_id':this.sols[selected].sku_id}, function(ret){
+
+                        });
+                    }
+                    this.sols.splice(selected,1);
+                    this.setCartAmt();
+                    this.setCartTotal();
                 },
                 switchEditOn: function () {
                     cart.editSwitch = 1;
@@ -197,21 +206,21 @@
                     cart.editSwitch = 0;
                 },
                 displayStatus: function () {
-                    console.log(this.editSwitch);
+                    // console.log(this.editSwitch);
                     if(this.editSwitch == 1){
                         return "hide";
                     }
                     return null;
                 },
                 displayStatus1: function () {
-                    console.log(this.editSwitch);
+                    // console.log(this.editSwitch);
                     if(this.editSwitch == 1){
                         return "hide";
                     }
                     return "visible-xs";
                 },
                 displayStatus2: function () {
-                    console.log(this.editSwitch);
+                    // console.log(this.editSwitch);
                     if(this.editSwitch == 1){
                         return "sm";
                     }
