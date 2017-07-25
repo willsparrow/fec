@@ -21,6 +21,9 @@ div {
 .btn:hover{
     background-color: #b4a078;
 }
+td{
+    min-width: 46px;
+}
 /*
  *设置导航nav固定在顶部效果
  */

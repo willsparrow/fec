@@ -17,7 +17,10 @@
                             </blockquote>
                         </div>
                     {% else %}
-                        <div class="text-center visible-xs"><a href="#" class="icon-edit" v-on:click="switchEditOn()">编辑<span class="glyphicon glyphicon-pencil"/></a><a href="#" class="icon-ok" v-on:click="switchEditOff()">完成<span class="glyphicon glyphicon-ok"/></a></div>
+                        <div class="text-center visible-xs">
+                            <div :class="switchEditOnHide()"><a href="#" class="icon-edit" v-on:click="switchEditOn()">编辑<span class="glyphicon glyphicon-pencil"/></a></div>
+                            <div :class="switchEditOnDisplay()"><a href="#" class="icon-ok" v-on:click="switchEditOff()">完成<span class="glyphicon glyphicon-ok"/></a></div>
+                        </div>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -26,8 +29,8 @@
                                     <th>名称</th>
                                     <th :class="displayStatus2()">数量</th>
                                     <th :class="displayStatus1()">数量</th>
-                                    <th :class="displayStatus()">价格</th>
-                                    <th :class="displayStatus()">总额</th>
+                                    <th :class="switchEditOnHide()">价格</th>
+                                    <th :class="switchEditOnHide()">总额</th>
                                     <th :class="displayStatus2()">删除</th>
                                 </tr>
                             </thead>
@@ -61,10 +64,10 @@
                                     <td :class="displayStatus1()">
                                         {% verbatim %} {{ sol.qty }} {% endverbatim %}
                                     </td>
-                                    <td :class="displayStatus()">
+                                    <td :class="switchEditOnHide()">
                                         {% verbatim %} {{ sol.price }} {% endverbatim %}
                                     </td>
-                                    <td :class="displayStatus()">
+                                    <td :class="switchEditOnHide()">
                                         {% verbatim %} {{ sol.amt }} {% endverbatim %}
                                     </td>
                                     <td :class="displayStatus2()">
@@ -76,8 +79,8 @@
                                 <tr>
                                     <th scope="row"></th>
                                     <td :class="displayStatus2()"></td>
-                                    <td :class="displayStatus()"></td>
-                                    <td :class="displayStatus()"></td>
+                                    <td :class="switchEditOnHide()"></td>
+                                    <td :class="switchEditOnHide()"></td>
                                     <td :class="displayStatus1()"></td>
                                     <td :class="displayStatus2()"></td>
                                     <td><span>件数:</span></td>
@@ -86,8 +89,8 @@
                                 <tr>
                                     <th scope="row"></th>
                                     <td :class="displayStatus2()"></td>
-                                    <td :class="displayStatus()"></td>
-                                    <td :class="displayStatus()"></td>
+                                    <td :class="switchEditOnHide()"></td>
+                                    <td :class="switchEditOnHide()"></td>
                                     <td :class="displayStatus1()"></td>
                                     <td :class="displayStatus2()"></td>
                                     <td><span>共计:</span></td>
@@ -205,12 +208,19 @@
                 switchEditOff: function () {
                     cart.editSwitch = 0;
                 },
-                displayStatus: function () {
+                switchEditOnHide: function () {
                     // console.log(this.editSwitch);
                     if(this.editSwitch == 1){
                         return "hide";
                     }
                     return null;
+                },
+                switchEditOnDisplay: function () {
+                    // console.log(this.editSwitch);
+                    if(this.editSwitch == 1){
+                        return null;
+                    }
+                    return "hide";
                 },
                 displayStatus1: function () {
                     // console.log(this.editSwitch);

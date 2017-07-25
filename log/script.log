@@ -6976,3 +6976,5 @@ Traceback (most recent call last):
   File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\db\models\fields\__init__.py", line 985, in get_prep_value
     return int(value)
 ValueError: invalid literal for int() with base 10: ''
+[2017-07-25 10:19:19,237] [Thread-4:3432] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-25 10:21:35,124] [Thread-18:3148] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico

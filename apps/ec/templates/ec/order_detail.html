@@ -18,7 +18,6 @@
                     <tr>
                         <th>#</th>
                         <th>商品</th>
-                        <th>商品编号</th>
                         <th>名称</th>
                         <th>数量</th>
                         <th>价格</th>
@@ -32,11 +31,6 @@
                             <td>
                                 <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
                                     <img src="{{ sol.img_url }}" width="78px" height="78px">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
-                                    {{ sol.prod_id }}
                                 </a>
                             </td>
                             <td>
@@ -57,13 +51,11 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                         <td>件数:</td>
                         <td>{{ so.total }}</td>
                     </tr>
                     <tr>
                         <th scope="row"></th>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
