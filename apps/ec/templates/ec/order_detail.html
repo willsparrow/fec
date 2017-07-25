@@ -4,16 +4,31 @@
     {% include "ec/_activity_bar.html" %}
 {% endblock %}
 
-{% block cart %}
-    <div class="container cart">
+{% block content %}
+    <div class="container order">
         <div class="row">
             <div class="col-md-2 text-center"><h2>订单</h2></div>
             <div class="col-md-8">
-                <div><h6>订单号:{{ so.no }}</h6></div>
-                <div><h6>收件人:{{ so.cust_name }}</h6></div>
-                <div><h6>收件人电话:{{ so.cust_mobilephone }}</h6></div>
-                <div><h6>支付方式:货到付款</h6></div>
-                <table class="table">
+                <table class="table order-outline">
+                    <tbody>
+                        <tr>
+                            <th><span>订单号:</span><span>{{ so.no }}</span></th>
+                            <th><span>下单时间:</span><span>{{ so.created_date|date:"Y-m-d H:i:s"  }}</span></th>
+                        </tr>
+                        <tr>
+                            <td><span>收件人:</span><span>{{ so.cust_name }}</span></td>
+                            <td><span>联系方式:</span><span>{{ so.cust_mobilephone }}</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><span>收货地址:</span><span>{{ so.province }}省-{{ so.city }}市-{{ so.country }}-{{ so.address }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>支付方式:</span><span>微信支付</span></td>
+                            <td><span>实付:</span><span>{{ so.amount }}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table order-detail">
                     <thead>
                     <tr>
                         <th>#</th>

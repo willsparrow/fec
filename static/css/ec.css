@@ -730,3 +730,25 @@ body {
     width: 208px;
     height:68px;
 }
+/*
+ *设置订单详情页展示
+ */
+.order .order-detail th{
+    text-align:center;
+}
+.order .order-detail td{
+    text-align:center;
+    vertical-align:middle;
+}
+.order-outline{
+    font-size: 14px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    line-height: 23px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+.order-outline>thead>tr>th, .order-outline>tbody>tr>th, .order-outline>tfoot>tr>th, .order-outline>thead>tr>td, .order-outline>tbody>tr>td, .order-outline>tfoot>tr>td{
+    border-top: 1px dashed #e8e8e8;
+}
