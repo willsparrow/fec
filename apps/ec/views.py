@@ -626,6 +626,15 @@ def deduct_sku_stock(so_id):
     return context_dict
 
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return HttpResponse(ip)
+
+
 @login_required
 def checkout_confirm(request):
     # 查询客户信息

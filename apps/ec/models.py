@@ -202,7 +202,29 @@ class WXPayQrcode(models.Model):
     trade_type = models.CharField(max_length=100, null=True)
     prepay_id = models.CharField(max_length=100, null=True)
     code_url = models.CharField(max_length=100, null=True)
-    qrcode_url = models.CharField(max_length=100, null=True)
+    created_date = models.DateTimeField(null=True)
+    updated_date = models.DateTimeField(null=True)
+    status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+
+
+
+class WXPayMweb(models.Model):
+    class Meta:
+        db_table = 't_wxpay_mweb'
+    so_id = models.DecimalField(max_digits=10, decimal_places=0, null=True)
+    so_no = models.DecimalField(max_digits=20, decimal_places=0, null=True)
+    appid = models.CharField(max_length=100, null=True)
+    mch_id = models.CharField(max_length=100, null=True)
+    device_info = models.CharField(max_length=100, null=True)
+    nonce_str = models.CharField(max_length=100, null=True)
+    sign = models.CharField(max_length=100, null=True)
+    sign_type = models.CharField(max_length=100, null=True)
+    result_code = models.CharField(max_length=100, null=True)
+    err_code = models.CharField(max_length=100, null=True)
+    err_code_des = models.CharField(max_length=100, null=True)
+    trade_type = models.CharField(max_length=100, null=True)
+    prepay_id = models.CharField(max_length=100, null=True)
+    mweb_url = models.CharField(max_length=100, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)

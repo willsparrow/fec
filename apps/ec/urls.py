@@ -32,4 +32,5 @@ urlpatterns = [
     url(r'^check_wxpay_result/(?P<order_id>\d+)/$', check_wxpay_result, name='check_wxpay_result'),
     url(r'^xml/$', xml, name='xml'),
     url(r'^xml_post/$', xml_post, name='xml_post'),
+    url(r'^get_client_ip/$', get_client_ip, name='get_client_ip'),
 ]

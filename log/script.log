@@ -7012,3 +7012,15 @@ Traceback (most recent call last):
   File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
     wxpay_request_dict['appid'] = settings_wxpay.appid
 AttributeError: 'module' object has no attribute 'appid'
+[2017-07-26 15:55:59,868] [Thread-10:2556] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_wxpay_qrcode/255/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 804, in generate_wxpay_qrcode
+    img = qrcode.make(unifiedorder(order_id))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+AttributeError: 'module' object has no attribute 'appid'
+[2017-07-26 16:48:00,043] [Thread-3:2464] [django.request:170] [base:get_response] [WARNING]- Not Found: /get_client_ip
