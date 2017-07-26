@@ -764,10 +764,8 @@ body {
 .btn-a{
     cursor: pointer;
     border: 1px solid #ddd;
-    float: left;
-    padding: 0 25px;
+    padding: 0 5px;
     line-height: 28px;
-    font-size: 12px;
     color: #333;
     overflow: hidden;
 }
