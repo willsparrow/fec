@@ -1,0 +1,125 @@
+{% extends 'ec/index.html' %}
+
+{% block activity %}
+    {% include "ec/_activity_bar.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="container order">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <table class="table order-outline">
+                    <tbody>
+                        <tr>
+                            <th><span>订单号:</span><span>{{ so.no }}</span></th>
+                            <th><span>下单时间:</span><span>{{ so.created_date|date:"Y-m-d H:i:s"  }}</span></th>
+                        </tr>
+                        <tr>
+                            <td><span>收件人:</span><span>{{ so.cust_name }}</span></td>
+                            <td><span>联系方式:</span><span>{{ so.cust_mobilephone }}</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><span>收货地址:</span><span>{{ so.province }}省-{{ so.city }}市-{{ so.country }}-{{ so.address }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>支付方式:</span><span>微信支付</span></td>
+                            <td><span>实付:</span><span>{{ so.amount }}</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table order-detail">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>商品</th>
+                        <th>名称</th>
+                        <th>数量</th>
+                        <th>价格</th>
+                        <th>总额</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for sol in sols %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>
+                                <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                    <img src="{{ sol.img_url }}" width="78px" height="78px">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'prod_detail' prod_id=sol.prod_id %}">
+                                    {{ sol.name }}
+                                </a>
+                                <div class="prod-description">
+                                    {{ sol.description }}
+                                </div>
+                            </td>
+                            <td>{{ sol.qty }}</td>
+                            <td>{{ sol.price }}</td>
+                            <td>{{ sol.amt }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>件数:</td>
+                        <td>{{ so.total }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>共计:</td>
+                        <td>{{ so.amount }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div><h6>收货地址:{{ so.province }}省-{{ so.city }}市-{{ so.country }}-{{ so.address }}</h6></div>
+            </div>
+            <div class="col-md-2 hidden-xs"><button id="print" type="button" class="btn btn-default" onclick="printSo()">打印</button></div>
+        </div>
+    </div>
+    <script>
+        function printSo() {
+            console.log('printSo');
+            so = {{ json_so|safe }};
+            sols = {{ json_sols|safe }};
+            console.log(so);
+            console.log(sols);
+            var html = '<html><head><title>' + 'print' +' </title></head>';
+            html += '<style type="text/css">body {background-color: white;height: 100%;width: 100%;position: fixed;top: 0;left: 0;margin: 0;padding: 0px;font-family: Times, TimesNR, "New Century Schoolbook", Georgia, "New York", serif, "Microsoft YaHei", 微软雅黑;font-size: 10px;line-height: 12px;} table {font-family: font-family: Times, TimesNR, "New Century Schoolbook", Georgia, "New York", serif, "Microsoft YaHei", 微软雅黑;font-size: 10px;line-height: 12px;}</style>';
+            html += '<body>';
+            html += '<div>上海传庭电子商务有限公司</div>';
+            html += '<div>时间:'+so['created_date']+'</div>';
+            html += '<div>单号:' + so['id'] +'</div>';
+            html += '<div>------------------------------------------</div>';
+            html += '<table>';
+            html += '<tr><th>货号</th><th>品名</th><th>数量</th><th>单价</th><th>金额</th></tr>';
+            for (var i = 0; i <sols.length; i++) {
+                html += '<tr>';
+                html += '<td>' + sols[i]['prod_id'] + '</td>';
+                html += '<td>' + sols[i]['name'] + '</td>';
+                html += '<td>' + sols[i]['qty'] + '</td>';
+                html += '<td>' + sols[i]['price'] + '</td>';
+                html += '<td>' + sols[i]['amt'] + '</td>';
+                html += '</tr>';
+            }
+            html += '</table>'
+            html += '<div>------------------------------------------</div>';
+            html += '<div>购买件数:'+so['total']+'</div>';
+            html += '<div>应付金额:'+so['amount']+'</div>';
+            html += '<div>售后电话:18621101150</div>';
+            html += '</body></html>';
+            var printWindow = window.open('', 'print', 'height=400,width=600');
+            printWindow.document.write(html);
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+        }
+    </script>
+{% endblock %}

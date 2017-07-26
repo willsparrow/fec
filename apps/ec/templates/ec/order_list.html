@@ -49,7 +49,7 @@
                                     <span>已付款</span>
                                 {% elif  so.status == 6%}
                                     <div><span>待付款</span></div>
-                                    <div><a href="{% url 'ec:wxpay' order_id=so.id %}">去付款</a></div>
+                                    <div><a class="btn-a" href="{% url 'ec:wxpay' order_id=so.id %}">去付款</a></div>
                                 {% endif %}
                             </td>
                         </tr>

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <table class="table order-outline">
+                <table class="table table-condensed order-outline">
                     <tbody>
                         <tr>
                             <th><span>订单号:</span><span>{{ so.no }}</span></th>
@@ -79,47 +79,8 @@
                     </tr>
                     </tbody>
                 </table>
-                <div><h6>收货地址:{{ so.province }}省-{{ so.city }}市-{{ so.country }}-{{ so.address }}</h6></div>
             </div>
-            <div class="col-md-2 hidden-xs"><button id="print" type="button" class="btn btn-default" onclick="printSo()">打印</button></div>
+            <div class="col-md-2"></div>
         </div>
     </div>
-    <script>
-        function printSo() {
-            console.log('printSo');
-            so = {{ json_so|safe }};
-            sols = {{ json_sols|safe }};
-            console.log(so);
-            console.log(sols);
-            var html = '<html><head><title>' + 'print' +' </title></head>';
-            html += '<style type="text/css">body {background-color: white;height: 100%;width: 100%;position: fixed;top: 0;left: 0;margin: 0;padding: 0px;font-family: Times, TimesNR, "New Century Schoolbook", Georgia, "New York", serif, "Microsoft YaHei", 微软雅黑;font-size: 10px;line-height: 12px;} table {font-family: font-family: Times, TimesNR, "New Century Schoolbook", Georgia, "New York", serif, "Microsoft YaHei", 微软雅黑;font-size: 10px;line-height: 12px;}</style>';
-            html += '<body>';
-            html += '<div>上海传庭电子商务有限公司</div>';
-            html += '<div>时间:'+so['created_date']+'</div>';
-            html += '<div>单号:' + so['id'] +'</div>';
-            html += '<div>------------------------------------------</div>';
-            html += '<table>';
-            html += '<tr><th>货号</th><th>品名</th><th>数量</th><th>单价</th><th>金额</th></tr>';
-            for (var i = 0; i <sols.length; i++) {
-                html += '<tr>';
-                html += '<td>' + sols[i]['prod_id'] + '</td>';
-                html += '<td>' + sols[i]['name'] + '</td>';
-                html += '<td>' + sols[i]['qty'] + '</td>';
-                html += '<td>' + sols[i]['price'] + '</td>';
-                html += '<td>' + sols[i]['amt'] + '</td>';
-                html += '</tr>';
-            }
-            html += '</table>'
-            html += '<div>------------------------------------------</div>';
-            html += '<div>购买件数:'+so['total']+'</div>';
-            html += '<div>应付金额:'+so['amount']+'</div>';
-            html += '<div>售后电话:18621101150</div>';
-            html += '</body></html>';
-            var printWindow = window.open('', 'print', 'height=400,width=600');
-            printWindow.document.write(html);
-            printWindow.focus();
-            printWindow.print();
-            printWindow.close();
-        }
-    </script>
 {% endblock %}

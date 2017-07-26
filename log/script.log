@@ -6979,3 +6979,36 @@ ValueError: invalid literal for int() with base 10: ''
 [2017-07-25 10:19:19,237] [Thread-4:3432] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-25 10:21:35,124] [Thread-18:3148] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2017-07-25 15:08:34,608] [Thread-4:3304] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2017-07-26 10:15:16,178] [Thread-101:2320] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_wxpay_qrcode/221/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 804, in generate_wxpay_qrcode
+    img = qrcode.make(unifiedorder(order_id))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+AttributeError: 'module' object has no attribute 'appid'
+[2017-07-26 10:17:38,627] [Thread-110:3980] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_wxpay_qrcode/220/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 804, in generate_wxpay_qrcode
+    img = qrcode.make(unifiedorder(order_id))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+AttributeError: 'module' object has no attribute 'appid'
+[2017-07-26 10:17:45,345] [Thread-117:4056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /ec/generate_wxpay_qrcode/221/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\core\handlers\base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Python27\lib\site-packages\django-1.8.14-py2.7.egg\django\contrib\auth\decorators.py", line 22, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "D:\PycharmProjects\fec\apps\ec\views.py", line 804, in generate_wxpay_qrcode
+    img = qrcode.make(unifiedorder(order_id))
+  File "D:\PycharmProjects\fec\apps\ec\wxpay.py", line 21, in unifiedorder
+    wxpay_request_dict['appid'] = settings_wxpay.appid
+AttributeError: 'module' object has no attribute 'appid'
