@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container orders">
     <div class="row">
-        <div class="col-md-2 text-center"><h2>订单</h2></div>
+        <div class="col-md-2"></div>
         <div class="col-sm-12 col-md-8">
             {% if cnt == 0 %}
                 <h5>{{ cust.name }}您好:</h5>
@@ -48,7 +48,8 @@
                             <td>{% if so.status == 18 %}
                                     <span>已付款</span>
                                 {% elif  so.status == 6%}
-                                    <a href="{% url 'ec:wxpay' order_id=so.id %}">待付款，去付款</a>
+                                    <div><span>待付款</span></div>
+                                    <div><a href="{% url 'ec:wxpay' order_id=so.id %}">去付款</a></div>
                                 {% endif %}
                             </td>
                         </tr>
