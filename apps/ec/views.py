@@ -632,7 +632,8 @@ def get_client_ip(request):
         ip = x_forwarded_for.split(',')[-1].strip()
     else:
         ip = request.META.get('REMOTE_ADDR')
-    return HttpResponse(ip)
+    # return HttpResponse(ip)
+    return ip
 
 
 def get_client_os(request):
