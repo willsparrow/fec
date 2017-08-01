@@ -637,7 +637,7 @@ def get_client_ip(request):
 
 def get_client_os(request):
     http_user_agent = request.META.get('HTTP_USER_AGENT')
-    logger.debug(http_user_agent)
+    logger.debug('http_user_agent:' + http_user_agent)
     if 'Windows NT' in http_user_agent:
         return 'windows'
     else:
@@ -818,6 +818,7 @@ def get_order_detail(request, so_id):
 def wxpay(request, order_id):
     so = So.objects.get(id=order_id)
     client_os = get_client_os(request)
+    logger.debug('client_os:' + client_os)
     if client_os == 'windows':
         context_dict = {'so': so}
     else:
