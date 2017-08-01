@@ -706,7 +706,7 @@ def checkout_confirm(request):
         if client_os != 'windows':
             client_ip = get_client_ip(request)
             mweb_url = unifiedorder_mweb(so.id, client_ip)
-            context_dict['mweb_url'] = mweb_url
+            context_dict['mweb_url'] = mweb_url + 'redirect_url=http://www.meibailian.com/ec/checkout_end/' + str(so.id)
         return render(request,
                       'ec/wxpay.html',
                       context_dict)

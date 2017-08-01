@@ -224,7 +224,7 @@ class WXPayMweb(models.Model):
     err_code_des = models.CharField(max_length=100, null=True)
     trade_type = models.CharField(max_length=100, null=True)
     prepay_id = models.CharField(max_length=100, null=True)
-    mweb_url = models.CharField(max_length=100, null=True)
+    mweb_url = models.CharField(max_length=1000, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
     status = models.DecimalField(max_digits=10, decimal_places=0, null=True)
