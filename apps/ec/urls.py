@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^xml/$', xml, name='xml'),
     url(r'^xml_post/$', xml_post, name='xml_post'),
     url(r'^get_client_ip/$', get_client_ip, name='get_client_ip'),
+    url(r'^get_wxpay_mweb_url/$', get_wxpay_mweb_url, name='get_wxpay_mweb_url'),
 ]

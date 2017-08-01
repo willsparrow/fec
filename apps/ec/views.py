@@ -635,6 +635,21 @@ def get_client_ip(request):
     return HttpResponse(ip)
 
 
+def get_client_os(request):
+    http_user_agent = request.META.get('HTTP_USER_AGENT')
+    logger.debug(http_user_agent)
+    if 'Windows NT' in http_user_agent:
+        return 'windows'
+    else:
+        return 'mweb'
+
+
+def get_wxpay_mweb_url(request):
+    # client_id = get_client_ip(request)
+    mweb_url = unifiedorder_mweb(255, '54.255.169.94')
+    return HttpResponse(mweb_url)
+
+
 @login_required
 def checkout_confirm(request):
     # 查询客户信息
@@ -681,7 +696,7 @@ def checkout_confirm(request):
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
         # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
         # return render(request,
         #               'ec/checkout_confirm.html',
@@ -802,7 +817,14 @@ def get_order_detail(request, so_id):
 @login_required
 def wxpay(request, order_id):
     so = So.objects.get(id=order_id)
-    context_dict = {'so': so}
+    client_os = get_client_os(request)
+    if client_os == 'windows':
+        context_dict = {'so': so}
+    else:
+        client_ip = get_client_ip(request)
+        mweb_url = unifiedorder_mweb(order_id, client_ip)
+        context_dict = {'so': so,
+                        'mweb_url': mweb_url}
     return render(request,
                   'ec/wxpay.html',
                   context_dict)

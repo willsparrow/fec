@@ -92,6 +92,7 @@ def unifiedorder_mweb(so_id, client_ip):
     wxpay_request_dict['spbill_create_ip'] = client_ip
     wxpay_request_dict['notify_url'] = 'http://www.meibailian.com/wxpay_callback/'
     wxpay_request_dict['trade_type'] = 'MWEB'
+    wxpay_request_dict['scene_info'] = '{"h5_info": {"type":"Wap","wap_url": "http://www.meibailian.com","wap_name": "美百联-在线支付"}'
     wxpay = WXPay(app_id=settings_wxpay.appid,
                   mch_id=settings_wxpay.mch_id,
                   key=settings_wxpay.key,
