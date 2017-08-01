@@ -701,6 +701,12 @@ def checkout_confirm(request):
         # return render(request,
         #               'ec/checkout_confirm.html',
         #               context_dict)
+        client_os = get_client_os(request)
+        logger.debug('client_os:' + client_os)
+        if client_os != 'windows':
+            client_ip = get_client_ip(request)
+            mweb_url = unifiedorder_mweb(so.id, client_ip)
+            context_dict['mweb_url'] = mweb_url
         return render(request,
                       'ec/wxpay.html',
                       context_dict)
