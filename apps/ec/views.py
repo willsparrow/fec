@@ -19,8 +19,8 @@ from .models import *
 from .prod import *
 #so
 from .so import *
-# MNS
-from .mns import *
+# sms
+from .aliysms import *
 # qrcode
 import qrcode
 from django.utils.six import BytesIO
@@ -697,7 +697,7 @@ def checkout_confirm(request):
             'so_number': so.id
         }
         # 短信通知店员有新的订单生成
-        # send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
+        send_orderid_to_shopkeeper_by_sms('18621101150', so.id)
         # send_orderid_to_shopkeeper_by_sms('15035048663', so.id)
         # return render(request,
         #               'ec/checkout_confirm.html',

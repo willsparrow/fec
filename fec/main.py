@@ -13,10 +13,9 @@ from apps.ec.models import SmsLog
 from apps.ec.models import Verifycode
 from django.db.models import Count
 from django import forms
-# MNS
-from libs.mns.mns_python_sdk.mns.account import Account
-from libs.mns.mns_python_sdk.mns.topic import *
-import settings_mns
+# sms
+from apps.ec.aliysms import *
+import settings_aliysms
 
 import hashlib
 import random
@@ -39,44 +38,18 @@ def test(request):
                   'fec/pseudo-element-before-after.html')
 
 
-def send_verifycode_to_mobilephone(mobilephone, template_code, description):
-    access_key_id = settings_mns.AccessKeyId
-    access_key_secret = settings_mns.AccessKeySecret
-    endpoint = settings_mns.Endpoint
-    topic = settings_mns.Topic
-    sign_name = settings_mns.SignName
-
-    my_account = Account(endpoint, access_key_id, access_key_secret)
-    my_topic = my_account.get_topic(topic)
-    msg_body1 = "sms-message1."
+def generate_verifycode_for_mobilephone(mobilephone):
     code = random.randint(100000, 999999)
     logger.debug(code)
-    direct_sms_attr1 = DirectSMSInfo(free_sign_name=sign_name, template_code=template_code, single=False)
-    direct_sms_attr1.add_receiver(receiver=mobilephone, params={"code": str(code)})
-    msg1 = TopicMessage(msg_body1, direct_sms=direct_sms_attr1)
-    try:
-        verifycode = Verifycode()
-        verifycode.mobilephone = mobilephone
-        verifycode.verifycode = str(code)
-        verifycode.status = 1
-        verifycode.created_date = timezone.now()
-        verifycode.updated_date = timezone.now()
-        verifycode.expire_date = timezone.now() + datetime.timedelta(minutes=5)
-        verifycode.save()
-
-        re_msg = my_topic.publish_message(msg1)
-        sms_log = SmsLog()
-        sms_log.receiver = mobilephone
-        sms_log.type = description
-        sms_log.message_id = re_msg.message_id
-        sms_log.created_date = timezone.now()
-        sms_log.updated_date = timezone.now()
-        sms_log.save()
-        logger.debug("Publish Message Succeed. MessageBody:%s MessageID:%s" % (msg_body1, re_msg.message_id))
-    except MNSExceptionBase, e:
-        if e.type == "TopicNotExist":
-            logger.debug("Topic not exist, please create it.")
-        logger.debug("Publish Message Fail. Exception:%s" % e)
+    verifycode = Verifycode()
+    verifycode.mobilephone = mobilephone
+    verifycode.verifycode = str(code)
+    verifycode.status = 1
+    verifycode.created_date = timezone.now()
+    verifycode.updated_date = timezone.now()
+    verifycode.expire_date = timezone.now() + datetime.timedelta(minutes=5)
+    verifycode.save()
+    return code
 
 
 def validate_verifycode(mobilephone, verifycode):
@@ -100,7 +73,8 @@ def register_step1(request):
                           'fec/register_step1.html',
                           context_dict)
         else:
-            send_verifycode_to_mobilephone(mobilephone, settings_mns.TemplateCodeForRegister, 'verifyCodeToRegister')
+            verifycode = generate_verifycode_for_mobilephone(mobilephone)
+            send_verifycode_for_register(mobilephone, verifycode)
             context_dict = {'mobilephone': mobilephone,
                             'msg': '注册短信验证码已发送至您的手机，请填写手机验证码进行注册。'}
             return render(request,
@@ -205,7 +179,9 @@ def get_mobilephone_from_md5(md5):
 
 def send_verifycode(request):
     mobilephone = get_mobilephone_from_md5(request.POST.get('mobilephone'))
-    send_verifycode_to_mobilephone(mobilephone, settings_mns.TemplateCodeForResetPassword, 'verifyCodeToResetPassword')
+    verifycode = generate_verifycode_for_mobilephone(mobilephone)
+    logger.debug(verifycode)
+    send_verifycode_for_reset_password(mobilephone, verifycode)
     context_dict = {'msg': '已发送，请及时查收。'}
     return render(request,
                   'fec/_msg.html',

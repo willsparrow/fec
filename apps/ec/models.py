@@ -272,6 +272,7 @@ class SmsLog(models.Model):
     receiver = models.CharField(max_length=100, null=True)
     type = models.CharField(max_length=100, null=True)
     message_id = models.CharField(max_length=100, null=True)
+    message_content = models.CharField(max_length=1000, null=True)
     created_date = models.DateTimeField(null=True)
     updated_date = models.DateTimeField(null=True)
 
