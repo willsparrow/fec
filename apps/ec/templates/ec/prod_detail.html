@@ -15,10 +15,9 @@
                 </div>
             </div>
         </div>
-        <!-- prod -->
-        <div id="prod" class="row prod">
-            <!-- Swiper on mobile-->
-            <div class="col-xs-12 col-sm-12 col-md-5 visible-xs">
+        <!-- prod swiper on mobile -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 visible-xs">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         {% for prod_thumb in prod_thumbs %}
@@ -31,15 +30,17 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-
-            <!-- img on web -->
+        </div>
+        <!-- prod on web -->
+        <div id="prod" class="row prod">
+            <!-- prod img -->
             <div class="col-xs-12 col-sm-12 col-md-5 visible-lg visible-md">
                 <div class="prod-img-m zoom">
                     <img class="responsive-img" :src="prod_img_url" width="430" height="430">
                 </div>
             </div>
 
-            <!-- thumb on web -->
+            <!-- prod thumb -->
             {% if prod_thumbs != 0 %}
                 <div class="col-xs-12 col-sm-12 col-md-2 visible-lg visible-md slide" style="max-width: 78px; margin-right: 68px">
                     <ul>
@@ -50,6 +51,7 @@
                 </div>
             {% endif %}
 
+            <!-- prod info -->
             <div class="col-xs-12 col-md-5">
                 <div class="prod-title">
                     <a href="{% url 'prod_detail' prod_id=prod.id %}"><h4><strong>{{ prod.title }}</strong></h4></a>
