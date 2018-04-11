@@ -143,27 +143,6 @@
         </div>
     {% endif %}
 
-    <!-- Swiper -->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-1"></div>
-            <div class="col-xs-12 col-sm-12 col-md-10">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-                        {% for prod_thumb in prod_thumbs %}
-                            <div class="swiper-slide">
-                                <img class="responsive-img" src="{{ prod_thumb.img_url}}">
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-1"></div>
-        </div>
-    </div>
-
     <script type="text/javascript">
         var prod = new Vue({
             el: '#prod',
