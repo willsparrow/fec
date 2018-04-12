@@ -7551,3 +7551,4 @@ Traceback (most recent call last):
 AttributeError: 'module' object has no attribute 'AccessKeyId'
 [2018-04-10 14:43:01,326] [Thread-5:2220] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
 [2018-04-12 16:03:29,262] [Thread-3:3956] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+[2018-04-12 16:17:25,615] [Thread-3:1236] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
