@@ -72,9 +72,12 @@ li.dropdown:hover > ul.dropdown-menu {
 .login {
     position: relative;
     min-height: 500px;
-    max-width: 500px;
+    max-width: 350px;
     top: 100px;
     margin: 0 auto;
+}
+#login{
+    padding: 0 10% 0 10%;
 }
 /*
  *设置注册框的位置
@@ -82,9 +85,12 @@ li.dropdown:hover > ul.dropdown-menu {
 .register {
     position: relative;
     min-height: 500px;
-    max-width: 500px;
+    max-width: 350px;
     top: 100px;
     margin: 0 auto;
+}
+#register{
+    padding: 0 10% 0 10%;
 }
 /*
  *设置login register form效果
@@ -95,7 +101,7 @@ li.dropdown:hover > ul.dropdown-menu {
 }
 */
 .form-horizontal input{
-    max-width: 100%;
+    width: 100%;
 }
 /*
  *设置页脚footer
